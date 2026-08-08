@@ -1,0 +1,31 @@
+# Environment and credentials
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Google Cloud credentials
+*.json
+!config.json
+google-service-account-key.json
+service-account-*.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Stitch local state (if any)
+.stitch-state/
+*.state
+
+# Temporary files
+/tmp/
+*.tmp

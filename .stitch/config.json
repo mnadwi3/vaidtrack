@@ -1,0 +1,65 @@
+{
+  "version": "1.0",
+  "project": "vaidtrack-stitch",
+  "description": "Google Stitch integration for VaidTrack medical tourism landing page",
+  "destination": {
+    "type": "google-bigquery",
+    "project_id": "${GCP_PROJECT_ID}",
+    "dataset": "vaidtrack_data",
+    "credentials_path": "${GOOGLE_APPLICATION_CREDENTIALS}"
+  },
+  "sources": [
+    {
+      "id": "doctors-api",
+      "type": "rest-api",
+      "name": "Doctors Data",
+      "enabled": true,
+      "config": {
+        "base_url": "${DOCTORS_API_URL}",
+        "endpoints": [
+          {
+            "path": "/api/doctors",
+            "method": "GET",
+            "destination_table": "doctors",
+            "sync_interval_minutes": 60,
+            "incremental_key": "updated_at"
+          }
+        ],
+        "auth": {
+          "type": "bearer",
+          "token": "${DOCTORS_API_TOKEN}"
+        }
+      }
+    },
+    {
+      "id": "leads-database",
+      "type": "mysql",
+      "name": "Lead Submissions",
+      "enabled": false,
+      "config": {
+        "host": "${DB_HOST}",
+        "port": 3306,
+        "database": "${DB_NAME}",
+        "username": "${DB_USER}",
+        "password": "${DB_PASSWORD}",
+        "tables": [
+          {
+            "name": "leads",
+            "destination_table": "lead_submissions",
+            "sync_interval_minutes": 30,
+            "incremental_key": "created_at"
+          }
+        ]
+      }
+    }
+  ],
+  "schedules": {
+    "full_sync": {
+      "frequency": "daily",
+      "time": "02:00 UTC"
+    },
+    "incremental_sync": {
+      "frequency": "hourly"
+    }
+  }
+}

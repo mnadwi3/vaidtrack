@@ -1,0 +1,79 @@
+version: '3.8'
+
+# Optional: Docker Compose for running Stitch-like data pipelines locally
+# This is useful for testing and development before pushing to production Stitch
+
+services:
+  # Example: Mock data source API
+  mock-api:
+    image: node:18-alpine
+    container_name: vaidtrack-mock-api
+    working_dir: /app
+    volumes:
+      - ./mock-api:/app
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+    command: npm start
+    profiles:
+      - dev
+
+  # Example: PostgreSQL database for lead submissions
+  postgres:
+    image: postgres:15-alpine
+    container_name: vaidtrack-postgres
+    environment:
+      POSTGRES_USER: stitch_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
+      POSTGRES_DB: vaidtrack
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    profiles:
+      - dev
+
+  # Optional: pgAdmin for managing PostgreSQL
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: vaidtrack-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
+    ports:
+      - "5050:80"
+    depends_on:
+      - postgres
+    profiles:
+      - dev
+
+  # Optional: BigQuery emulator (for local testing)
+  bigquery-emulator:
+    image: gcloud-bigtable-emulator:latest
+    container_name: vaidtrack-bigquery
+    ports:
+      - "9050:9050"
+    profiles:
+      - dev
+
+volumes:
+  postgres_data:
+
+# Usage:
+#
+# # Start development environment (mock API + database)
+# docker-compose --profile dev up -d
+#
+# # Stop all services
+# docker-compose down
+#
+# # View logs
+# docker-compose logs -f postgres
+#
+# # Connect to PostgreSQL
+# psql -h localhost -U stitch_user -d vaidtrack
+#
+# # Connect to pgAdmin
+# Open http://localhost:5050
