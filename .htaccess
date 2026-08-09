@@ -1,5 +1,9 @@
 RewriteEngine On
 
+# Redirect www → non-www (canonical domain)
+RewriteCond %{HTTP_HOST} ^www\.vaidtrack\.com$ [NC]
+RewriteRule ^(.*)$ https://vaidtrack.com/$1 [R=301,L]
+
 # Redirect /index.html → /
 RewriteRule ^index\.html$ / [R=301,L]
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /adminpanel/
+Sitemap: https://vaidtrack.com/sitemap.xml
