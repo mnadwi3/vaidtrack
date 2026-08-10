@@ -1,3 +1,8 @@
 
 .build/
 node_modules/
+
+top-orthopedics/.claude/
+top-orthopedics/server.log
+top-orthopedics/Ortho Doctors.xlsx
+top-orthopedics/doctors-data.json
