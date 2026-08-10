@@ -613,14 +613,15 @@
               <div class="hp-card-panel">
                 <h3>Get a Free Second Opinion</h3>
                 <p>Share your details and our care team will get back to you within 24 hours.</p>
-                <form id="hp-sidebar-form" class="hp-enquiry-form">
-                  <input type="text" name="name" placeholder="Full Name" required class="hp-full">
+                <form id="hp-sidebar-form" class="hp-enquiry-form" novalidate>
+                  <input type="text" name="name" placeholder="Full Name" required>
+                  <input type="email" name="email" placeholder="Email Address" required>
+                  <input type="tel" name="whatsapp" placeholder="Phone / WhatsApp" required>
                   <input type="text" name="country" placeholder="Country">
-                  <input type="tel" name="phone" placeholder="Phone / WhatsApp" required>
-                  <input type="email" name="email" placeholder="Email Address" class="hp-full">
-                  <textarea name="message" placeholder="Your Message" rows="3" class="hp-full"></textarea>
+                  <textarea name="condition" placeholder="Tell us about your condition" rows="3" class="hp-full"></textarea>
                   <button type="submit" class="hp-enquiry-submit">Request Free Consultation</button>
                 </form>
+                <p id="hp-sidebar-form-success" class="hidden" style="text-align:center;font-size:0.875rem;font-weight:600;color:#16A34A;margin-top:0.75rem;">Thank you - we received your details and will contact you shortly.</p>
               </div>
             </div>
           </div>
@@ -719,6 +720,7 @@
 
   <script src="/assets/js/analytics.js?v=20260803-perf3" defer></script>
   <script src="/assets/js/nav.js?v=20260808-navsmooth1" defer></script>
+  <script src="/assets/js/main.min.js?v=20260810-formstandardize1" defer></script>
   <script>
     (function () {
       var API_BASE = '/adminpanel';
@@ -855,23 +857,6 @@
 
         window.addEventListener('resize', function () { fitNameToWidth(nameEl); });
       }
-
-      function bindEnquiryForm(form) {
-        if (!form) return;
-        form.addEventListener('submit', function (event) {
-          event.preventDefault();
-          var data = new FormData(form);
-          var lines = ['Enquiry for ' + (document.getElementById('hp-name').textContent || 'hospital') + ':'];
-          ['name', 'country', 'phone', 'email', 'message'].forEach(function (key) {
-            var value = (data.get(key) || '').toString().trim();
-            if (value) lines.push(key + ': ' + value);
-          });
-          var url = 'https://wa.me/918979983149?text=' + encodeURIComponent(lines.join('\n'));
-          window.open(url, '_blank', 'noopener');
-        });
-      }
-
-      bindEnquiryForm(document.getElementById('hp-sidebar-form'));
 
       function armReveal() {
         var nodes = document.querySelectorAll('.hp-reveal:not(.is-visible)');
