@@ -923,24 +923,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 class="font-headline-lg text-lg md:text-headline-lg text-on-surface mb-1 md:mb-4">Get Free Treatment Plan</h2>
 <p class="font-body-md text-xs md:text-body-md text-on-surface-variant">Schedule Your Free Treatment Plan</p>
 </div>
-<form class="flex flex-col gap-3 md:gap-6">
+<form id="ortho-lead-form" class="flex flex-col gap-3 md:gap-6" novalidate>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Full Name</label>
-<input class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="John Doe" required="" type="text">
+<input name="name" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="John Doe" required="" type="text">
 </div>
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Email Address</label>
-<input class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="john@example.com" required="" type="email">
+<input name="email" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="john@example.com" required="" type="email">
 </div>
 </div>
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Phone Number</label>
-<input class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="(555) 123-4567" required="" type="tel">
+<input name="whatsapp" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="(555) 123-4567" required="" type="tel">
 </div>
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Interested In</label>
-<select class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary outline-none">
+<select name="treatment" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary outline-none">
 <option>Hip Replacement</option>
 <option>Knee Replacement</option>
 <option>Shoulder Replacement</option>
@@ -954,7 +954,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Tell Us About Your Condition</label>
-<textarea class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="What symptoms or condition would you like to discuss?" rows="2"></textarea>
+<textarea name="condition" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="What symptoms or condition would you like to discuss?" rows="2"></textarea>
 </div>
 <div class="flex items-center gap-2 p-2 md:p-3 bg-primary-fixed/10 rounded-lg">
 <span class="material-symbols-outlined text-primary text-sm">lock</span>
@@ -964,6 +964,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           Schedule Free Consultation
         </button>
 </form>
+<p id="ortho-lead-form-success" class="hidden text-center text-sm text-[#16A34A] font-semibold mt-3">Thank you - we received your details and will contact you shortly.</p>
 </div>
 </div>
 </section>
@@ -1000,24 +1001,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 class="font-headline-lg text-lg md:text-headline-lg text-on-surface mb-1 md:mb-4">Get Free Treatment Plan</h2>
 <p class="font-body-md text-xs md:text-body-md text-on-surface-variant">Schedule Your Free Treatment Plan</p>
 </div>
-<form class="flex flex-col gap-3 md:gap-6">
+<form id="ortho-lead-form-modal" class="flex flex-col gap-3 md:gap-6" novalidate>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Full Name</label>
-<input class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="John Doe" required="" type="text">
+<input name="name" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="John Doe" required="" type="text">
 </div>
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Email Address</label>
-<input class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="john@example.com" required="" type="email">
+<input name="email" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="john@example.com" required="" type="email">
 </div>
 </div>
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Phone Number</label>
-<input class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="(555) 123-4567" required="" type="tel">
+<input name="whatsapp" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="(555) 123-4567" required="" type="tel">
 </div>
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Interested In</label>
-<select class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary outline-none">
+<select name="treatment" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary outline-none">
 <option>Hip Replacement</option>
 <option>Knee Replacement</option>
 <option>Shoulder Replacement</option>
@@ -1031,7 +1032,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Tell Us About Your Condition</label>
-<textarea class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="What symptoms or condition would you like to discuss?" rows="2"></textarea>
+<textarea name="condition" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="What symptoms or condition would you like to discuss?" rows="2"></textarea>
 </div>
 <div class="flex items-center gap-2 p-2 md:p-3 bg-primary-fixed/10 rounded-lg">
 <span class="material-symbols-outlined text-primary text-sm">lock</span>
@@ -1041,6 +1042,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           Schedule Free Consultation
         </button>
 </form>
+<p id="ortho-lead-form-modal-success" class="hidden text-center text-sm text-[#16A34A] font-semibold mt-3">Thank you - we received your details and will contact you shortly.</p>
 </div>
 </div>
 
@@ -1154,5 +1156,175 @@ window.addEventListener('load', function () {
 
     steps.forEach(function (step) { stepObserver.observe(step); });
 });
+
+/* Forms → same Google Sheet as vaidtrack.com main site, then generate_lead, then WhatsApp */
+(function () {
+    var GAS_URL = 'https://script.google.com/macros/s/AKfycbzTo3v4gxY1FmMrSFndbYSDaWRhjL58uUzkicjfDW7xS1xdoL_Rxsq69juo2PcT3g2q_Q/exec';
+    var WA_NUMBER = '916395905054';
+
+    function field(form, names) {
+        for (var i = 0; i < names.length; i++) {
+            var el = form.elements.namedItem(names[i]);
+            if (el && el.value) return String(el.value).trim();
+        }
+        return '';
+    }
+
+    function getLeadPayload(form) {
+        var treatment = field(form, ['treatment']);
+        var notes = field(form, ['condition']);
+        return {
+            name: field(form, ['name']),
+            whatsapp: field(form, ['whatsapp', 'phone']),
+            country: field(form, ['country']),
+            condition: [treatment, notes].filter(Boolean).join(' - ')
+        };
+    }
+
+    function buildWhatsAppUrl(payload) {
+        var lines = [
+            'New orthopedic enquiry from website:',
+            'Name: ' + (payload.name || ''),
+            'WhatsApp: ' + (payload.whatsapp || ''),
+            'Condition: ' + (payload.condition || '')
+        ];
+        return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+    }
+
+    function showFormError(form, message) {
+        var el = form.querySelector('.form-submit-error');
+        if (!el) {
+            el = document.createElement('p');
+            el.className = 'form-submit-error text-center text-sm font-semibold mt-3';
+            el.style.color = '#DC2626';
+            form.appendChild(el);
+        }
+        el.textContent = message;
+        el.hidden = false;
+    }
+
+    function clearFormError(form) {
+        var el = form.querySelector('.form-submit-error');
+        if (el) {
+            el.textContent = '';
+            el.hidden = true;
+        }
+    }
+
+    function setSubmitting(form, isSubmitting) {
+        var btn = form.querySelector('[type="submit"]');
+        if (btn) btn.disabled = !!isSubmitting;
+    }
+
+    function submitLeadToSheet(payload) {
+        var body = JSON.stringify(payload);
+        var qs =
+            'name=' + encodeURIComponent(payload.name || '') +
+            '&whatsapp=' + encodeURIComponent(payload.whatsapp || '') +
+            '&country=' + encodeURIComponent(payload.country || '') +
+            '&condition=' + encodeURIComponent(payload.condition || '');
+
+        return new Promise(function (resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', GAS_URL + '?' + qs);
+            xhr.setRequestHeader('Content-Type', 'text/plain;charset=utf-8');
+            xhr.onload = function () {
+                if (xhr.status < 200 || xhr.status >= 300) {
+                    reject(new Error('Sheet HTTP ' + xhr.status));
+                    return;
+                }
+                var data;
+                try {
+                    data = JSON.parse(xhr.responseText);
+                } catch (err) {
+                    reject(new Error('Invalid sheet response'));
+                    return;
+                }
+                if (!data || data.success !== true) {
+                    reject(new Error('Sheet did not confirm save'));
+                    return;
+                }
+                resolve(data);
+            };
+            xhr.onerror = function () {
+                reject(new Error('Sheet network error'));
+            };
+            xhr.send(body);
+        });
+    }
+
+    function fireGenerateLeadThenOpenWhatsApp(form, whatsappUrl) {
+        var formId = (form && form.id) || '';
+        var payload = {
+            form_id: formId,
+            lead_source: 'website_form',
+            page_type: 'top_orthopedics'
+        };
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push(Object.assign({ event: 'generate_lead' }, payload));
+
+        if (typeof window.gtag !== 'function') {
+            window.gtag = function () {
+                window.dataLayer.push(arguments);
+            };
+        }
+
+        window.gtag('event', 'generate_lead', Object.assign({
+            send_to: 'G-5TBH8QQ2EQ'
+        }, payload));
+
+        return new Promise(function (resolve) {
+            setTimeout(resolve, 500);
+        }).then(function () {
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+
+    function wireLeadForm(formId, onSuccess) {
+        var form = document.getElementById(formId);
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            clearFormError(form);
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            var payload = getLeadPayload(form);
+            var whatsappUrl = buildWhatsAppUrl(payload);
+            setSubmitting(form, true);
+
+            submitLeadToSheet(payload)
+                .then(function () {
+                    return fireGenerateLeadThenOpenWhatsApp(form, whatsappUrl);
+                })
+                .then(function () {
+                    if (typeof onSuccess === 'function') onSuccess(form);
+                })
+                .catch(function () {
+                    showFormError(form, 'Something went wrong. Please try again.');
+                })
+                .then(function () {
+                    setSubmitting(form, false);
+                });
+        });
+    }
+
+    wireLeadForm('ortho-lead-form', function (form) {
+        form.classList.add('hidden');
+        var success = document.getElementById('ortho-lead-form-success');
+        if (success) success.classList.remove('hidden');
+    });
+
+    wireLeadForm('ortho-lead-form-modal', function (form) {
+        form.classList.add('hidden');
+        var success = document.getElementById('ortho-lead-form-modal-success');
+        if (success) success.classList.remove('hidden');
+    });
+})();
 </script>
 </body></html>
