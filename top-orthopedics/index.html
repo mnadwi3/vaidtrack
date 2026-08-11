@@ -177,6 +177,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         .doctor-photo {
             filter: grayscale(15%) saturate(105%) brightness(1.03) contrast(0.97);
         }
+
+        /* Featured testimonial card */
+        .t-card{--royal-blue:#0057B8;--gold:#D4A72C;--ink:#24364B;--gray-mid:#6B7A8C;--divider:#E4E8ED;--card-border:#E7ECF2;--light-blue-bg:#EAF2FB;--quote-tint:#BBD6F2;width:100%;background:#fff;border-radius:22px;overflow:hidden;border:1px solid var(--card-border);box-shadow:0 8px 30px rgba(15,35,70,0.12);font-family:Georgia,ui-serif,serif;}
+        .t-photo{position:relative;width:100%;height:300px;}
+        .t-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+        @media (max-width:480px){.t-photo{height:260px;}}
+        .t-curve{position:relative;height:46px;margin-top:-34px;z-index:2;}
+        .t-curve svg{position:absolute;top:0;left:0;width:100%;height:100%;display:block;}
+        .t-rating{display:flex;justify-content:center;align-items:center;gap:4px;margin:10px 0 18px;height:20px;}
+        .t-rating svg{width:19px;height:19px;}
+        .t-quote-wrap{position:relative;padding:0 40px;margin:0 auto 18px;max-width:340px;}
+        .t-quote-wrap .qm{position:absolute;font-family:Georgia,serif;font-size:52px;line-height:1;color:var(--quote-tint);font-style:normal;}
+        .t-quote-wrap .qm.left{top:-14px;left:-2px;}
+        .t-quote-wrap .qm.right{bottom:-34px;right:-2px;transform:rotate(180deg);}
+        .t-quote-text{font-style:italic;font-size:17px;line-height:1.7;color:var(--ink);text-align:center;font-weight:400;position:relative;z-index:1;}
+        .t-divider{display:flex;align-items:center;gap:10px;width:80%;margin:6px auto 20px;}
+        .t-divider .line{flex:1;height:1px;background:var(--divider);}
+        .t-divider svg{width:13px;height:13px;flex-shrink:0;}
+        .t-profile{display:flex;align-items:center;gap:14px;padding:0 28px 24px;}
+        .t-avatar{width:56px;height:56px;border-radius:999px;background:var(--light-blue-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;overflow:hidden;}
+        .t-avatar img{width:34px;height:34px;object-fit:contain;}
+        .t-profile-text{text-align:left;font-family:system-ui,-apple-system,sans-serif;}
+        .t-profile-text .name{margin:0;font-size:18px;font-weight:700;color:var(--royal-blue);}
+        .t-profile-text .treatment{margin:3px 0 0;font-size:12.5px;font-weight:500;color:var(--gray-mid);}
+        .t-footer{background:linear-gradient(180deg,#0060C9,var(--royal-blue));height:52px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden;}
+        .t-footer-left{display:flex;align-items:center;gap:8px;z-index:1;}
+        .t-footer-left svg{width:18px;height:18px;flex-shrink:0;}
+        .t-footer-left span{font-family:system-ui,-apple-system,sans-serif;color:#fff;font-size:12px;font-weight:600;letter-spacing:.01em;}
+        .t-dots{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;z-index:1;}
+        .t-dots div{width:4px;height:4px;border-radius:999px;background:rgba(255,255,255,.55);}
+        .t-dots div:nth-child(4n){background:rgba(212,167,44,.6);}
     </style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased min-h-screen flex flex-col pt-20">
@@ -992,18 +1023,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 
-<div class="flex flex-col h-[360px] md:h-[528px] bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all">
-<div class="flex-[7] overflow-hidden"><img alt="Oretha W Mason" class="w-full h-full object-cover object-center" src="images/testimonials/testimonial-4.jpeg"></div>
-<div class="flex-[3] flex flex-col p-4 md:p-6 overflow-hidden">
-<div class="flex items-center gap-1 text-primary mb-2">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="t-card">
+<div class="t-photo"><img alt="Oretha W Mason with her care team" src="images/testimonials/testimonial-4.jpeg"></div>
+<div class="t-curve">
+<svg viewBox="0 0 420 46" preserveAspectRatio="none">
+<path d="M0,8 Q210,32 420,8 L420,46 L0,46 Z" fill="#fff"/>
+<path d="M0,6 Q210,30 420,6" fill="none" stroke="#D4A72C" stroke-width="4.5"/>
+<path d="M0,9 Q210,33 420,9" fill="none" stroke="#0057B8" stroke-width="4.5"/>
+</svg>
 </div>
-<p class="font-body-md text-on-surface-variant text-sm italic mb-2 line-clamp-2">"Both my knees replaced and I finally feel like myself again. The care I received was outstanding from start to finish."</p>
-<p class="font-label-md text-on-surface mt-auto">Oretha W Mason <span class="text-on-surface-variant font-body-md">• Bilateral Knee Replacement</span></p>
+<div class="t-rating">
+<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
+<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
+<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
+<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
+<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
+</div>
+<div class="t-quote-wrap">
+<span class="qm left">&ldquo;</span>
+<p class="t-quote-text">Both my knees replaced and I finally feel like myself again. The care I received was exceptional from start to finish.</p>
+<span class="qm right">&ldquo;</span>
+</div>
+<div class="t-divider">
+<span class="line"></span>
+<svg viewBox="0 0 24 24" fill="#BBD6F2"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2.1 5 5.5 5c2 0 3.5 1.1 4.5 2.7C11 6.1 12.5 5 14.5 5 17.9 5 19.6 8.4 22 11.7 19.5 16.4 12 21 12 21z"/></svg>
+<span class="line"></span>
+</div>
+<div class="t-profile">
+<div class="t-avatar">
+<img alt="Knee Replacement" src="ortho%20icon/Knee%20Replacement.png">
+</div>
+<div class="t-profile-text">
+<p class="name">Oretha W Mason</p>
+<p class="treatment">Bilateral Knee Replacement</p>
+</div>
+</div>
+<div class="t-footer">
+<div class="t-footer-left">
+<svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5l8-3z" fill="#D4A72C"/><path d="M8.5 12l2.3 2.3L15.5 9.5" stroke="#0057B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+<span>Trusted Care. Better Outcomes.</span>
+</div>
+<div class="t-dots">
+<div></div><div></div><div></div><div></div>
+<div></div><div></div><div></div><div></div>
+<div></div><div></div><div></div><div></div>
+</div>
 </div>
 </div>
 </div>
