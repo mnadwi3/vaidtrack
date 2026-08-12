@@ -1816,13 +1816,13 @@ header .site-logo-img {
     bottom: auto !important;
     display: grid !important;
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 0 !important;
+    gap: 0.7rem !important;
     align-items: stretch !important;
     justify-content: stretch !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0.2rem 0 0 !important;
-    padding: 0.1rem 0.2rem !important;
+    padding: 0.5rem 0.4rem !important;
     box-sizing: border-box;
     overflow: visible;
     background: #FFFFFF;
@@ -1838,12 +1838,9 @@ header .site-logo-img {
     white-space: normal;
     line-height: 1.2;
     gap: 0.3rem;
-    padding: 0.05rem 0.3rem;
-    border-left: 1px solid rgba(15, 76, 129, 0.14);
-    min-width: 0;
-  }
-  .hero-trust li:first-child {
+    padding: 0.05rem 0.15rem;
     border-left: none;
+    min-width: 0;
   }
   .hero-trust li svg {
     width: 1.1rem;
@@ -1856,11 +1853,11 @@ header .site-logo-img {
 }
 @media (max-width: 767px) {
   .hero-slider {
-    min-height: 100svh;
-    height: 100svh;
+    min-height: 70svh;
+    height: 70svh;
   }
   .hero-slide-content {
-    padding-top: 1.5625rem !important;
+    padding-top: 2.1875rem !important;
     padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important;
     justify-content: flex-start !important;
     align-items: stretch !important;
@@ -1882,7 +1879,7 @@ header .site-logo-img {
     margin: 0 0 0.75rem !important;
   }
   .hero-trust {
-    margin: 1.1rem 0 0 !important;
+    margin: 2.35rem 0 0 !important;
     padding: 0.05rem 0.2rem !important;
   }
   .hero-trust li {
