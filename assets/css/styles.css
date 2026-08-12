@@ -1856,8 +1856,8 @@ header .site-logo-img {
 }
 @media (max-width: 767px) {
   .hero-slider {
-    min-height: max(620px, calc((100svh - 4.25rem) * 0.9));
-    height: max(620px, calc((100svh - 4.25rem) * 0.9));
+    min-height: 100svh;
+    height: 100svh;
   }
   .hero-slide-content {
     padding-top: 1.5625rem !important;
