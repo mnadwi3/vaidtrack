@@ -1800,11 +1800,13 @@ header .site-logo-img {
   .hero-slide-content > .grid {
     width: 100%;
     margin: 0;
+    grid-template-columns: minmax(0, 1fr);
   }
   .hero-copy {
     margin: 0;
     max-width: 100%;
     width: 100%;
+    min-width: 0;
     text-align: left;
   }
   .hero-copy h1,
@@ -1874,14 +1876,14 @@ header .site-logo-img {
 }
 @media (max-width: 767px) {
   .hero-slider {
-    min-height: max(580px, calc((100svh - 4.25rem) * 0.82));
-    height: max(580px, calc((100svh - 4.25rem) * 0.82));
+    min-height: max(520px, calc((100svh - 4.25rem) * 0.82));
+    height: max(520px, calc((100svh - 4.25rem) * 0.82));
   }
   .hero-slide-content {
-    padding-top: 4.53rem !important;
+    padding-top: 1.5rem !important;
     padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important;
-    justify-content: center !important;
-    align-items: center !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
   }
   .hero-copy,
   .hero-copy h1,
