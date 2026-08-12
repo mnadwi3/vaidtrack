@@ -54,7 +54,7 @@
       --wa: #15803D;
       --font-heading: "Inter", "Segoe UI", system-ui, sans-serif;
       --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
-      --fs-h1: 2.25rem;
+      --fs-h1: 2.025rem;
       --fw-bold: 700;
       --lh-heading: 1.22
     }
@@ -114,157 +114,155 @@
       }
     }
 
-    .hero-slider {
+    .hero2 {
       position: relative;
-      min-height: 100vh;
-      overflow: hidden;
-      background: linear-gradient(180deg, #F5FBFA 0%, #D5EFEC 48%, #8CDAD4 100%)
-    }
-
-    .hero-slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      z-index: 1
-    }
-
-    .hero-slide.active {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto
-    }
-
-    .hero-slide-content {
-      position: relative;
-      z-index: 2;
       display: flex;
       align-items: center;
-      box-sizing: border-box
+      overflow: hidden;
+      min-height: calc(100svh - 4.25rem);
+      padding: 3rem 0 3.25rem
     }
 
-    .hero-copy .hero-eyebrow {
-      color: var(--primary) !important;
-      font-size: .75rem;
-      font-weight: 700;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      margin: 0 0 .6rem
+    .hero2-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-size: cover;
+      background-position: center
     }
 
-    .hero-copy h1,
-    .hero-copy h2 {
-      color: var(--text) !important;
-      font-size: var(--fs-h1);
-      font-weight: var(--fw-bold);
-      line-height: 1.15;
-      margin: 0 0 1rem
+    .hero2-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(0, 0, 0, .96) 0%, rgba(0, 0, 0, .86) 45%, rgba(0, 0, 0, .55) 100%)
     }
 
-    .hero-copy .hero-accent {
-      color: var(--primary) !important
+    .hero2-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 72rem;
+      margin: 0 auto;
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem
     }
 
-    .hero-copy .hero-free {
-      color: var(--success) !important
-    }
-
-    .hero-copy p {
-      color: var(--text-light) !important;
+    .hero2-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
       max-width: 34rem
     }
 
-    .hero-trust {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0;
-      margin: 1.25rem 0 0;
-      padding: .85rem .35rem;
-      list-style: none;
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
-      background: #fff;
-      border: 1px solid rgba(15, 76, 129, .08);
-      border-radius: 1rem;
-      box-shadow: 0 10px 28px rgba(11, 58, 97, .1)
+    .hero2-form-col {
+      display: none
     }
 
-    .hero-trust li {
+    .hero2-h1 {
+      color: #fff !important;
+      font-size: var(--fs-h1);
+      font-weight: var(--fw-bold);
+      line-height: 1.15;
+      margin: 0
+    }
+
+    .hero2-sub {
+      color: rgba(255, 255, 255, .85) !important;
+      margin: 0;
+      max-width: 30rem
+    }
+
+    .hero2-ctas {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: .4rem;
-      text-align: center;
-      color: var(--secondary);
-      font-size: .625rem;
-      font-weight: 600;
-      line-height: 1.25;
-      padding: .15rem .45rem;
-      border-left: 1px solid rgba(15, 76, 129, .14);
-      min-width: 0
+      gap: .75rem;
+      padding-top: .5rem
     }
 
-    .hero-trust li:first-child {
-      border-left: none
+    .hero2-btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: .5rem;
+      color: #fff;
+      font-weight: 700;
+      font-size: .875rem;
+      padding: .9rem 2rem;
+      border-radius: 9999px;
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      transition: filter .15s ease
+    }
+
+    .hero2-btn:hover {
+      filter: brightness(.95)
+    }
+
+    .hero2-btn-primary {
+      background: var(--primary);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .25)
+    }
+
+    .hero2-btn-wa {
+      background: var(--wa);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .3)
+    }
+
+    .hero2-trust {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      margin: 1rem 0 0;
+      padding: 1rem 0 0;
+      border-top: 1px solid rgba(255, 255, 255, .2);
+      list-style: none
+    }
+
+    .hero2-trust li {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      color: rgba(255, 255, 255, .85);
+      font-size: .75rem;
+      font-weight: 600
+    }
+
+    .hero2-trust svg {
+      flex-shrink: 0
+    }
+
+    @media(min-width:640px) {
+      .hero2-ctas {
+        flex-direction: row
+      }
     }
 
     @media(min-width:1024px) {
-      br.hero-mobile-break {
-        display: none
+      .hero2 {
+        min-height: 720px;
+        padding: 5rem 0
       }
 
-      #hero .hero-copy h1 {
+      .hero2-h1 {
         font-size: 2.75rem !important
       }
 
-      .hero-trust {
-        padding: .55rem .5rem;
-        margin-top: 1.5rem;
-        max-width: 36rem
+      .hero2-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2.5rem
       }
 
-      .hero-trust li {
-        font-size: .7rem;
-        padding: .1rem .55rem;
-        gap: .28rem
-      }
-
-      .hero-trust li svg {
-        width: 1.2rem;
-        height: 1.2rem
-      }
-
-      #hero .hero-copy,
-      #hero .appointment-card {
-        transform: translateY(-80px);
-      }
-    }
-
-    @media(max-width:1023px) {
-      .hero-slider {
-        min-height: calc(100svh - 4.25rem);
-        height: calc(100dvh - 4.25rem);
-        background: linear-gradient(180deg, color-mix(in srgb, var(--primary) 16%, #fff) 0%, color-mix(in srgb, var(--primary) 10%, #fff) 38%, color-mix(in srgb, #16A34A 26%, #fff) 100%)
-      }
-
-      .hero-slide-content {
-        display: flex !important;
-        align-items: flex-start !important;
-        justify-content: flex-start !important;
-        height: 100% !important;
-        min-height: 100% !important;
-        padding-top: 3rem !important;
-        padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important
-      }
-
-      .hero-trust {
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
-        margin: 15% 0 0
+      .hero2-form-col {
+        display: block;
+        flex-shrink: 0;
+        width: 20rem
       }
     }
   </style>
@@ -481,65 +479,62 @@
   <main id="top">
 
     <!-- ========== 1. HERO SLIDER ========== -->
-    <section class="hero-slider" id="hero" aria-label="Trusted Medical Care in India">
-      <div class="hero-slide active">
-        <div
-          class="hero-slide-content max-w-6xl mx-auto px-4 sm:px-6 h-full min-h-[inherit] flex items-center pt-6 pb-14 sm:py-14 lg:py-16">
-          <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center w-full">
-            <div class="hero-copy text-white max-w-xl">
-              <p class="hero-eyebrow">TRUSTED MEDICAL CARE IN INDIA</p>
-              <h1 class="mb-4">
-                World-Class<br>
-                Medical Treatments<br>
-                Personalized For You
-              </h1>
-              <p class="mb-0" id="hero-subheadline">
-                Connect with leading Indian hospitals and experienced
-                specialists for expert consultation, advanced treatment,
-                and complete support throughout your healthcare journey.
-              </p>
-              <ul class="hero-trust hero-mobile-only" aria-label="Trust highlights" id="hero-trust-list">
-                <li>
-                  <svg fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 12 2.25c2.1 0 4.115.337 6 1.464v5.786a11.95 11.95 0 0 1-6 10.374 11.95 11.95 0 0 1-6-10.374V3.714A11.959 11.959 0 0 1 12 2.25Z" />
-                  </svg>
-                  <span>JCI/NABH Accredited Hospital</span>
-                </li>
-                <li>
-                  <svg fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M3.6 9h16.8M3.6 15h16.8M12 3c2.5 2.7 3.75 5.7 3.75 9S14.5 18.3 12 21c-2.5-2.7-3.75-5.7-3.75-9S9.5 5.7 12 3Z" />
-                  </svg>
-                  <span>International Patient Care</span>
-                </li>
-                <li>
-                  <svg fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M16.5 18.75h-9m9 0a2.25 2.25 0 0 0 1.97-1.14l2.2-4.4a1.125 1.125 0 0 0-.35-1.41l-2.63-1.88a2.25 2.25 0 0 1-.9-1.8V6.75a4.5 4.5 0 1 0-9 0v1.37c0 .7-.33 1.36-.9 1.8l-2.63 1.88c-.48.34-.64.98-.35 1.41l2.2 4.4A2.25 2.25 0 0 0 7.5 18.75m9 0v.75a1.5 1.5 0 0 1-1.5 1.5h-6a1.5 1.5 0 0 1-1.5-1.5v-.75" />
-                  </svg>
-                  <span>World Class Oncology Specialists</span>
-                </li>
-                <li>
-                  <svg fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                  </svg>
-                  <span>24/7 Support for Patient</span>
-                </li>
-              </ul>
-            </div>
-            <div class="hidden lg:block"></div>
+    <section class="hero2" id="hero" aria-label="Trusted Medical Care in India">
+      <div class="hero2-bg" style="background-image:url('/images/hero/doctor-patient-consult.jpg')"></div>
+      <div class="hero2-overlay"></div>
+      <div class="hero2-inner">
+        <div class="hero2-copy">
+          <h1 class="hero2-h1">
+            World-Class<br>
+            Medical Treatments<br>
+            Personalized For You
+          </h1>
+          <p class="hero2-sub" id="hero-subheadline">
+            Connect with leading Indian hospitals and experienced
+            specialists for expert consultation, advanced treatment,
+            and complete support throughout your healthcare journey.
+          </p>
+          <div class="hero2-ctas">
+            <button type="button" id="open-appointment-modal" class="hero2-btn hero2-btn-primary">
+              Get Free Treatment Plan
+            </button>
+            <a href="https://wa.me/918979983149?text=Hi%2C%20I%27d%20like%20to%20get%20a%20quote"
+              target="_blank" rel="noopener noreferrer" class="hero2-btn hero2-btn-wa">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path
+                  d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.87.505 3.622 1.386 5.128L2.06 22l4.995-1.31a9.94 9.94 0 0 0 4.949 1.31h.004c5.518 0 10.004-4.486 10.004-10.004C21.992 6.486 17.522 2 12.004 2zm0 18.19h-.003a8.17 8.17 0 0 1-4.166-1.14l-.299-.177-3.096.812.827-3.02-.195-.31a8.17 8.17 0 0 1-1.256-4.36c0-4.518 3.677-8.196 8.195-8.196 2.19 0 4.248.853 5.797 2.402a8.14 8.14 0 0 1 2.4 5.796c0 4.518-3.678 8.193-8.204 8.193z" />
+              </svg>
+              Get Reply Within 15 Minutes
+            </a>
           </div>
+          <ul class="hero2-trust" aria-label="Trust highlights">
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 12 2.25c2.1 0 4.115.337 6 1.464v5.786a11.95 11.95 0 0 1-6 10.374 11.95 11.95 0 0 1-6-10.374V3.714A11.959 11.959 0 0 1 12 2.25Z" />
+              </svg>
+              <span>JCI/NABH Accredited Hospital</span>
+            </li>
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M3.6 9h16.8M3.6 15h16.8M12 3c2.5 2.7 3.75 5.7 3.75 9S14.5 18.3 12 21c-2.5-2.7-3.75-5.7-3.75-9S9.5 5.7 12 3Z" />
+              </svg>
+              <span>International Patient Care</span>
+            </li>
+            <li>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+              <span>24/7 Support for Patient</span>
+            </li>
+          </ul>
         </div>
-      </div>
-
-      <!-- Appointment form overlay (desktop right / mobile below via flow) -->
-      <div class="absolute inset-0 z-[3] pointer-events-none">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-full flex items-center justify-end py-14">
-          <div
-            class="pointer-events-auto w-full max-w-[20rem] hidden lg:block bg-white rounded-2xl shadow-card p-5 border border-slate-100 appointment-card">
+        <div class="hero2-form-col">
+          <div class="appointment-card bg-white rounded-2xl shadow-card p-5 border border-slate-100">
             <h3 class="text-primary mb-3 text-center">Book An Appointment</h3>
             <form id="hero-form" class="space-y-3" novalidate>
               <input type="text" name="name" required placeholder="Full name" autocomplete="name" aria-label="Name"
@@ -564,28 +559,6 @@
             </form>
             <p id="hero-form-success" class="hidden text-center text-sm text-success font-semibold mt-3">Thank you - we
               received your details and will contact you shortly.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hero stats bar (desktop/tablet only; mobile keeps the trust badges list above) -->
-      <div class="hero-stats-wrap hero-desktop-only max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="hero-stats">
-          <div>
-            <span class="hero-stats-num">500+</span>
-            <span class="hero-stats-label">Successful Treatments</span>
-          </div>
-          <div>
-            <span class="hero-stats-num">JCI Accredited</span>
-            <span class="hero-stats-label">Hospitals</span>
-          </div>
-          <div>
-            <span class="hero-stats-num">24/7</span>
-            <span class="hero-stats-label">Patient Support</span>
-          </div>
-          <div>
-            <span class="hero-stats-num">24/7</span>
-            <span class="hero-stats-label">Support for Patient</span>
           </div>
         </div>
       </div>
@@ -1529,26 +1502,6 @@
       </svg>
       <span>WhatsApp</span>
     </a>
-
-    <!-- Mobile sticky bottom actions -->
-    <div class="mobile-bottom-bar lg:hidden" role="navigation" aria-label="Quick actions">
-      <a href="https://wa.me/918979983149?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Cancer%20Treatment%20in%20India"
-        target="_blank" rel="noopener noreferrer" class="mobile-bottom-btn mobile-bottom-wa">
-        <svg class="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.85 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 6.045L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg>
-        WhatsApp
-      </a>
-      <a href="/book-appointment" class="mobile-bottom-btn mobile-bottom-book">
-        <svg class="w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"
-          aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-        </svg>
-        Book Now
-      </a>
-    </div>
 
     <script src="assets/js/analytics.js?v=20260803-perf3" defer></script>
     <script src="assets/js/nav.js?v=20260808-navsmooth1" defer></script>
