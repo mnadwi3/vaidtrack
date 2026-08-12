@@ -1860,10 +1860,10 @@ header .site-logo-img {
     height: max(620px, calc((100svh - 4.25rem) * 0.9));
   }
   .hero-slide-content {
-    padding-top: 3.59rem !important;
+    padding-top: 1.5625rem !important;
     padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important;
-    justify-content: center !important;
-    align-items: center !important;
+    justify-content: flex-start !important;
+    align-items: stretch !important;
   }
   .hero-copy,
   .hero-copy h1,
@@ -1871,15 +1871,18 @@ header .site-logo-img {
   .hero-copy p {
     text-align: left !important;
   }
+  .hero-copy .hero-eyebrow {
+    margin: 0 0 0.55rem !important;
+  }
   .hero-copy h1,
   .hero-copy h2 {
-    margin: 0 0 0.15rem !important;
+    margin: 0 0 0.6rem !important;
   }
   .hero-copy p {
-    margin: 0 0 0.25rem !important;
+    margin: 0 0 0.75rem !important;
   }
   .hero-trust {
-    margin: 0.9rem 0 0 !important;
+    margin: 1.1rem 0 0 !important;
     padding: 0.05rem 0.2rem !important;
   }
   .hero-trust li {
