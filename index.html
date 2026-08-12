@@ -177,38 +177,49 @@
 
     .hero-trust {
       position: relative;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
       gap: 0;
       margin: 1.25rem 0 0;
-      padding: .85rem .35rem;
+      padding: .6rem .5rem;
       list-style: none;
       width: 100%;
       max-width: 100%;
       box-sizing: border-box;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
       background: #fff;
       border: 1px solid rgba(15, 76, 129, .08);
       border-radius: 1rem;
       box-shadow: 0 10px 28px rgba(11, 58, 97, .1)
     }
 
+    .hero-trust::-webkit-scrollbar {
+      display: none
+    }
+
     .hero-trust li {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      flex: 0 0 auto;
       align-items: center;
-      gap: .4rem;
-      text-align: center;
+      gap: .3rem;
+      text-align: left;
       color: var(--secondary);
-      font-size: .625rem;
+      font-size: .6rem;
       font-weight: 600;
-      line-height: 1.25;
-      padding: .15rem .45rem;
+      line-height: 1.2;
+      white-space: nowrap;
+      padding: .15rem .5rem;
       border-left: 1px solid rgba(15, 76, 129, .14);
       min-width: 0
     }
 
     .hero-trust li:first-child {
-      border-left: none
+      border-left: none;
+      padding-left: 0
     }
 
     @media(min-width:1024px) {
@@ -223,7 +234,8 @@
       .hero-trust {
         padding: .55rem .5rem;
         margin-top: 1.5rem;
-        max-width: 36rem
+        max-width: 36rem;
+        overflow-x: visible
       }
 
       .hero-trust li {
@@ -264,7 +276,7 @@
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
-        margin: 15% 0 0
+        margin: .9rem 0 0
       }
     }
   </style>
