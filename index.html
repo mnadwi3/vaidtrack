@@ -177,49 +177,38 @@
 
     .hero-trust {
       position: relative;
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 0;
       margin: 1.25rem 0 0;
-      padding: .6rem .5rem;
+      padding: .85rem .35rem;
       list-style: none;
       width: 100%;
       max-width: 100%;
       box-sizing: border-box;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
       background: #fff;
       border: 1px solid rgba(15, 76, 129, .08);
       border-radius: 1rem;
       box-shadow: 0 10px 28px rgba(11, 58, 97, .1)
     }
 
-    .hero-trust::-webkit-scrollbar {
-      display: none
-    }
-
     .hero-trust li {
       display: flex;
-      flex-direction: row;
-      flex: 0 0 auto;
+      flex-direction: column;
       align-items: center;
-      gap: .3rem;
-      text-align: left;
+      gap: .4rem;
+      text-align: center;
       color: var(--secondary);
-      font-size: .6rem;
+      font-size: .625rem;
       font-weight: 600;
-      line-height: 1.2;
-      white-space: nowrap;
-      padding: .15rem .5rem;
+      line-height: 1.25;
+      padding: .15rem .45rem;
       border-left: 1px solid rgba(15, 76, 129, .14);
       min-width: 0
     }
 
     .hero-trust li:first-child {
-      border-left: none;
-      padding-left: 0
+      border-left: none
     }
 
     @media(min-width:1024px) {
@@ -234,8 +223,7 @@
       .hero-trust {
         padding: .55rem .5rem;
         margin-top: 1.5rem;
-        max-width: 36rem;
-        overflow-x: visible
+        max-width: 36rem
       }
 
       .hero-trust li {
@@ -276,7 +264,7 @@
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
-        margin: .9rem 0 0
+        margin: 15% 0 0
       }
     }
   </style>
@@ -326,7 +314,7 @@
     }
   </style>
   <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=20260803-perf3">
-  <link rel="stylesheet" href="/assets/css/styles.min.css?v=20260812-herotrust3">
+  <link rel="stylesheet" href="/assets/css/styles.min.css?v=20260812-revert0810">
 
   <!-- Schema.org Structured Data for MedicalBusiness and Organization -->
   <script type="application/ld+json">
@@ -501,9 +489,8 @@
             <div class="hero-copy text-white max-w-xl">
               <p class="hero-eyebrow">TRUSTED MEDICAL CARE IN INDIA</p>
               <h1 class="mb-4">
-                World-Class<br>
-                Medical Treatments<br>
-                Personalized For You
+                World-Class Medical Treatment,<br>
+                Personalized for You
               </h1>
               <p class="mb-0" id="hero-subheadline">
                 Connect with leading Indian hospitals and experienced

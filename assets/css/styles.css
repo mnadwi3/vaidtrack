@@ -1016,12 +1016,9 @@ label {
 .hero-slider {
   position: relative;
   /* 100vh minus the sticky header's own height (4.75rem at sm+), so
-     header + hero together fit exactly one screen with no scroll on
-     tall viewports. Floored at 820px so the booking card and stats bar
-     (both absolutely positioned, so they can't grow this box themselves)
-     never get clipped against the header/next section on short browser
-     windows (e.g. 1366x768 laptops with visible browser chrome). */
-  min-height: max(820px, calc(100vh - 4.75rem));
+     header + hero together fit exactly one screen with no scroll. */
+  min-height: calc(100vh - 4.75rem);
+  height: calc(100vh - 4.75rem);
   overflow: hidden;
   background: linear-gradient(180deg, #F5FBFA 0%, #D5EFEC 48%, #8CDAD4 100%);
 }
@@ -1216,50 +1213,45 @@ label {
 }
 body.appt-modal-open { overflow: hidden; }
 
-/* Trust badges under hero copy — single-line horizontal row with dividers */
+/* Trust badges under hero copy — horizontal row with dividers */
 .hero-trust {
   position: relative;
   left: auto;
   right: auto;
   bottom: auto;
   z-index: 1;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0;
+  align-items: stretch;
+  justify-content: stretch;
   max-width: 100%;
   width: 100%;
   margin: 1.25rem 0 0;
-  padding: 0.6rem 0.5rem;
+  padding: 0.85rem 0.35rem;
   list-style: none;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  pointer-events: none;
   background: #FFFFFF;
   border: 1px solid rgba(15, 76, 129, 0.08);
   border-radius: 1rem;
   box-shadow: 0 10px 28px rgba(11, 58, 97, 0.1);
   box-sizing: border-box;
 }
-.hero-trust::-webkit-scrollbar {
-  display: none;
-}
 .hero-trust li {
   display: flex;
-  flex-direction: row;
-  flex: 0 0 auto;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.3rem;
+  gap: 0.4rem;
   margin: 0;
-  padding: 0.15rem 0.5rem;
+  padding: 0.15rem 0.45rem;
   color: var(--secondary);
-  font-size: 0.6rem;
+  font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  line-height: 1.2;
-  text-align: left;
-  white-space: nowrap;
+  line-height: 1.25;
+  text-align: center;
+  white-space: normal;
   background: none;
   border: none;
   border-left: 1px solid rgba(15, 76, 129, 0.14);
@@ -1267,31 +1259,29 @@ body.appt-modal-open { overflow: hidden; }
 }
 .hero-trust li:first-child {
   border-left: none;
-  padding-left: 0;
 }
 .hero-trust li svg {
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 1.2rem;
+  height: 1.2rem;
   flex-shrink: 0;
   color: var(--primary);
 }
 @media (min-width: 640px) {
   .hero-trust {
-    padding: 0.75rem 0.6rem;
+    padding: 1rem 0.45rem;
     margin-top: 1.5rem;
   }
   .hero-trust li {
     font-size: 0.7rem;
-    padding: 0.2rem 0.6rem;
+    padding: 0.2rem 0.55rem;
   }
-  .hero-trust li svg { width: 1.2rem; height: 1.2rem; }
+  .hero-trust li svg { width: 1.35rem; height: 1.35rem; }
 }
 @media (min-width: 1024px) {
   .hero-trust {
     padding: 0.55rem 0.5rem;
     margin-top: 1.5rem;
     max-width: 36rem;
-    overflow-x: visible;
   }
   .hero-trust li {
     font-size: 0.7rem;
@@ -1761,12 +1751,11 @@ header .site-logo-img {
     width: 100%;
     /* Content is top-anchored (see .hero-slide-content below), so
        shrinking the box by 10% trims empty space at the bottom.
-       svh (not dvh): dvh recalculates live as the mobile browser's
-       address bar shows/hides during scroll, which was making the
-       whole section visibly resize/jump mid-scroll. Floored in px so
-       the trust badges can't get clipped by overflow:hidden or hidden
-       behind the fixed WhatsApp/Book Now bar on short/narrow screens. */
-    min-height: max(560px, calc((100svh - 4.25rem) * 0.75735));
+       svh (not dvh) on both properties: dvh recalculates live as the
+       mobile browser's address bar shows/hides during scroll, which
+       was making the whole section visibly resize/jump mid-scroll. */
+    min-height: calc((100svh - 4.25rem) * 0.75735);
+    height: calc((100svh - 4.25rem) * 0.75735);
     overflow: hidden;
     background: linear-gradient(
       180deg,
@@ -1800,18 +1789,16 @@ header .site-logo-img {
   .hero-slide-content > .grid {
     width: 100%;
     margin: 0;
-    grid-template-columns: minmax(0, 1fr);
   }
   .hero-copy {
     margin: 0;
     max-width: 100%;
     width: 100%;
-    min-width: 0;
     text-align: left;
   }
   .hero-copy h1,
   .hero-copy h2 {
-    font-size: clamp(1.3rem, 6vw, 1.7rem) !important;
+    font-size: clamp(1.85rem, 8vw, 2.25rem);
     margin: 0 0 0.25rem !important;
     text-align: left;
   }
@@ -1827,47 +1814,40 @@ header .site-logo-img {
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
-    display: flex !important;
-    flex-wrap: nowrap !important;
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
     gap: 0 !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
+    align-items: stretch !important;
+    justify-content: stretch !important;
     width: 100% !important;
     max-width: 100% !important;
-    margin: 0.9rem 0 0 !important;
-    padding: 0.5rem 0.4rem !important;
+    margin: 0.2rem 0 0 !important;
+    padding: 0.1rem 0.2rem !important;
     box-sizing: border-box;
-    overflow-x: auto;
-    scrollbar-width: none;
+    overflow: visible;
     background: #FFFFFF;
     border: 1px solid rgba(15, 76, 129, 0.08);
     border-radius: 1rem;
     box-shadow: 0 10px 28px rgba(11, 58, 97, 0.1);
   }
-  .hero-trust::-webkit-scrollbar {
-    display: none;
-  }
   .hero-trust li {
-    flex: 0 0 auto;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    text-align: left;
+    text-align: center;
     font-size: 0.58rem;
-    white-space: nowrap;
+    white-space: normal;
     line-height: 1.2;
     gap: 0.3rem;
-    padding: 0.1rem 0.4rem;
+    padding: 0.05rem 0.3rem;
     border-left: 1px solid rgba(15, 76, 129, 0.14);
     min-width: 0;
   }
   .hero-trust li:first-child {
     border-left: none;
-    padding-left: 0;
   }
   .hero-trust li svg {
     width: 1.1rem;
     height: 1.1rem;
-    flex-shrink: 0;
   }
   .hero-dots {
     display: none !important;
@@ -1876,20 +1856,20 @@ header .site-logo-img {
 }
 @media (max-width: 767px) {
   .hero-slider {
-    min-height: max(520px, calc((100svh - 4.25rem) * 0.82));
-    height: max(520px, calc((100svh - 4.25rem) * 0.82));
+    min-height: calc((100svh - 4.25rem) * 0.75735);
+    height: calc((100svh - 4.25rem) * 0.75735);
   }
   .hero-slide-content {
-    padding-top: 1.5rem !important;
+    padding-top: 4.53rem !important;
     padding-bottom: calc(4.75rem + env(safe-area-inset-bottom, 0px)) !important;
-    justify-content: flex-start !important;
-    align-items: stretch !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
   .hero-copy,
   .hero-copy h1,
   .hero-copy h2,
   .hero-copy p {
-    text-align: left !important;
+    text-align: center !important;
   }
   .hero-copy h1,
   .hero-copy h2 {
@@ -1899,8 +1879,8 @@ header .site-logo-img {
     margin: 0 0 0.25rem !important;
   }
   .hero-trust {
-    margin: 1rem 0 0 !important;
-    padding: 0.5rem 0.4rem !important;
+    margin: 0.9rem 0 0 !important;
+    padding: 0.05rem 0.2rem !important;
   }
   .hero-trust li {
     gap: 0.25rem !important;
@@ -1908,7 +1888,8 @@ header .site-logo-img {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero-slider {
-    min-height: max(500px, calc(100vh - 4.75rem));
+    min-height: calc(100vh - 4.75rem);
+    height: calc(100vh - 4.75rem);
   }
   .hero-slide-content {
     padding-top: 3rem !important;
@@ -1917,7 +1898,6 @@ header .site-logo-img {
   }
   .hero-trust {
     padding: 0.9rem 0.35rem !important;
-    overflow-x: visible;
   }
   .hero-trust li { font-size: 0.68rem; padding: 0.15rem 0.4rem; }
   .hero-trust li svg { width: 1.25rem; height: 1.25rem; }
@@ -1926,10 +1906,10 @@ header .site-logo-img {
   .hiw-step h3 { font-size: 0.75rem !important; }
   .hiw-step p { font-size: 0.65rem; }
   .hero-trust {
-    padding: 0.45rem 0.3rem !important;
+    padding: 0.65rem 0.1rem !important;
   }
-  .hero-trust li { font-size: 0.5rem; padding: 0.05rem 0.3rem; }
-  .hero-trust li svg { width: 0.9rem; height: 0.9rem; }
+  .hero-trust li { font-size: 0.52rem; padding: 0.05rem 0.2rem; }
+  .hero-trust li svg { width: 1rem; height: 1rem; }
 }
 
 /* ---- FAQ ---- */
