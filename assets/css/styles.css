@@ -1754,11 +1754,12 @@ header .site-logo-img {
     width: 100%;
     /* Content is top-anchored (see .hero-slide-content below), so
        shrinking the box by 10% trims empty space at the bottom.
-       svh (not dvh) on both properties: dvh recalculates live as the
-       mobile browser's address bar shows/hides during scroll, which
-       was making the whole section visibly resize/jump mid-scroll. */
-    min-height: calc((100svh - 4.25rem) * 0.75735);
-    height: calc((100svh - 4.25rem) * 0.75735);
+       svh (not dvh): dvh recalculates live as the mobile browser's
+       address bar shows/hides during scroll, which was making the
+       whole section visibly resize/jump mid-scroll. Floored in px so
+       the trust badges can't get clipped by overflow:hidden or hidden
+       behind the fixed WhatsApp/Book Now bar on short/narrow screens. */
+    min-height: max(560px, calc((100svh - 4.25rem) * 0.75735));
     overflow: hidden;
     background: linear-gradient(
       180deg,
@@ -1859,8 +1860,7 @@ header .site-logo-img {
 }
 @media (max-width: 767px) {
   .hero-slider {
-    min-height: calc((100svh - 4.25rem) * 0.75735);
-    height: calc((100svh - 4.25rem) * 0.75735);
+    min-height: max(580px, calc((100svh - 4.25rem) * 0.75735));
   }
   .hero-slide-content {
     padding-top: 4.53rem !important;
@@ -1891,8 +1891,7 @@ header .site-logo-img {
 }
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero-slider {
-    min-height: calc(100vh - 4.75rem);
-    height: calc(100vh - 4.75rem);
+    min-height: max(500px, calc(100vh - 4.75rem));
   }
   .hero-slide-content {
     padding-top: 3rem !important;
