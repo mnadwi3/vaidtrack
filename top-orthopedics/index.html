@@ -122,11 +122,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <!-- TopNavBar -->
+<style>
+#header-logo { height: 30px; width: auto; }
+@media (min-width: 768px) { #header-logo { height: 34px; } }
+@media (min-width: 1024px) { #header-logo { height: 39px; } }
+</style>
 <header class="fixed top-0 w-full z-50 h-20 bg-primary">
 <div class="flex justify-between items-center h-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="flex items-center gap-2">
 <a href="https://vaidtrack.com/top-orthopedics/">
-<img alt="VaidTrack.com" class="h-[25px] md:h-[29px] lg:h-8 w-auto" src="images/logo.png">
+<img id="header-logo" alt="VaidTrack.com" src="images/logo.png">
 </a>
 </div>
 <nav class="hidden md:flex gap-gutter items-center">
@@ -167,9 +172,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <p class="font-body-lg text-[15px] leading-[22px] md:text-body-lg text-white/85 max-w-lg">
                         VaidTrack connects patients with expert orthopedic surgeons in India for knee, hip, and spine surgery, one coordinator from your first message to your first pain-free steps home.
                     </p>
+<div class="flex flex-col gap-1.5">
 <div class="flex items-center gap-1.5 text-white/70">
 <span class="material-symbols-outlined text-sm">location_on</span>
-<span class="font-caption text-caption">Trusted by patients from Tanzania</span>
+<span class="font-caption text-caption">Trusted by Patients Across Africa</span>
+</div>
+<div class="flex items-center justify-between" style="margin-left:30px;width:194px;background:rgba(255,255,255,0.12);border-radius:6px;padding:4px 8px;" aria-label="Patients from Tanzania, Ghana, Kenya, and Nigeria">
+<span class="inline-flex items-center justify-center rounded-[2px] ring-1 ring-white/30 overflow-hidden" style="width:20px;height:14px;">
+<span class="block w-full h-full" style="background:linear-gradient(135deg,#1EB53A 0 38%,#FCD116 38% 46%,#000 46% 54%,#FCD116 54% 62%,#00A3DD 62% 100%);" title="Tanzania"></span>
+</span>
+<span class="inline-flex items-center justify-center rounded-[2px] ring-1 ring-white/30 overflow-hidden" style="width:20px;height:14px;">
+<span class="block w-full h-full" style="background:linear-gradient(180deg,#CE1126 0 33%,#FCD116 33% 66%,#006B3F 66% 100%);" title="Ghana"></span>
+</span>
+<span class="inline-flex items-center justify-center rounded-[2px] ring-1 ring-white/30 overflow-hidden" style="width:20px;height:14px;">
+<span class="block w-full h-full" style="background:linear-gradient(180deg,#000 0 24%,#fff 24% 28%,#BB0000 28% 72%,#fff 72% 76%,#006600 76% 100%);" title="Kenya"></span>
+</span>
+<span class="inline-flex items-center justify-center rounded-[2px] ring-1 ring-white/30 overflow-hidden" style="width:20px;height:14px;">
+<span class="block w-full h-full" style="background:linear-gradient(90deg,#008751 0 33%,#fff 33% 66%,#008751 66% 100%);" title="Nigeria"></span>
+</span>
+</div>
 </div>
 <div class="flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
 <button id="open-treatment-modal" type="button" class="open-treatment-modal-trigger w-full sm:w-auto inline-flex justify-center items-center bg-primary text-on-primary font-label-md text-label-md px-8 py-3 md:py-4 rounded-full hover:brightness-95 transition-colors shadow-md">
@@ -199,6 +220,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 </div>
+<div class="hidden md:flex md:col-span-5 lg:col-span-6 items-center fade-in-up stagger-2" style="justify-content:flex-end;">
+<div class="w-full rounded-2xl bg-white shadow-xl" style="padding: 32px; max-width: 398px;">
+<h2 class="font-headline-md text-headline-md text-primary font-bold leading-tight text-center" style="margin-bottom: 20px;">Book An Appointment</h2>
+<form id="ortho-lead-form-hero" class="flex flex-col" style="gap: 16px;" novalidate>
+<input name="name" class="w-full p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Full name" required type="text">
+<input name="email" class="w-full p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Email address" required type="email">
+<input name="whatsapp" class="w-full p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="+XX XXXXXXXXXX" required type="tel" pattern="[0-9+\(\)\-\s]{7,20}" title="Enter a valid phone number">
+<input name="country" class="w-full p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Your country" type="text">
+<textarea name="condition" class="w-full p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" placeholder="Briefly describe your condition, stage, and any specific questions..." rows="3"></textarea>
+<button class="w-full py-3 bg-primary text-on-primary font-label-md text-label-md rounded-full hover:bg-tertiary transition-all shadow-md active:scale-95" type="submit">
+                    Get Free Medical Consultation
+                </button>
+</form>
+<p id="ortho-lead-form-hero-success" class="hidden text-center text-sm text-[#16A34A] font-semibold mt-3">Thank you - we received your details and will contact you shortly.</p>
+</div>
+</div>
 </div>
 </section>
 
@@ -206,62 +243,62 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section class="py-12 md:py-24 bg-surface-container-low" id="treatments">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-8 md:mb-16">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Orthopedic Treatment Options</h2>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Treatment Options</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Explore advanced orthopedic solutions for knee, hip, joint and spine conditions in India, with dedicated support for international patients.</p>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-gutter">
 <div class="reveal-card flex flex-col justify-center sm:justify-start min-h-[190px] sm:min-h-[240px] md:min-h-[280px] p-2 sm:p-4 md:p-6 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all" style="transition-delay: 0ms;">
-<div class="w-16 h-16 sm:w-14 sm:h-14 md:w-20 md:h-20 mx-auto flex items-center justify-center mb-1"><img alt="Hip Replacement icon" class="w-full h-full object-contain" src="ortho%20icon/Hip%20Replacement.png"></div>
+<div class="w-full rounded-lg overflow-hidden bg-white flex items-center justify-center mb-1" style="height:160px;"><img alt="Hip Replacement" class="w-full h-full object-cover" src="images/treatment%20images/hip.png"></div>
 <h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-xs sm:text-base md:text-lg leading-tight line-clamp-2 text-center">Hip Replacement</h3>
 <p class="hidden md:block font-body-md text-on-surface-variant mb-3 text-xs md:text-sm line-clamp-2">Hip replacement surgery improves mobility and eases pain.</p>
 <a class="mt-2 sm:mt-auto w-full py-2 bg-primary text-on-primary text-center font-label-md text-label-md rounded-md sm:rounded-full hover:bg-tertiary transition-colors" href="https://wa.me/916395905054?text=I'd%20like%20a%20free%20quote%20for%20Hip%20Replacement" target="_blank" rel="noopener noreferrer">Get Free Quote</a>
 </div>
 
 <div class="reveal-card flex flex-col justify-center sm:justify-start min-h-[190px] sm:min-h-[240px] md:min-h-[280px] p-2 sm:p-4 md:p-6 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all" style="transition-delay: 80ms;">
-<div class="w-16 h-16 sm:w-14 sm:h-14 md:w-20 md:h-20 mx-auto flex items-center justify-center mb-1"><img alt="Knee Replacement icon" class="w-full h-full object-contain" src="ortho%20icon/Knee%20Replacement.png"></div>
+<div class="w-full rounded-lg overflow-hidden bg-white flex items-center justify-center mb-1" style="height:160px;"><img alt="Knee Replacement" class="w-full h-full object-cover" src="images/treatment%20images/knee.png"></div>
 <h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-xs sm:text-base md:text-lg leading-tight line-clamp-2 text-center">Knee Replacement</h3>
 <p class="hidden md:block font-body-md text-on-surface-variant mb-3 text-xs md:text-sm line-clamp-2">Knee replacement surgery improves movement and reduces discomfort.</p>
 <a class="mt-2 sm:mt-auto w-full py-2 bg-primary text-on-primary text-center font-label-md text-label-md rounded-md sm:rounded-full hover:bg-tertiary transition-colors" href="https://wa.me/916395905054?text=I'd%20like%20a%20free%20quote%20for%20Knee%20Replacement" target="_blank" rel="noopener noreferrer">Get Free Quote</a>
 </div>
 
 <div class="reveal-card flex flex-col justify-center sm:justify-start min-h-[190px] sm:min-h-[240px] md:min-h-[280px] p-2 sm:p-4 md:p-6 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all" style="transition-delay: 160ms;">
-<div class="w-16 h-16 sm:w-14 sm:h-14 md:w-20 md:h-20 mx-auto flex items-center justify-center mb-1"><img alt="Shoulder Replacement icon" class="w-full h-full object-contain" src="ortho%20icon/Soulder%20Replacement.png"></div>
+<div class="w-full rounded-lg overflow-hidden bg-white flex items-center justify-center mb-1" style="height:160px;"><img alt="Shoulder Replacement" class="w-full h-full object-cover" src="images/treatment%20images/shoulder.png"></div>
 <h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-xs sm:text-base md:text-lg leading-tight line-clamp-2 text-center">Shoulder Replacement</h3>
 <p class="hidden md:block font-body-md text-on-surface-variant mb-3 text-xs md:text-sm line-clamp-2">Shoulder replacement surgery restores strength and improves mobility.</p>
 <a class="mt-2 sm:mt-auto w-full py-2 bg-primary text-on-primary text-center font-label-md text-label-md rounded-md sm:rounded-full hover:bg-tertiary transition-colors" href="https://wa.me/916395905054?text=I'd%20like%20a%20free%20quote%20for%20Shoulder%20Replacement" target="_blank" rel="noopener noreferrer">Get Free Quote</a>
 </div>
 
 <div class="reveal-card flex flex-col justify-center sm:justify-start min-h-[190px] sm:min-h-[240px] md:min-h-[280px] p-2 sm:p-4 md:p-6 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all" style="transition-delay: 240ms;">
-<div class="w-16 h-16 sm:w-14 sm:h-14 md:w-20 md:h-20 mx-auto flex items-center justify-center mb-1"><img alt="ACL Reconstruction icon" class="w-full h-full object-contain" src="ortho%20icon/ACL%20Reconstruction.png"></div>
+<div class="w-full rounded-lg overflow-hidden bg-white flex items-center justify-center mb-1" style="height:160px;"><img alt="ACL Reconstruction" class="w-full h-full object-cover" src="images/treatment%20images/ACL.png"></div>
 <h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-xs sm:text-base md:text-lg leading-tight line-clamp-2 text-center">ACL Reconstruction</h3>
 <p class="hidden md:block font-body-md text-on-surface-variant mb-3 text-xs md:text-sm line-clamp-2">ACL reconstruction restores stability after ligament injury.</p>
 <a class="mt-2 sm:mt-auto w-full py-2 bg-primary text-on-primary text-center font-label-md text-label-md rounded-md sm:rounded-full hover:bg-tertiary transition-colors" href="https://wa.me/916395905054?text=I'd%20like%20a%20free%20quote%20for%20ACL%20Reconstruction" target="_blank" rel="noopener noreferrer">Get Free Quote</a>
 </div>
 
 <div class="reveal-card flex flex-col justify-center sm:justify-start min-h-[190px] sm:min-h-[240px] md:min-h-[280px] p-2 sm:p-4 md:p-6 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all" style="transition-delay: 320ms;">
-<div class="w-16 h-16 sm:w-14 sm:h-14 md:w-20 md:h-20 mx-auto flex items-center justify-center mb-1"><img alt="Spine Fusion Surgery icon" class="w-full h-full object-contain" src="ortho%20icon/Spine%20Fusion%20Surgery.png"></div>
+<div class="w-full rounded-lg overflow-hidden bg-white flex items-center justify-center mb-1" style="height:160px;"><img alt="Spine Fusion Surgery" class="w-full h-full object-cover" src="images/treatment%20images/fusion.png"></div>
 <h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-xs sm:text-base md:text-lg leading-tight line-clamp-2 text-center">Spine Fusion Surgery</h3>
 <p class="hidden md:block font-body-md text-on-surface-variant mb-3 text-xs md:text-sm line-clamp-2">Spine fusion surgery stabilizes vertebrae and supports stability.</p>
 <a class="mt-2 sm:mt-auto w-full py-2 bg-primary text-on-primary text-center font-label-md text-label-md rounded-md sm:rounded-full hover:bg-tertiary transition-colors" href="https://wa.me/916395905054?text=I'd%20like%20a%20free%20quote%20for%20Spine%20Fusion%20Surgery" target="_blank" rel="noopener noreferrer">Get Free Quote</a>
 </div>
 
 <div class="reveal-card flex flex-col justify-center sm:justify-start min-h-[190px] sm:min-h-[240px] md:min-h-[280px] p-2 sm:p-4 md:p-6 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all" style="transition-delay: 400ms;">
-<div class="w-16 h-16 sm:w-14 sm:h-14 md:w-20 md:h-20 mx-auto flex items-center justify-center mb-1"><img alt="Lumbar Spine Surgery icon" class="w-full h-full object-contain" src="ortho%20icon/Lumbar%20Spine%20Surgery.png"></div>
+<div class="w-full rounded-lg overflow-hidden bg-white flex items-center justify-center mb-1" style="height:160px;"><img alt="Lumbar Spine Surgery" class="w-full h-full object-cover" src="images/treatment%20images/lumber.png"></div>
 <h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-xs sm:text-base md:text-lg leading-tight line-clamp-2 text-center">Lumbar Spine Surgery</h3>
 <p class="hidden md:block font-body-md text-on-surface-variant mb-3 text-xs md:text-sm line-clamp-2">Lumbar spine surgery treats lower back pain conditions.</p>
 <a class="mt-2 sm:mt-auto w-full py-2 bg-primary text-on-primary text-center font-label-md text-label-md rounded-md sm:rounded-full hover:bg-tertiary transition-colors" href="https://wa.me/916395905054?text=I'd%20like%20a%20free%20quote%20for%20Lumbar%20Spine%20Surgery" target="_blank" rel="noopener noreferrer">Get Free Quote</a>
 </div>
 
 <div class="reveal-card flex flex-col justify-center sm:justify-start min-h-[190px] sm:min-h-[240px] md:min-h-[280px] p-2 sm:p-4 md:p-6 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all" style="transition-delay: 480ms;">
-<div class="w-16 h-16 sm:w-14 sm:h-14 md:w-20 md:h-20 mx-auto flex items-center justify-center mb-1"><img alt="Meniscus Repair icon" class="w-full h-full object-contain" src="ortho%20icon/Knee%20Replacement.png"></div>
+<div class="w-full rounded-lg overflow-hidden bg-white flex items-center justify-center mb-1" style="height:160px;"><img alt="Meniscus Repair" class="w-full h-full object-cover" src="images/treatment%20images/miniscus.png"></div>
 <h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-xs sm:text-base md:text-lg leading-tight line-clamp-2 text-center">Meniscus Repair</h3>
 <p class="hidden md:block font-body-md text-on-surface-variant mb-3 text-xs md:text-sm line-clamp-2">Meniscus repair restores knee stability after cartilage injury.</p>
 <a class="mt-2 sm:mt-auto w-full py-2 bg-primary text-on-primary text-center font-label-md text-label-md rounded-md sm:rounded-full hover:bg-tertiary transition-colors" href="https://wa.me/916395905054?text=I'd%20like%20a%20free%20quote%20for%20Meniscus%20Repair" target="_blank" rel="noopener noreferrer">Get Free Quote</a>
 </div>
 
 <div class="reveal-card flex flex-col justify-center sm:justify-start min-h-[190px] sm:min-h-[240px] md:min-h-[280px] p-2 sm:p-4 md:p-6 bg-surface-container-lowest rounded-xl border border-outline-variant hover:shadow-md hover:-translate-y-1 transition-all" style="transition-delay: 560ms;">
-<div class="w-16 h-16 sm:w-14 sm:h-14 md:w-20 md:h-20 mx-auto flex items-center justify-center mb-1"><img alt="Other Orthopedic Treatments icon" class="w-full h-full object-contain" src="ortho%20icon/other%20treatments.png"></div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-xs sm:text-base md:text-lg leading-tight line-clamp-2 text-center">Other Orthopedic Treatments</h3>
+<div class="w-full rounded-lg overflow-hidden bg-white flex items-center justify-center mb-1" style="height:160px;"><img alt="Other Orthopedic Treatments" class="w-full h-full object-cover" src="images/treatment%20images/others.png"></div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-xs sm:text-base md:text-lg leading-tight line-clamp-2 text-center">Other Treatments</h3>
 <p class="hidden md:block font-body-md text-on-surface-variant mb-3 text-xs md:text-sm line-clamp-2">Comprehensive evaluation and care for bone, joint, and ligament conditions.</p>
 <a class="mt-2 sm:mt-auto w-full py-2 bg-primary text-on-primary text-center font-label-md text-label-md rounded-md sm:rounded-full hover:bg-tertiary transition-colors" href="https://wa.me/916395905054?text=I'd%20like%20a%20free%20quote%20for%20Other%20Orthopedic%20Treatments" target="_blank" rel="noopener noreferrer">Get Free Quote</a>
 </div>
@@ -273,7 +310,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section class="py-12 md:py-24 bg-background" id="specialists">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-8 md:mb-16">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Expert Orthopedic Doctors</h2>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Expert Doctors</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
         Highly qualified specialists dedicated to restoring mobility and relieving pain with personalized care.
       </p>
@@ -555,36 +592,42 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Top Hospitals</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Backed by India's leading hospital networks, equipped with world-class infrastructure.</p>
 </div>
-<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-gutter">
-<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-6 px-3 md:py-10 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-gutter">
+<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-<div class="h-12 md:h-20 w-full flex items-center justify-center px-2 md:px-4"><img alt="Apollo Hospital logo" class="max-h-12 md:max-h-20 max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" src="images/Hospital%20Logos/Apollo.png"></div>
+<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="Apollo Hospital logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/Apollo.png"></div>
 <div class="h-px w-8 bg-outline-variant"></div>
-<span class="font-label-md text-xs md:text-label-md text-on-surface text-center font-semibold">Apollo Hospital</span>
+<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">Apollo Hospital</span>
 </div>
-<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-6 px-3 md:py-10 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
+<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-<div class="h-12 md:h-20 w-full flex items-center justify-center px-2 md:px-4"><img alt="BLK Max Hospital logo" class="max-h-12 md:max-h-20 max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" src="images/Hospital%20Logos/blk%20max.png"></div>
+<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="BLK Max Hospital logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/blk%20max.png"></div>
 <div class="h-px w-8 bg-outline-variant"></div>
-<span class="font-label-md text-xs md:text-label-md text-on-surface text-center font-semibold">BLK Max Hospital</span>
+<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">BLK Max Hospital</span>
 </div>
-<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-6 px-3 md:py-10 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
+<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-<div class="h-12 md:h-20 w-full flex items-center justify-center px-2 md:px-4"><img alt="Artemis Hospital logo" class="max-h-12 md:max-h-20 max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" src="images/Hospital%20Logos/Artemis_Hospital_-_Logo.png"></div>
+<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="Artemis Hospital logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/Artemis_Hospital_-_Logo.png"></div>
 <div class="h-px w-8 bg-outline-variant"></div>
-<span class="font-label-md text-xs md:text-label-md text-on-surface text-center font-semibold">Artemis Hospital</span>
+<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">Artemis Hospital</span>
 </div>
-<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-6 px-3 md:py-10 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
+<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-<div class="h-12 md:h-20 w-full flex items-center justify-center px-2 md:px-4"><img alt="Marengo Asia Hospitals logo" class="max-h-12 md:max-h-20 max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" src="images/Hospital%20Logos/marengo.png"></div>
+<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="Marengo Asia Hospitals logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/marengo.png"></div>
 <div class="h-px w-8 bg-outline-variant"></div>
-<span class="font-label-md text-xs md:text-label-md text-on-surface text-center font-semibold">Marengo Asia Hospitals</span>
+<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">Marengo Asia Hospitals</span>
 </div>
-<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-6 px-3 md:py-10 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 col-span-2 sm:col-span-1 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
+<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
 <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-<div class="h-12 md:h-20 w-full flex items-center justify-center px-2 md:px-4"><img alt="Fortis Hospitals logo" class="max-h-12 md:max-h-20 max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" src="images/Hospital%20Logos/fortis.png"></div>
+<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="Fortis Hospitals logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/fortis.png"></div>
 <div class="h-px w-8 bg-outline-variant"></div>
-<span class="font-label-md text-xs md:text-label-md text-on-surface text-center font-semibold">Fortis Hospitals</span>
+<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">Fortis Hospitals</span>
+</div>
+<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
+<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="Medanta Hospital logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/medanta.png"></div>
+<div class="h-px w-8 bg-outline-variant"></div>
+<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">Medanta Hospital</span>
 </div>
 </div>
 </div>
@@ -730,7 +773,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section class="py-12 md:py-24 bg-background" id="process">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-8 md:mb-16">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Complete Care, Every Step of the Way</h2>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">With You, Every Step of the Way</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
         We've streamlined the process to ensure you feel supported at every step of your recovery.
       </p>
@@ -859,7 +902,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section class="py-12 md:py-24 bg-surface-container-low" id="testimonials">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-8 md:mb-16">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Patient Success Stories</h2>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Success Stories</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Join patients who regained pain-free movement with VaidTrack.com.</p>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter items-stretch">
@@ -1025,45 +1068,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 
 <!-- Contact Section -->
-<section class="py-6 md:py-24 bg-surface-container-low" id="contact">
+<style>
+#contact-box { padding: 48px 32px; display: flex; flex-direction: column; gap: 32px; border-radius: 24px; }
+@media (min-width: 768px) { #contact-box { padding: 72px 64px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; align-items: center; } }
+#contact-box a, #contact-box button { height: 56px; white-space: nowrap; width: 100%; max-width: 260px; }
+</style>
+<section class="py-12 md:py-24 bg-surface-container-low" id="contact">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="max-w-2xl mx-auto bg-surface-container-lowest p-4 md:p-12 rounded-xl border border-outline-variant shadow-sm">
-<div class="text-center mb-3 md:mb-8">
-<h2 class="font-headline-lg text-lg md:text-headline-lg text-on-surface mb-1 md:mb-4">Get Free Treatment Plan</h2>
-<p class="font-body-md text-xs md:text-body-md text-on-surface-variant">Schedule Your Free Treatment Plan</p>
+<div id="contact-box" class="bg-primary items-center shadow-lg">
+<div style="max-width:420px;grid-column: span 2;" class="text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg text-white mb-2 md:mb-3">Book an Appointment</h2>
+<p class="font-body-md text-body-md text-white/80">Get a free consultation with our orthopedic specialists. Our care coordinators are ready to guide you through every step, from diagnosis to recovery.</p>
 </div>
-<form id="ortho-lead-form" class="flex flex-col gap-3 md:gap-6" novalidate>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
-<div class="flex flex-col gap-1 md:gap-2">
-<label class="font-label-md text-xs md:text-base text-on-surface">Full Name</label>
-<input name="name" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="John Doe" required="" type="text">
+<div class="flex flex-col items-center md:items-start gap-3 md:gap-4 flex-shrink-0 w-full sm:w-auto">
+<a class="inline-flex justify-center items-center gap-2 bg-white text-primary font-label-md text-label-md px-6 py-3 md:py-3.5 rounded-full hover:brightness-95 transition-colors shadow-md" href="https://wa.me/916395905054?text=I'd%20like%20to%20get%20a%20quote" target="_blank" rel="noopener noreferrer">
+<svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.87.505 3.622 1.386 5.128L2.06 22l4.995-1.31a9.94 9.94 0 0 0 4.949 1.31h.004c5.518 0 10.004-4.486 10.004-10.004C21.992 6.486 17.522 2 12.004 2zm0 18.19h-.003a8.17 8.17 0 0 1-4.166-1.14l-.299-.177-3.096.812.827-3.02-.195-.31a8.17 8.17 0 0 1-1.256-4.36c0-4.518 3.677-8.196 8.195-8.196 2.19 0 4.248.853 5.797 2.402a8.14 8.14 0 0 1 2.4 5.796c0 4.518-3.678 8.193-8.204 8.193z"></path></svg>
+Quick Reply on WhatsApp
+</a>
+<button type="button" class="open-treatment-modal-trigger inline-flex justify-center items-center bg-transparent border-2 border-white text-white font-label-md text-label-md px-6 py-3 md:py-3.5 rounded-full hover:bg-white hover:text-primary transition-colors">
+Book Consultation
+</button>
 </div>
-<div class="flex flex-col gap-1 md:gap-2">
-<label class="font-label-md text-xs md:text-base text-on-surface">Email Address</label>
-<input name="email" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="john@example.com" required="" type="email">
-</div>
-</div>
-<div class="flex flex-col gap-1 md:gap-2">
-<label class="font-label-md text-xs md:text-base text-on-surface">Phone Number</label>
-<input name="whatsapp" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="(555) 123-4567" required="" type="tel">
-</div>
-<div class="flex flex-col gap-1 md:gap-2">
-<label class="font-label-md text-xs md:text-base text-on-surface">Country</label>
-<input name="country" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Your country" type="text">
-</div>
-<div class="flex flex-col gap-1 md:gap-2">
-<label class="font-label-md text-xs md:text-base text-on-surface">Tell Us About Your Condition</label>
-<textarea name="condition" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="What symptoms or condition would you like to discuss?" rows="2"></textarea>
-</div>
-<div class="flex items-center gap-2 p-2 md:p-3 bg-primary-fixed/10 rounded-lg">
-<span class="material-symbols-outlined text-primary text-sm">lock</span>
-<p class="text-caption text-on-surface-variant">Your information is secure and private.</p>
-</div>
-<button class="w-full py-2.5 md:py-4 bg-primary text-on-primary font-label-md text-label-md rounded-full hover:bg-tertiary transition-all shadow-md active:scale-95" type="submit">
-          Schedule Free Consultation
-        </button>
-</form>
-<p id="ortho-lead-form-success" class="hidden text-center text-sm text-[#16A34A] font-semibold mt-3">Thank you - we received your details and will contact you shortly.</p>
 </div>
 </div>
 </section>
@@ -1071,26 +1096,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </main>
 
 <!-- Footer -->
-<footer class="w-full py-stack-lg bg-primary flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto gap-stack-md mt-auto">
-<div class="flex flex-col items-center md:items-start gap-2">
-<div class="flex items-center gap-2">
-<img alt="VaidTrack.com" class="h-7 w-auto" src="images/logo.png">
+<style>
+#site-footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
+@media (min-width: 768px) { #site-footer-grid { grid-template-columns: 1fr 1fr 1fr; gap: 32px; } }
+</style>
+<footer class="w-full bg-primary mt-auto" style="border-top:1px solid rgba(255,255,255,0.18);">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" style="padding-top:56px;padding-bottom:28px;">
+<div id="site-footer-grid" class="text-left">
+<div class="flex flex-col items-start gap-3">
+<img alt="VaidTrack.com" style="height:33px;width:auto;align-self:flex-start;" src="images/logo.png">
+<p class="font-caption text-caption text-white/70 max-w-xs leading-relaxed">Restoring mobility, rebuilding lives, one patient at a time.</p>
 </div>
-<p class="font-caption text-caption text-white/80 text-center md:text-left max-w-md">
-                © 2026 VaidTrack.com. Restoring mobility, rebuilding lives, one patient at a time.
-            </p>
+<div class="flex flex-col items-start gap-2">
+<p class="font-caption text-caption text-white font-semibold uppercase tracking-wide" style="letter-spacing:0.05em;">Contact</p>
+<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="tel:+916395905054">+91-6395905054</a>
+<p class="font-caption text-caption text-white/70 max-w-xs leading-relaxed">R-7, Joga Bai, Jamia Nagar, Okhla, New Delhi, 110025</p>
 </div>
-<div class="flex flex-col items-center md:items-start gap-1">
-<p class="font-caption text-caption text-white font-semibold">Contact:</p>
-<a class="font-caption text-caption text-white/80 hover:text-white hover:underline transition-all" href="tel:+916395905054">Ph: +91-6395905054</a>
-<p class="font-caption text-caption text-white/80 text-center md:text-left max-w-xs">Add: R-7, Joga Bai, Jamia Nagar, Okhla, New Delhi, 110025</p>
+<div class="flex flex-col items-start gap-2">
+<p class="font-caption text-caption text-white font-semibold uppercase tracking-wide" style="letter-spacing:0.05em;">Quick Links</p>
+<div class="flex flex-col items-start gap-2">
+<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="#">About Us</a>
+<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="#">Financing</a>
+<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="#">Insurance</a>
 </div>
-<div class="flex flex-wrap justify-center gap-4 md:gap-6">
-<a class="font-caption text-caption text-white/80 hover:text-white hover:underline transition-all" href="#">About Us</a>
-<a class="font-caption text-caption text-white/80 hover:text-white hover:underline transition-all" href="#">Privacy Policy</a>
-<a class="font-caption text-caption text-white/80 hover:text-white hover:underline transition-all" href="#">Financing</a>
-<a class="font-caption text-caption text-white/80 hover:text-white hover:underline transition-all" href="#">Insurance</a>
-<a class="font-caption text-caption text-white/80 hover:text-white hover:underline transition-all" href="#">Contact</a>
+</div>
+</div>
+<div style="border-top:1px solid rgba(255,255,255,0.12);margin-top:40px;padding-top:20px;" class="text-center">
+<p class="font-caption text-caption text-white/60">© 2026 VaidTrack.com. All rights reserved.</p>
+</div>
 </div>
 </footer>
 
@@ -1118,7 +1152,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Phone Number</label>
-<input name="whatsapp" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="(555) 123-4567" required="" type="tel">
+<input name="whatsapp" class="w-full p-2 md:p-3 text-sm rounded-lg border border-outline-variant bg-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="(555) 123-4567" required="" type="tel" pattern="[0-9+\(\)\-\s]{7,20}" title="Enter a valid phone number">
 </div>
 <div class="flex flex-col gap-1 md:gap-2">
 <label class="font-label-md text-xs md:text-base text-on-surface">Country</label>
@@ -1264,13 +1298,18 @@ window.addEventListener('load', function () {
         return '';
     }
 
+    function sanitizeField(value) {
+        var trimmed = (value || '').trim();
+        return trimmed.replace(/^[=+\-@]+/, '');
+    }
+
     function getLeadPayload(form) {
         return {
-            name: field(form, ['name']),
-            email: field(form, ['email']),
-            whatsapp: field(form, ['whatsapp', 'phone']),
-            country: field(form, ['country']),
-            condition: field(form, ['condition']),
+            name: sanitizeField(field(form, ['name'])),
+            email: sanitizeField(field(form, ['email'])),
+            whatsapp: sanitizeField(field(form, ['whatsapp', 'phone'])),
+            country: sanitizeField(field(form, ['country'])),
+            condition: sanitizeField(field(form, ['condition'])),
             page_type: PAGE_TYPE,
             form_id: form.id || ''
         };
@@ -1417,6 +1456,12 @@ window.addEventListener('load', function () {
     wireLeadForm('ortho-lead-form-modal', function (form) {
         form.classList.add('hidden');
         var success = document.getElementById('ortho-lead-form-modal-success');
+        if (success) success.classList.remove('hidden');
+    });
+
+    wireLeadForm('ortho-lead-form-hero', function (form) {
+        form.classList.add('hidden');
+        var success = document.getElementById('ortho-lead-form-hero-success');
         if (success) success.classList.remove('hidden');
     });
 })();
