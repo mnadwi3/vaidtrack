@@ -1286,34 +1286,18 @@ window.addEventListener('load', function () {
             submitLeadToSheet(payload)
                 .then(function () {
                     fireGenerateLead(payload);
-                    if (typeof onSuccess === 'function') onSuccess(form);
+                    window.location.href = 'thank-you/';
                 })
                 .catch(function () {
                     showFormError(form, 'Something went wrong, please try again or WhatsApp us directly.');
-                })
-                .then(function () {
                     setSubmitting(form, false);
                 });
         });
     }
 
-    wireLeadForm('ortho-lead-form', function (form) {
-        form.classList.add('hidden');
-        var success = document.getElementById('ortho-lead-form-success');
-        if (success) success.classList.remove('hidden');
-    });
-
-    wireLeadForm('ortho-lead-form-modal', function (form) {
-        form.classList.add('hidden');
-        var success = document.getElementById('ortho-lead-form-modal-success');
-        if (success) success.classList.remove('hidden');
-    });
-
-    wireLeadForm('ortho-lead-form-hero', function (form) {
-        form.classList.add('hidden');
-        var success = document.getElementById('ortho-lead-form-hero-success');
-        if (success) success.classList.remove('hidden');
-    });
+    wireLeadForm('ortho-lead-form');
+    wireLeadForm('ortho-lead-form-modal');
+    wireLeadForm('ortho-lead-form-hero');
 })();
 </script>
 </body></html>
