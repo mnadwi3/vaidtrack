@@ -779,159 +779,205 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </section>
 
-<!-- Testimonials Section -->
-<section class="py-12 md:py-24 bg-surface-container-low" id="testimonials">
+<!-- Patients We've Helped Section -->
+<style>
+:root{--ph-blue:#0B5ED7;--ph-gold:#D4AF37;}
+.ph-section{background:#fff;}
+.ph-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ph-blue);background:rgba(11,94,215,0.07);border:1px solid rgba(11,94,215,0.18);padding:6px 16px;border-radius:999px;margin-bottom:18px;}
+.ph-heading-rule{width:56px;height:3px;background:var(--ph-gold);border-radius:999px;margin:16px auto 0;}
+.ph-subtitle{margin-top:14px;}
+.ph-slider{position:relative;margin-top:56px;}
+.ph-track{display:flex;align-items:flex-start;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;padding:6px 6px 16px;margin:0 -6px;scrollbar-width:none;}
+.ph-track::-webkit-scrollbar{display:none;}
+.ph-card{flex:0 0 100%;scroll-snap-align:start;background:#fff;border-radius:18px;overflow:hidden;border:1px solid #E7EAF0;box-shadow:0 2px 8px rgba(16,24,40,0.06);display:flex;flex-direction:column;transition:transform 0.35s ease,box-shadow 0.35s ease;}
+.ph-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(16,24,40,0.12);}
+@media (min-width:640px){.ph-card{flex:0 0 calc(50% - 12px);}}
+@media (min-width:1024px){.ph-card{flex:0 0 calc(33.333% - 16px);}}
+.ph-card-pair{flex:0 0 100%;}
+.ph-media{position:relative;width:100%;aspect-ratio:4/4.3;overflow:hidden;background:radial-gradient(circle at 30% 22%,#1c3a5c,#0a1c30 72%);border-radius:18px 18px 0 0;}
+.ph-play-btn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(8,16,28,0.18);cursor:pointer;z-index:1;transition:opacity 0.25s ease;}
+.ph-play-btn.is-hidden{opacity:0;pointer-events:none;}
+.ph-play-btn-circle{width:58px;height:58px;border-radius:9999px;background:rgba(255,255,255,0.95);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(0,0,0,0.3);transition:transform 0.2s ease;}
+.ph-play-btn:hover .ph-play-btn-circle{transform:scale(1.08);}
+.ph-play-btn-circle svg{margin-left:3px;color:var(--ph-blue);}
+.ph-media img,.ph-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;display:block;}
+.ph-media video{object-fit:contain;object-position:50% 50%;}
+.ph-pair:has(video) .ph-pair-half{padding-top:14px;background:#fff;}
+.ph-pair:has(video) .ph-tag{top:24px;}
+.ph-info{padding:16px 18px 20px;text-align:left;border-top:1px solid #F0F2F6;}
+.ph-card-pair .ph-info{text-align:center;}
+.ph-card-pair .ph-caption{justify-content:center;}
+.ph-name{font-size:15px;font-weight:700;color:#182233;letter-spacing:-0.01em;}
+.ph-caption{margin-top:3px;font-size:13px;font-weight:500;color:#7A8699;display:flex;align-items:center;gap:6px;}
+.ph-flag{display:inline-block;width:18px;height:12px;border-radius:2px;box-shadow:0 0 0 1px rgba(0,0,0,0.1) inset;flex-shrink:0;}
+.ph-flag-ke{background:linear-gradient(180deg,#000 0 24%,#fff 24% 28%,#BB0000 28% 72%,#fff 72% 76%,#006600 76% 100%);}
+.ph-flag-gh{background:linear-gradient(180deg,#CE1126 0 33%,#FCD116 33% 66%,#006B3F 66% 100%);}
+.ph-flag-tz{background:linear-gradient(135deg,#1EB53A 0 38%,#FCD116 38% 46%,#000 46% 54%,#FCD116 54% 62%,#00A3DD 62% 100%);}
+.ph-flag-ng{background:linear-gradient(90deg,#008751 0 33%,#fff 33% 66%,#008751 66% 100%);}
+.ph-flag-sd{background:linear-gradient(180deg,#D21034 0 33%,#fff 33% 66%,#000 66% 100%);}
+.ph-flag-lr{background:linear-gradient(180deg,#BF0A30 0 9.09%,#fff 9.09% 18.18%,#BF0A30 18.18% 27.27%,#fff 27.27% 36.36%,#BF0A30 36.36% 45.45%,#fff 45.45% 54.54%,#BF0A30 54.54% 63.63%,#fff 63.63% 72.72%,#BF0A30 72.72% 81.81%,#fff 81.81% 90.90%,#BF0A30 90.90% 100%),linear-gradient(#002868,#002868);background-size:100% 100%,45% 50%;background-position:0 0,top left;background-repeat:no-repeat;}
+.ph-pair{display:flex;justify-content:center;gap:10px;background:#fff;border-radius:18px 18px 0 0;padding:0;}
+.ph-pair-half{position:relative;flex:0 0 auto;}
+.ph-pair-half .ph-media{aspect-ratio:4/4.3;border-radius:12px;width:auto;max-width:100%;}
+@media (min-width:640px){.ph-pair{gap:16px;}}
+.ph-pair-half .ph-media img{object-fit:contain;object-position:50% 50%;}
+.ph-tag{position:absolute;top:10px;left:10px;background:var(--ph-blue);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 11px;border-radius:999px;z-index:1;}
+.ph-pair-half:last-child .ph-tag{background:var(--ph-gold);color:#3A2F04;}
+.ph-nav{display:flex;position:absolute;top:38%;transform:translateY(-50%);width:38px;height:38px;border-radius:9999px;background:rgba(255,255,255,0.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);border:1px solid rgba(255,255,255,0.7);box-shadow:0 4px 14px rgba(16,24,40,0.15);align-items:center;justify-content:center;cursor:pointer;z-index:2;color:var(--ph-blue);transition:background 0.2s ease,box-shadow 0.2s ease;}
+.ph-nav:hover{background:rgba(255,255,255,0.9);box-shadow:0 6px 18px rgba(16,24,40,0.2);}
+.ph-prev{left:14px;}
+.ph-next{right:14px;}
+@media (min-width:768px){
+    .ph-nav{width:44px;height:44px;}
+    .ph-prev{left:18px;}
+    .ph-next{right:18px;}
+}
+</style>
+<section class="py-12 md:py-24 ph-section" id="testimonials">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="text-center mb-8 md:mb-16">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Success Stories</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Join patients who regained pain-free movement with VaidTrack.com.</p>
+<div class="text-center" style="max-width:640px;margin:0 auto;">
+<span class="ph-eyebrow">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+Trusted by International Patients
+</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface" style="font-weight:700;">Patients We've Helped</h2>
+<div class="ph-heading-rule"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant ph-subtitle">Patients supported by our team throughout their healthcare journey in India.</p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter items-stretch">
-<div class="t-card">
-<div class="t-photo"><img alt="Muhammad D.K." src="images/testimonials/testimonial-1.jpg"></div>
-<div class="t-curve">
-<svg viewBox="0 0 420 46" preserveAspectRatio="none">
-<path d="M0,8 Q210,32 420,8 L420,46 L0,46 Z" fill="#fff"/>
-<path d="M0,6 Q210,30 420,6" fill="none" stroke="#D4A72C" stroke-width="4.5"/>
-<path d="M0,9 Q210,33 420,9" fill="none" stroke="#0057B8" stroke-width="4.5"/>
-</svg>
+<div class="ph-slider">
+<button type="button" class="ph-nav ph-prev" aria-label="Previous patients" onclick="document.getElementById('ph-track').scrollBy({left:-document.getElementById('ph-track').clientWidth,behavior:'smooth'})">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+</button>
+<button type="button" class="ph-nav ph-next" aria-label="Next patients" onclick="document.getElementById('ph-track').scrollBy({left:document.getElementById('ph-track').clientWidth,behavior:'smooth'})">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+</button>
+<div class="ph-track" id="ph-track">
+<div class="ph-card">
+<div class="ph-media"><img alt="James, patient from Kenya" src="/images/patients/james-kenya.jpeg" loading="lazy"></div>
+<div class="ph-info"><p class="ph-name">James</p><p class="ph-caption">Patient from Kenya <span class="ph-flag ph-flag-ke" title="Kenya"></span></p></div>
 </div>
-<div class="t-rating">
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
+<div class="ph-card">
+<div class="ph-media"><img alt="Samuel Fianko, patient from Ghana" src="/images/patients/mr-samual-fianko-ghana.jpeg" loading="lazy"></div>
+<div class="ph-info"><p class="ph-name">Samuel Fianko</p><p class="ph-caption">Patient from Ghana <span class="ph-flag ph-flag-gh" title="Ghana"></span></p></div>
 </div>
-<div class="t-quote-wrap">
-<span class="qm left">&ldquo;</span>
-<p class="t-quote-text">After years of severe back pain, I finally found the right treatment in India. Dr. Abhinav Agrahari and the VaidTrack team made my journey smooth and stress-free.</p>
-<span class="qm right">&ldquo;</span>
+<div class="ph-card">
+<div class="ph-media"><img alt="Naomi Gyamfi, patient from Ghana" src="/images/patients/mrs-naomi-gyamfi-ghana.jpeg" loading="lazy"></div>
+<div class="ph-info"><p class="ph-name">Naomi Gyamfi</p><p class="ph-caption">Patient from Ghana <span class="ph-flag ph-flag-gh" title="Ghana"></span></p></div>
 </div>
-<div class="t-divider">
-<span class="line"></span>
-<svg viewBox="0 0 24 24" fill="#BBD6F2"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2.1 5 5.5 5c2 0 3.5 1.1 4.5 2.7C11 6.1 12.5 5 14.5 5 17.9 5 19.6 8.4 22 11.7 19.5 16.4 12 21 12 21z"/></svg>
-<span class="line"></span>
+<div class="ph-card">
+<div class="ph-media"><img alt="Isaac Tetteh, patient from Ghana" src="/images/patients/mr-isaac-tetteh.jpeg" loading="lazy"></div>
+<div class="ph-info"><p class="ph-name">Isaac Tetteh</p><p class="ph-caption">Patient from Ghana <span class="ph-flag ph-flag-gh" title="Ghana"></span></p></div>
 </div>
-<div class="t-profile">
-<div class="t-avatar">
-<img alt="Spine Surgery" src="ortho%20icon/Spine%20Fusion%20Surgery.png">
+<div class="ph-card">
+<div class="ph-media"><img alt="Beatha Avelin Minde, patient from Tanzania" src="/images/patients/mrs-beatha-avelin-minde.jpeg" loading="lazy"></div>
+<div class="ph-info"><p class="ph-name">Beatha Avelin Minde</p><p class="ph-caption">Patient from Tanzania <span class="ph-flag ph-flag-tz" title="Tanzania"></span></p></div>
 </div>
-<div class="t-profile-text">
-<p class="name">Muhammad D.K.</p>
-<p class="treatment">Spine Surgery</p>
+<div class="ph-card">
+<div class="ph-media"><img alt="Muhammadu Dan Kawu, patient from Nigeria" src="/images/patients/muhammadu-dan-kawu.jpeg" loading="lazy"></div>
+<div class="ph-info"><p class="ph-name">Muhammadu Dan Kawu</p><p class="ph-caption">Patient from Nigeria <span class="ph-flag ph-flag-ng" title="Nigeria"></span></p></div>
 </div>
+<div class="ph-card ph-card-pair">
+<div class="ph-pair">
+<div class="ph-pair-half">
+<div class="ph-media"><img alt="Abdullah before treatment" src="/images/patients/abdullah-before.jpeg" loading="lazy"></div>
+<span class="ph-tag">Before</span>
 </div>
-<div class="t-footer">
-<div class="t-footer-left">
-<svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5l8-3z" fill="#D4A72C"/><path d="M8.5 12l2.3 2.3L15.5 9.5" stroke="#0057B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-<span>Trusted Care. Better Outcomes.</span>
-</div>
-<div class="t-dots">
-<div></div><div></div><div></div><div></div>
-<div></div><div></div><div></div><div></div>
-<div></div><div></div><div></div><div></div>
-</div>
-</div>
-</div>
-<div class="t-card">
-<div class="t-photo"><img alt="Mrs Naomi G." src="images/testimonials/mrs-naomi-g..JPG"></div>
-<div class="t-curve">
-<svg viewBox="0 0 420 46" preserveAspectRatio="none">
-<path d="M0,8 Q210,32 420,8 L420,46 L0,46 Z" fill="#fff"/>
-<path d="M0,6 Q210,30 420,6" fill="none" stroke="#D4A72C" stroke-width="4.5"/>
-<path d="M0,9 Q210,33 420,9" fill="none" stroke="#0057B8" stroke-width="4.5"/>
-</svg>
-</div>
-<div class="t-rating">
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-</div>
-<div class="t-quote-wrap">
-<span class="qm left">&ldquo;</span>
-<p class="t-quote-text">My shoulder pain had made even simple daily activities difficult. Dr. Havind Tandon provided excellent care, and I'm now moving my shoulder with much more confidence.</p>
-<span class="qm right">&ldquo;</span>
-</div>
-<div class="t-divider">
-<span class="line"></span>
-<svg viewBox="0 0 24 24" fill="#BBD6F2"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2.1 5 5.5 5c2 0 3.5 1.1 4.5 2.7C11 6.1 12.5 5 14.5 5 17.9 5 19.6 8.4 22 11.7 19.5 16.4 12 21 12 21z"/></svg>
-<span class="line"></span>
-</div>
-<div class="t-profile">
-<div class="t-avatar">
-<img alt="Shoulder Arthritis" src="ortho%20icon/Soulder%20Replacement.png">
-</div>
-<div class="t-profile-text">
-<p class="name">Mrs Naomi G.</p>
-<p class="treatment">Shoulder Arthritis</p>
+<div class="ph-pair-half">
+<div class="ph-media"><video src="/images/patients/abdullah-after.mp4" playsinline preload="auto"></video><div class="ph-play-btn"><div class="ph-play-btn-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+<span class="ph-tag">After</span>
 </div>
 </div>
-<div class="t-footer">
-<div class="t-footer-left">
-<svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5l8-3z" fill="#D4A72C"/><path d="M8.5 12l2.3 2.3L15.5 9.5" stroke="#0057B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-<span>Trusted Care. Better Outcomes.</span>
+<div class="ph-info"><p class="ph-name">Abdullah</p><p class="ph-caption">Patient from Sudan <span class="ph-flag ph-flag-sd" title="Sudan"></span></p></div>
 </div>
-<div class="t-dots">
-<div></div><div></div><div></div><div></div>
-<div></div><div></div><div></div><div></div>
-<div></div><div></div><div></div><div></div>
+<div class="ph-card ph-card-pair">
+<div class="ph-pair">
+<div class="ph-pair-half">
+<div class="ph-media"><video src="/images/patients/oretha-w-mason-before.mp4" playsinline preload="auto"></video><div class="ph-play-btn"><div class="ph-play-btn-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+<span class="ph-tag">Before</span>
 </div>
-</div>
-</div>
-
-<div class="t-card">
-<div class="t-photo"><img alt="Oretha W Mason with her care team" src="images/testimonials/testimonial-4.jpeg"></div>
-<div class="t-curve">
-<svg viewBox="0 0 420 46" preserveAspectRatio="none">
-<path d="M0,8 Q210,32 420,8 L420,46 L0,46 Z" fill="#fff"/>
-<path d="M0,6 Q210,30 420,6" fill="none" stroke="#D4A72C" stroke-width="4.5"/>
-<path d="M0,9 Q210,33 420,9" fill="none" stroke="#0057B8" stroke-width="4.5"/>
-</svg>
-</div>
-<div class="t-rating">
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-<svg viewBox="0 0 24 24" fill="#D4A72C"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7-5.4-4.7 7.1-.6z"/></svg>
-</div>
-<div class="t-quote-wrap">
-<span class="qm left">&ldquo;</span>
-<p class="t-quote-text">After years of knee pain, walking was difficult. Dr. Devendra Singh Solanki provided excellent care, and the VaidTrack team supported me throughout. I'm walking with confidence again.</p>
-<span class="qm right">&ldquo;</span>
-</div>
-<div class="t-divider">
-<span class="line"></span>
-<svg viewBox="0 0 24 24" fill="#BBD6F2"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2.1 5 5.5 5c2 0 3.5 1.1 4.5 2.7C11 6.1 12.5 5 14.5 5 17.9 5 19.6 8.4 22 11.7 19.5 16.4 12 21 12 21z"/></svg>
-<span class="line"></span>
-</div>
-<div class="t-profile">
-<div class="t-avatar">
-<img alt="Knee Replacement" src="ortho%20icon/Knee%20Replacement.png">
-</div>
-<div class="t-profile-text">
-<p class="name">Oretha W Mason</p>
-<p class="treatment">Bilateral Knee Replacement</p>
+<div class="ph-pair-half">
+<div class="ph-media"><video src="/images/patients/oretha-w-mason-after.mp4" playsinline preload="auto"></video><div class="ph-play-btn"><div class="ph-play-btn-circle"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div></div></div>
+<span class="ph-tag">After</span>
 </div>
 </div>
-<div class="t-footer">
-<div class="t-footer-left">
-<svg viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5l8-3z" fill="#D4A72C"/><path d="M8.5 12l2.3 2.3L15.5 9.5" stroke="#0057B8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-<span>Trusted Care. Better Outcomes.</span>
-</div>
-<div class="t-dots">
-<div></div><div></div><div></div><div></div>
-<div></div><div></div><div></div><div></div>
-<div></div><div></div><div></div><div></div>
-</div>
+<div class="ph-info"><p class="ph-name">Oretha W Mason</p><p class="ph-caption">Patient from Liberia <span class="ph-flag ph-flag-lr" title="Liberia"></span></p></div>
 </div>
 </div>
 </div>
 </div>
 </section>
+<script>
+(function () {
+    var track = document.getElementById('ph-track');
+    if (!track) return;
+    var isHovering = false;
+    var isVideoPlaying = false;
+    var timer = null;
+
+    function syncPairMediaSize() {
+        var refMedia = track.querySelector('.ph-card:not(.ph-card-pair) .ph-media');
+        if (!refMedia) return;
+        var h = refMedia.getBoundingClientRect().height;
+        if (!h) return;
+        var w = h * (4 / 4.3);
+        track.querySelectorAll('.ph-pair-half .ph-media').forEach(function (el) {
+            el.style.height = h + 'px';
+            el.style.width = w + 'px';
+        });
+    }
+
+    function advance() {
+        if (isHovering || isVideoPlaying) return;
+        var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+        track.scrollTo({ left: atEnd ? 0 : track.scrollLeft + track.clientWidth, behavior: 'smooth' });
+    }
+
+    function start() {
+        stop();
+        timer = setInterval(advance, 4000);
+    }
+    function stop() {
+        if (timer) clearInterval(timer);
+        timer = null;
+    }
+
+    track.addEventListener('mouseenter', function () { isHovering = true; });
+    track.addEventListener('mouseleave', function () { isHovering = false; });
+    track.addEventListener('touchstart', function () { isHovering = true; }, { passive: true });
+    track.addEventListener('touchend', function () { isHovering = false; }, { passive: true });
+
+    var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) start(); else stop();
+        });
+    }, { threshold: 0.25 });
+    io.observe(track);
+
+    syncPairMediaSize();
+    window.addEventListener('load', syncPairMediaSize);
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(syncPairMediaSize, 150);
+    });
+
+    track.querySelectorAll('.ph-media').forEach(function (media) {
+        var video = media.querySelector('video');
+        var btn = media.querySelector('.ph-play-btn');
+        if (!video || !btn) return;
+        btn.addEventListener('click', function () {
+            video.controls = true;
+            video.play();
+        });
+        function refreshVideoPlayingState() {
+            isVideoPlaying = [].slice.call(track.querySelectorAll('video')).some(function (v2) { return !v2.paused; });
+        }
+        video.addEventListener('play', function () { btn.classList.add('is-hidden'); refreshVideoPlayingState(); });
+        video.addEventListener('pause', function () { if (!video.controls) btn.classList.remove('is-hidden'); refreshVideoPlayingState(); });
+        video.addEventListener('ended', function () { if (!video.controls) btn.classList.remove('is-hidden'); refreshVideoPlayingState(); });
+    });
+})();
+</script>
 
 <!-- Mobile Floating WhatsApp -->
 <div id="mobile-floating-whatsapp" class="fixed bottom-base right-base z-50 flex flex-col items-end md:hidden opacity-0 pointer-events-none translate-y-2 transition-all duration-300">
@@ -1135,21 +1181,6 @@ Book Consultation
     });
 })();
 
-(function () {
-    window.dataLayer = window.dataLayer || [];
-
-    document.addEventListener('click', function (e) {
-        var link = e.target.closest('a[href*="wa.me"]');
-        if (!link) return;
-
-        window.dataLayer.push({
-            event: 'whatsapp_click',
-            button_name: 'whatsapp',
-            page_type: 'top_orthopedics'
-        });
-    });
-})();
-
 window.addEventListener('load', function () {
     var steps = document.querySelectorAll('.journey-step, .reveal-card');
     if (!steps.length) return;
@@ -1169,7 +1200,7 @@ window.addEventListener('load', function () {
 /* Forms → same Google Sheet as vaidtrack.com main site, then generate_lead, then WhatsApp */
 (function () {
     var GAS_URL = 'https://script.google.com/macros/s/AKfycbzTo3v4gxY1FmMrSFndbYSDaWRhjL58uUzkicjfDW7xS1xdoL_Rxsq69juo2PcT3g2q_Q/exec';
-    var PAGE_TYPE = 'top_orthopedics';
+    var PAGE_TYPE = 'knee_replacement';
 
     function field(form, names) {
         for (var i = 0; i < names.length; i++) {
