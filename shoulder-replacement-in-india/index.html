@@ -1256,24 +1256,11 @@ window.addEventListener('load', function () {
         });
     }
 
-    /* Fires only after the Sheet POST succeeds - for GTM + GA4 → Google Ads */
+    /* Fires only after the Sheet POST succeeds - GTM's CE - generate_lead trigger picks this up and sends it to GA4 → Google Ads */
     function fireGenerateLead(payload) {
         window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
             event: 'generate_lead',
-            form_id: payload.form_id,
-            lead_source: 'website_form',
-            page_type: payload.page_type
-        });
-
-        if (typeof window.gtag !== 'function') {
-            window.gtag = function () {
-                window.dataLayer.push(arguments);
-            };
-        }
-
-        window.gtag('event', 'generate_lead', {
-            send_to: 'G-5TBH8QQ2EQ',
             form_id: payload.form_id,
             lead_source: 'website_form',
             page_type: payload.page_type
