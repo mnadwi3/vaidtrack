@@ -146,7 +146,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <header class="fixed top-0 w-full z-50 h-20 bg-primary">
 <div class="flex justify-between items-center h-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
 <div class="flex items-center gap-2">
-<a href="https://vaidtrack.com/">
+<a href="#hero">
 <img id="header-logo" alt="VaidTrack.com" src="images/logo.png">
 </a>
 </div>
@@ -171,7 +171,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <main class="flex-grow">
 <!-- Hero Section -->
-<section class="relative min-h-[720px] md:min-h-[600px] lg:min-h-[650px] flex items-center pt-8 pb-10 md:pt-24 md:pb-32 overflow-hidden">
+<section id="hero" class="relative min-h-[720px] md:min-h-[600px] lg:min-h-[650px] flex items-center pt-8 pb-10 md:pt-24 md:pb-32 overflow-hidden">
 <div class="absolute inset-0 z-0">
 <div class="bg-cover bg-center w-full h-full" style="background-image: url('images/erwinbosman-doctor-10350071.jpg');"></div>
 <div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/65 to-black/25"></div>
@@ -989,13 +989,14 @@ Book Consultation
 <!-- Footer -->
 <style>
 #site-footer-grid { display: grid; grid-template-columns: 1fr; gap: 40px; }
-@media (min-width: 768px) { #site-footer-grid { grid-template-columns: 1fr 1fr 1fr; gap: 32px; } }
+@media (min-width: 640px) { #site-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
+@media (min-width: 1024px) { #site-footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; } }
 </style>
 <footer class="w-full bg-primary mt-auto" style="border-top:1px solid rgba(255,255,255,0.18);">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" style="padding-top:56px;padding-bottom:28px;">
 <div id="site-footer-grid" class="text-left">
 <div class="flex flex-col items-start gap-3">
-<img alt="VaidTrack.com" style="height:33px;width:auto;align-self:flex-start;" src="images/logo.png">
+<a href="#hero"><img alt="VaidTrack.com" style="height:33px;width:auto;" src="images/logo.png"></a>
 <p class="font-caption text-caption text-white/70 max-w-xs leading-relaxed">Restoring mobility, rebuilding lives, one patient at a time.</p>
 </div>
 <div class="flex flex-col items-start gap-2">
@@ -1005,16 +1006,23 @@ Book Consultation
 </div>
 <div class="flex flex-col items-start gap-2">
 <p class="font-caption text-caption text-white font-semibold uppercase tracking-wide" style="letter-spacing:0.05em;">Quick Links</p>
+<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="#hero">Home</a>
+<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="../all-treatments.html">All Treatments</a>
+<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="../privacy-policy.html">Privacy Policy</a>
+<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="../disclaimer.html">Disclaimer</a>
+</div>
 <div class="flex flex-col items-start gap-2">
-<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="#">About Us</a>
-<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="#">Privacy Policy</a>
-<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="#">Financing</a>
-<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="#">Insurance</a>
+<p class="font-caption text-caption text-white font-semibold uppercase tracking-wide" style="letter-spacing:0.05em;">Other Treatments</p>
+<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="../knee-replacement-in-india/index.html">Knee Replacement</a>
+<a class="font-caption text-caption text-white/70 hover:text-white transition-colors" href="../shoulder-replacement-in-india/index.html">Shoulder Replacement</a>
 </div>
 </div>
-</div>
-<div style="border-top:1px solid rgba(255,255,255,0.12);margin-top:40px;padding-top:20px;" class="text-center">
+<div style="border-top:1px solid rgba(255,255,255,0.12);margin-top:40px;padding-top:20px;" class="flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
 <p class="font-caption text-caption text-white/60">© 2026 VaidTrack.com. All rights reserved.</p>
+<div class="flex items-center gap-4">
+<a class="font-caption text-caption text-white/60 hover:text-white transition-colors" href="../privacy-policy.html">Privacy Policy</a>
+<a class="font-caption text-caption text-white/60 hover:text-white transition-colors" href="../disclaimer.html">Disclaimer</a>
+</div>
 </div>
 </div>
 </footer>
