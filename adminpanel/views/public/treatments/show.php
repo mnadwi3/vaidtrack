@@ -13,7 +13,7 @@ $recovery = (string) ($treatment['recovery'] ?? '');
 $whyChoose = (string) ($treatment['why_choose'] ?? '');
 $image = !empty($treatment['featured_image']) ? asset((string) $treatment['featured_image']) : null;
 $canonical = 'https://www.vaidtrack.com/treatments/' . ((string) ($treatment['slug'] ?? ''));
-$waNumber = '918979983149';
+$waNumber = '916395905054';
 $waMessage = 'Hi, I need ' . $name . ' treatment guidance and a free plan.';
 $waUrl = 'https://wa.me/' . $waNumber . '?text=' . rawurlencode($waMessage);
 
@@ -75,7 +75,13 @@ $secHead = static function (string $title): string {
 <?php endif; ?>
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="/favicon.ico" sizes="any">
-<script>window.dataLayer=window.dataLayer||[];window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KZ86XPT5');</script>
+<!-- End Google Tag Manager -->
 <link rel="canonical" href="<?= e($canonical) ?>">
 <meta property="og:type" content="website">
 <meta property="og:title" content="<?= e($title) ?>">
@@ -209,7 +215,6 @@ $secHead = static function (string $title): string {
   </div>
 </div>
 
-<script src="/assets/js/analytics.js?v=20260803-perf3" defer></script>
 <script src="/assets/js/doctors.js?v=20260808-allgridfix1" defer></script>
 <script src="/assets/js/treatment-page.js?v=20260803-perf3" defer></script>
 </body>

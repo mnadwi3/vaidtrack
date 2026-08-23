@@ -6,7 +6,7 @@
   var DOCTORS_URL = '/adminpanel/api/doctors.json';
   var DOCTORS_FALLBACK_URL = '/data/doctors/doctors.json';
   var IMAGE_BASE = 'images/doctors-images/';
-  var WA_NUMBER = '918979983149';
+  var WA_NUMBER = '916395905054';
 
   var ICON_CLOCK =
     '<svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2"/><circle cx="12" cy="12" r="9"/></svg>';
