@@ -959,6 +959,166 @@ Trusted by International Patients
             </a>
 </div>
 
+<!-- FAQ Section -->
+<style>
+.faq-list { max-width: 760px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid rgba(3,83,164,0.14); }
+.faq-item:first-child { border-top: 1px solid rgba(3,83,164,0.14); }
+.faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; text-align: left; background: none; border: none; padding: 20px 4px; cursor: pointer; }
+.faq-question:focus-visible { outline: 2px solid #0353a4; outline-offset: 4px; border-radius: 6px; }
+.faq-icon { position: relative; flex-shrink: 0; width: 22px; height: 22px; }
+.faq-icon::before, .faq-icon::after { content: ""; position: absolute; top: 50%; left: 50%; background: #0353a4; border-radius: 2px; transform: translate(-50%, -50%); }
+.faq-icon::before { width: 14px; height: 2px; }
+.faq-icon::after { width: 2px; height: 14px; transition: transform 0.25s ease; }
+.faq-item.is-open .faq-icon::after { transform: translate(-50%, -50%) scaleY(0); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-answer-inner { margin: 0; padding: 0 4px 20px; }
+@media (min-width: 768px) { .faq-question { padding: 24px 4px; } }
+</style>
+<section class="py-12 md:py-24 bg-background" id="faq">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-8 md:mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Common FAQs</h2>
+<div style="width:140px;height:4px;background:#0353a4;border-radius:999px;margin:0 auto;"></div>
+</div>
+<div class="faq-list" id="faq-list">
+<div class="faq-item">
+<h3 style="margin:0;"><button type="button" class="faq-question font-body-md text-sm md:text-base font-bold text-on-surface" aria-expanded="false" aria-controls="faq-answer-1" id="faq-question-1">
+<span>What is VaidTrack?</span>
+<span class="faq-icon" aria-hidden="true"></span>
+</button></h3>
+<div class="faq-answer" id="faq-answer-1">
+<p class="faq-answer-inner font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed">VaidTrack helps international patients access medical treatment in India by connecting them with doctors and hospitals and supporting them throughout their treatment journey.</p>
+</div>
+</div>
+<div class="faq-item">
+<h3 style="margin:0;"><button type="button" class="faq-question font-body-md text-sm md:text-base font-bold text-on-surface" aria-expanded="false" aria-controls="faq-answer-2" id="faq-question-2">
+<span>What services does VaidTrack provide?</span>
+<span class="faq-icon" aria-hidden="true"></span>
+</button></h3>
+<div class="faq-answer" id="faq-answer-2">
+<p class="faq-answer-inner font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed">We assist with doctor consultations, treatment planning, hospital coordination, medical visa assistance, travel arrangements, accommodation, and ongoing patient support.</p>
+</div>
+</div>
+<div class="faq-item">
+<h3 style="margin:0;"><button type="button" class="faq-question font-body-md text-sm md:text-base font-bold text-on-surface" aria-expanded="false" aria-controls="faq-answer-3" id="faq-question-3">
+<span>Can I consult an Indian doctor before traveling to India?</span>
+<span class="faq-icon" aria-hidden="true"></span>
+</button></h3>
+<div class="faq-answer" id="faq-answer-3">
+<p class="faq-answer-inner font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed">Yes. We can help arrange an online consultation with a suitable specialist so you can discuss your condition and treatment options before traveling.</p>
+</div>
+</div>
+<div class="faq-item">
+<h3 style="margin:0;"><button type="button" class="faq-question font-body-md text-sm md:text-base font-bold text-on-surface" aria-expanded="false" aria-controls="faq-answer-4" id="faq-question-4">
+<span>How do I choose the right hospital or doctor?</span>
+<span class="faq-icon" aria-hidden="true"></span>
+</button></h3>
+<div class="faq-answer" id="faq-answer-4">
+<p class="faq-answer-inner font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed">VaidTrack helps you identify suitable hospitals and specialists based on your medical condition, treatment requirements, and preferences.</p>
+</div>
+</div>
+<div class="faq-item">
+<h3 style="margin:0;"><button type="button" class="faq-question font-body-md text-sm md:text-base font-bold text-on-surface" aria-expanded="false" aria-controls="faq-answer-5" id="faq-question-5">
+<span>Do I need to travel to India for a consultation?</span>
+<span class="faq-icon" aria-hidden="true"></span>
+</button></h3>
+<div class="faq-answer" id="faq-answer-5">
+<p class="faq-answer-inner font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed">Not always. Initial consultations can often be arranged online. If treatment is required, we can assist with planning your visit to India.</p>
+</div>
+</div>
+<div class="faq-item">
+<h3 style="margin:0;"><button type="button" class="faq-question font-body-md text-sm md:text-base font-bold text-on-surface" aria-expanded="false" aria-controls="faq-answer-6" id="faq-question-6">
+<span>Does VaidTrack help with medical visa assistance?</span>
+<span class="faq-icon" aria-hidden="true"></span>
+</button></h3>
+<div class="faq-answer" id="faq-answer-6">
+<p class="faq-answer-inner font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed">Yes. We provide guidance and support with the medical visa process and required documentation.</p>
+</div>
+</div>
+<div class="faq-item">
+<h3 style="margin:0;"><button type="button" class="faq-question font-body-md text-sm md:text-base font-bold text-on-surface" aria-expanded="false" aria-controls="faq-answer-7" id="faq-question-7">
+<span>Can VaidTrack arrange airport pickup and travel support?</span>
+<span class="faq-icon" aria-hidden="true"></span>
+</button></h3>
+<div class="faq-answer" id="faq-answer-7">
+<p class="faq-answer-inner font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed">Yes. We can assist with airport transfers, local transportation, accommodation, and other travel-related arrangements.</p>
+</div>
+</div>
+<div class="faq-item">
+<h3 style="margin:0;"><button type="button" class="faq-question font-body-md text-sm md:text-base font-bold text-on-surface" aria-expanded="false" aria-controls="faq-answer-8" id="faq-question-8">
+<span>How long will my treatment in India take?</span>
+<span class="faq-icon" aria-hidden="true"></span>
+</button></h3>
+<div class="faq-answer" id="faq-answer-8">
+<p class="faq-answer-inner font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed">The duration depends on your medical condition, treatment plan, procedure, and recovery. Your doctor will provide a more accurate estimate after reviewing your case.</p>
+</div>
+</div>
+<div class="faq-item">
+<h3 style="margin:0;"><button type="button" class="faq-question font-body-md text-sm md:text-base font-bold text-on-surface" aria-expanded="false" aria-controls="faq-answer-9" id="faq-question-9">
+<span>Will someone assist me during my treatment journey?</span>
+<span class="faq-icon" aria-hidden="true"></span>
+</button></h3>
+<div class="faq-answer" id="faq-answer-9">
+<p class="faq-answer-inner font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed">Yes. Our team provides ongoing coordination and support from the initial consultation through hospital treatment and follow-up.</p>
+</div>
+</div>
+<div class="faq-item">
+<h3 style="margin:0;"><button type="button" class="faq-question font-body-md text-sm md:text-base font-bold text-on-surface" aria-expanded="false" aria-controls="faq-answer-10" id="faq-question-10">
+<span>How can I start my treatment journey with VaidTrack?</span>
+<span class="faq-icon" aria-hidden="true"></span>
+</button></h3>
+<div class="faq-answer" id="faq-answer-10">
+<p class="faq-answer-inner font-body-md text-sm md:text-base text-on-surface-variant leading-relaxed">Simply contact VaidTrack and share your medical details and requirements. Our team will guide you through the next steps.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script>
+(function () {
+    var items = document.querySelectorAll('#faq-list .faq-item');
+
+    function closeItem(item) {
+        var panel = item.querySelector('.faq-answer');
+        var btn = item.querySelector('.faq-question');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        requestAnimationFrame(function () {
+            panel.style.maxHeight = '0px';
+        });
+        item.classList.remove('is-open');
+        btn.setAttribute('aria-expanded', 'false');
+    }
+
+    function openItem(item) {
+        var panel = item.querySelector('.faq-answer');
+        var btn = item.querySelector('.faq-question');
+        item.classList.add('is-open');
+        btn.setAttribute('aria-expanded', 'true');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+    }
+
+    items.forEach(function (item) {
+        var btn = item.querySelector('.faq-question');
+        var panel = item.querySelector('.faq-answer');
+
+        panel.addEventListener('transitionend', function (e) {
+            if (e.propertyName === 'max-height' && item.classList.contains('is-open')) {
+                panel.style.maxHeight = 'none';
+            }
+        });
+
+        btn.addEventListener('click', function () {
+            var isOpen = item.classList.contains('is-open');
+            items.forEach(function (other) {
+                if (other !== item && other.classList.contains('is-open')) closeItem(other);
+            });
+            if (isOpen) { closeItem(item); } else { openItem(item); }
+        });
+    });
+})();
+</script>
+
 <!-- Contact Section -->
 <style>
 #contact-box { padding: 48px 32px; display: flex; flex-direction: column; gap: 32px; border-radius: 24px; }
@@ -1394,6 +1554,91 @@ window.addEventListener('load', function () {
       "name": "Dr Subhash Jangid",
       "medicalSpecialty": "Musculoskeletal",
       "description": "Joint Replacement Specialist. MBBS, MS Ortho, DNB. 27+ Years Experience."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is VaidTrack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VaidTrack helps international patients access medical treatment in India by connecting them with doctors and hospitals and supporting them throughout their treatment journey."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What services does VaidTrack provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We assist with doctor consultations, treatment planning, hospital coordination, medical visa assistance, travel arrangements, accommodation, and ongoing patient support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I consult an Indian doctor before traveling to India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We can help arrange an online consultation with a suitable specialist so you can discuss your condition and treatment options before traveling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I choose the right hospital or doctor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "VaidTrack helps you identify suitable hospitals and specialists based on your medical condition, treatment requirements, and preferences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to travel to India for a consultation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Not always. Initial consultations can often be arranged online. If treatment is required, we can assist with planning your visit to India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does VaidTrack help with medical visa assistance?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We provide guidance and support with the medical visa process and required documentation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can VaidTrack arrange airport pickup and travel support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We can assist with airport transfers, local transportation, accommodation, and other travel-related arrangements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long will my treatment in India take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The duration depends on your medical condition, treatment plan, procedure, and recovery. Your doctor will provide a more accurate estimate after reviewing your case."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will someone assist me during my treatment journey?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Our team provides ongoing coordination and support from the initial consultation through hospital treatment and follow-up."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I start my treatment journey with VaidTrack?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Simply contact VaidTrack and share your medical details and requirements. Our team will guide you through the next steps."
+          }
+        }
+      ]
     }
   ]
 }
