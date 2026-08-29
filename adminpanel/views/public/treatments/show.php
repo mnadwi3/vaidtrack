@@ -13,7 +13,7 @@ $recovery = (string) ($treatment['recovery'] ?? '');
 $whyChoose = (string) ($treatment['why_choose'] ?? '');
 $image = !empty($treatment['featured_image']) ? asset((string) $treatment['featured_image']) : null;
 $canonical = 'https://www.vaidtrack.com/treatments/' . ((string) ($treatment['slug'] ?? ''));
-$waNumber = '916395905054';
+$waNumber = '919818377518';
 $waMessage = 'Hi, I need ' . $name . ' treatment guidance and a free plan.';
 $waUrl = 'https://wa.me/' . $waNumber . '?text=' . rawurlencode($waMessage);
 

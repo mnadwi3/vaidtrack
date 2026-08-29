@@ -17,7 +17,7 @@ Static marketing site for **[VaidTrack.com](https://www.vaidtrack.com)** - medic
 | Data | `data/doctors/doctors.json` (homepage + treatment doctor cards) |
 | Hosting | Apache (`.htaccess`) and/or Netlify-style (`_redirects`) |
 | Analytics | GTM `GTM-KZ86XPT5`, GA4 `G-5TBH8QQ2EQ` |
-| Lead CTA | WhatsApp `wa.me/918979983149` + on-page enquiry forms |
+| Lead CTA | WhatsApp `wa.me/919818377518` + on-page enquiry forms |
 
 ---
 

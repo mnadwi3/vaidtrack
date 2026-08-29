@@ -17,7 +17,7 @@ Repo: https://github.com/mnadwi3/kenyalandingpage
 /treatments/{cancer-slug} /privacy-policy /disclaimer
 
 ## Brand
-primary #0F4C81 · dark #0B3A61 · success #16A34A · soft #F8FAFC · WhatsApp +91 8979983149
+primary #0F4C81 · dark #0B3A61 · success #16A34A · soft #F8FAFC · WhatsApp +91 9818377518
 
 ## Notes
 Doctor profiles are loaded from doctors.json — verify credentials before launch.
