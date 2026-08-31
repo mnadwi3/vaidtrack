@@ -276,7 +276,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="treatment-pair-row">
 <div class="reveal-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all" style="transition-delay: 0ms;">
 <div class="treatment-card-img bg-white">
-<img alt="Total Hip Replacement surgery in India - before and after, benefits, and recovery" class="w-full h-auto rounded-lg" src="treatment-images/total%20hip%20replacement.png">
+<img alt="Total Hip Replacement surgery in India - before and after, benefits, and recovery" class="w-full h-auto rounded-lg cursor-zoom-in zoomable-treatment-img" src="treatment-images/total%20hip%20replacement.png">
 </div>
 <div class="px-5 md:px-8" style="padding-top:24px;padding-bottom:20px;">
 <p class="font-body-md text-sm md:text-base font-bold mb-2" style="color:#0353a4;text-align:center;">Struggling with hip arthritis pain?</p>
@@ -289,7 +289,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="reveal-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all" style="transition-delay: 80ms;">
 <div class="treatment-card-img bg-white">
-<img alt="Partial Hip Replacement surgery in India - before and after, benefits, and recovery" class="w-full h-auto rounded-lg" src="treatment-images/Partial%20Hip%20Replacement.png">
+<img alt="Partial Hip Replacement surgery in India - before and after, benefits, and recovery" class="w-full h-auto rounded-lg cursor-zoom-in zoomable-treatment-img" src="treatment-images/Partial%20Hip%20Replacement.png">
 </div>
 <div class="px-5 md:px-8" style="padding-top:24px;padding-bottom:20px;">
 <p class="font-body-md text-sm md:text-base font-bold mb-2" style="color:#0353a4;text-align:center;">Recovering from a hip fracture?</p>
@@ -304,7 +304,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="treatment-pair-row">
 <div class="reveal-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all" style="transition-delay: 160ms;">
 <div class="treatment-card-img bg-white">
-<img alt="Hip Resurfacing Surgery in India - before and after, benefits, and recovery" class="w-full h-auto rounded-lg" src="treatment-images/Hip%20Resurfacing.png">
+<img alt="Hip Resurfacing Surgery in India - before and after, benefits, and recovery" class="w-full h-auto rounded-lg cursor-zoom-in zoomable-treatment-img" src="treatment-images/Hip%20Resurfacing.png">
 </div>
 <div class="px-5 md:px-8" style="padding-top:24px;padding-bottom:20px;">
 <p class="font-body-md text-sm md:text-base font-bold mb-2" style="color:#0353a4;text-align:center;">Young, active, with hip joint damage?</p>
@@ -317,7 +317,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <div class="reveal-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all" style="transition-delay: 240ms;">
 <div class="treatment-card-img bg-white">
-<img alt="Revision Hip Replacement surgery in India - before and after, benefits, and recovery" class="w-full h-auto rounded-lg" src="treatment-images/Revision%20Hip%20Replacement.png">
+<img alt="Revision Hip Replacement surgery in India - before and after, benefits, and recovery" class="w-full h-auto rounded-lg cursor-zoom-in zoomable-treatment-img" src="treatment-images/Revision%20Hip%20Replacement.png">
 </div>
 <div class="px-5 md:px-8" style="padding-top:24px;padding-bottom:20px;">
 <p class="font-body-md text-sm md:text-base font-bold mb-2" style="color:#0353a4;text-align:center;">Dealing with a failed hip implant?</p>
@@ -1234,6 +1234,25 @@ Book Consultation
 </div>
 </div>
 
+<!-- Treatment Image Zoom Lightbox -->
+<style>
+#img-lightbox { position: fixed; inset: 0; z-index: 9999; padding: 16px; }
+#img-lightbox-backdrop { position: absolute; inset: 0; background: rgba(0,0,0,0.85); opacity: 0; transition: opacity 0.3s ease-out; }
+#img-lightbox-backdrop.is-open { opacity: 1; }
+#img-lightbox-img { position: relative; max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px; opacity: 0; transform: scale(0.95); transition: opacity 0.3s ease-out, transform 0.3s ease-out; }
+#img-lightbox-img.is-open { opacity: 1; transform: scale(1); }
+#img-lightbox-close { position: absolute; top: 12px; right: 12px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 999px; background: rgba(255,255,255,0.15); color: #fff; border: none; cursor: pointer; transition: background 0.2s ease-out; }
+#img-lightbox-close:hover { background: rgba(255,255,255,0.3); }
+@media (min-width: 768px) { #img-lightbox-close { top: 24px; right: 24px; } }
+</style>
+<div id="img-lightbox" class="hidden items-center justify-center">
+<div id="img-lightbox-backdrop"></div>
+<button id="img-lightbox-close" type="button" aria-label="Close">
+<span class="material-symbols-outlined">close</span>
+</button>
+<img id="img-lightbox-img" src="" alt="">
+</div>
+
 <script>
 (function () {
     var trigger = document.getElementById('hero-whatsapp-cta');
@@ -1311,6 +1330,49 @@ Book Consultation
     backdrop.addEventListener('click', closeModal);
     document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') closeModal();
+    });
+})();
+
+(function () {
+    var lightbox = document.getElementById('img-lightbox');
+    var backdrop = document.getElementById('img-lightbox-backdrop');
+    var closeBtn = document.getElementById('img-lightbox-close');
+    var lbImg = document.getElementById('img-lightbox-img');
+    if (!lightbox || !backdrop || !closeBtn || !lbImg) return;
+
+    function openLightbox(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+        requestAnimationFrame(function () {
+            backdrop.classList.add('is-open');
+            lbImg.classList.add('is-open');
+        });
+    }
+
+    function closeLightbox() {
+        backdrop.classList.remove('is-open');
+        lbImg.classList.remove('is-open');
+        document.body.style.overflow = '';
+        setTimeout(function () {
+            lightbox.classList.add('hidden');
+            lightbox.classList.remove('flex');
+            lbImg.src = '';
+        }, 300);
+    }
+
+    document.querySelectorAll('.zoomable-treatment-img').forEach(function (img) {
+        img.addEventListener('click', function () {
+            openLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+        });
+    });
+
+    backdrop.addEventListener('click', closeLightbox);
+    closeBtn.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
     });
 })();
 
