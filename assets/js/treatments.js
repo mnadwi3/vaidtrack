@@ -4,7 +4,7 @@
 (function () {
   var TREATMENTS_URL = '/adminpanel/api/treatments.json';
   var TREATMENTS_FALLBACK_URL = '/data/treatments/treatments.json';
-  var WA_NUMBER = '919818377518';
+  var WA_NUMBER = '919871262293';
 
   var ICON_ARROW =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M10 7h7v7"/></svg>';

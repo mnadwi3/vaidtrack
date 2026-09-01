@@ -107,7 +107,7 @@ or leave the hardcoded static markup in place. When editing these files,
 preserve this fetch → render → fallback pattern rather than assuming the API
 is always available.
 
-**WhatsApp CTA number actually in use:** `919818377518` (updated 2026-08-30; README and llms.txt now match, see §11).
+**WhatsApp CTA number actually in use:** `919871262293` (updated 2026-09-01; README and llms.txt now match, see §11).
 
 ---
 
@@ -343,9 +343,11 @@ this file or direct inspection. Confirmed stale points:
   controllers (§5), or the JSON API (§6) at all.
 - Neither document mentions the three landing-page microsites (§7),
   `all-doctors.html`, `all-treatments.html`, `hospital.html`, or `hospitals.html`.
-- (Resolved 2026-08-30) `README.md`'s WhatsApp CTA number previously read
-  `wa.me/918979983149`, out of sync with the number actually used across live
-  pages; both now use `919818377518`.
+- (Resolved 2026-08-30, superseded 2026-09-01) `README.md`'s WhatsApp CTA
+  number previously read `wa.me/918979983149`, out of sync with the number
+  actually used across live pages. The number was then changed sitewide on
+  2026-09-01 to `919871262293` (from the interim `919818377518`); README and
+  llms.txt were updated to match.
 - `adminpanel/README.md`'s quick-start references only migration
   `001_auth_schema.sql`; the repo actually has migrations through
   `013_treatments_price.sql`.
