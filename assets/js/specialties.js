@@ -23,7 +23,8 @@
     'oncology': 'assets/images/treatment-icons/oncology.png',
     'orthopedics': 'assets/images/treatment-icons/orthopedics.png',
     'spine-surgery': 'assets/images/treatment-icons/spine-surgery.png',
-    'urology': 'assets/images/treatment-icons/urology.png'
+    'urology': 'assets/images/treatment-icons/urology.png',
+    'weight-loss': 'assets/images/treatment-icons/weight-loss.png'
   };
 
   function escapeHtml(str) {
