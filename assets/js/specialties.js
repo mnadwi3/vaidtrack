@@ -52,10 +52,16 @@
     nodes.forEach(function (n) { io.observe(n); });
   }
 
-  function renderCard(specialty) {
+  var ICON_CHEVRON =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>';
+  var ICON_ARROW_RIGHT =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18l6-6-6-6"/></svg>';
+
+  function renderCard(specialty, index) {
     var name = specialty.name || '';
     var description = specialty.description || '';
     var url = specialty.url || '#';
+    var panelId = 'spec-panel-' + (specialty.slug || index);
     var overrideSrc = ICON_OVERRIDES[specialty.slug];
     var iconHtml = overrideSrc
       ? '<img src="' + escapeHtml(overrideSrc) + '" alt="" width="40" height="40" decoding="async">'
@@ -64,17 +70,32 @@
       : ICON_GENERIC;
 
     return (
-      '<a class="spec-card reveal" href="' + escapeHtml(url) + '">' +
-        '<span class="spec-icon" aria-hidden="true">' + iconHtml + '</span>' +
-        '<span class="spec-body">' +
+      '<div class="spec-card reveal">' +
+        '<button type="button" class="spec-toggle" aria-expanded="false" aria-controls="' + escapeHtml(panelId) + '">' +
+          '<span class="spec-icon" aria-hidden="true">' + iconHtml + '</span>' +
           '<span class="spec-name">' + escapeHtml(name) + '</span>' +
-          (description ? '<span class="spec-desc">' + escapeHtml(description) + '</span>' : '') +
-        '</span>' +
-        '<span class="spec-arrow" aria-hidden="true">' +
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18l6-6-6-6"/></svg>' +
-        '</span>' +
-      '</a>'
+          '<span class="spec-chevron" aria-hidden="true">' + ICON_CHEVRON + '</span>' +
+        '</button>' +
+        '<div class="spec-panel" id="' + escapeHtml(panelId) + '">' +
+          '<div class="spec-panel-inner">' +
+            (description ? '<p class="spec-desc">' + escapeHtml(description) + '</p>' : '') +
+            '<a class="spec-readmore" href="' + escapeHtml(url) + '">Read More' + ICON_ARROW_RIGHT + '</a>' +
+          '</div>' +
+        '</div>' +
+      '</div>'
     );
+  }
+
+  function bindAccordion(grid) {
+    if (grid.dataset.accordionBound) return;
+    grid.dataset.accordionBound = 'true';
+    grid.addEventListener('click', function (e) {
+      var toggle = e.target.closest('.spec-toggle');
+      if (!toggle) return;
+      var card = toggle.closest('.spec-card');
+      var isOpen = card.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
   }
 
   function mountSpecialties(specialties) {
@@ -89,6 +110,7 @@
 
     if (section) section.hidden = false;
     grid.innerHTML = specialties.map(renderCard).join('');
+    bindAccordion(grid);
     observeReveal(grid.querySelectorAll('.reveal'));
   }
 

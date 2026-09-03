@@ -526,7 +526,10 @@ label {
   border-bottom: 1px solid rgba(201, 162, 75, 0.35);
 }
 
-/* ---- Specialities grid (homepage) ---- */
+/* ---- Specialities grid (homepage) ----
+   Click-to-expand cards: .spec-toggle is the always-visible header button;
+   .spec-panel reveals a short description + Read More link on click, using
+   the same grid-template-rows 0fr->1fr trick as the FAQ accordion. */
 .spec-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -539,20 +542,35 @@ label {
   .spec-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 .spec-card {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
   background: var(--white, #fff);
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 0.85rem;
-  padding: 1rem 1.1rem;
   box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  overflow: hidden;
   transition: box-shadow 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
 }
 .spec-card:hover {
   box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
   transform: translateY(-2px);
   border-color: var(--primary);
+}
+.spec-card.is-open {
+  border-color: var(--primary);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+.spec-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: none;
+  border: 0;
+  margin: 0;
+  padding: 1rem 1.1rem;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 .spec-icon {
   flex: none;
@@ -568,32 +586,39 @@ label {
 }
 .spec-icon svg { width: 28px; height: 28px; }
 .spec-icon img { width: 100%; height: 100%; object-fit: contain; }
-.spec-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.15rem; }
-.spec-name { font-weight: 700; color: var(--secondary, #0f172a); font-size: 0.98rem; }
+.spec-name { flex: 1; min-width: 0; font-weight: 700; color: var(--secondary, #0f172a); font-size: 0.98rem; }
+.spec-chevron { flex: none; width: 18px; height: 18px; color: #94a3b8; transition: transform 0.25s ease; }
+.spec-chevron svg { width: 100%; height: 100%; }
+.spec-card.is-open .spec-chevron { transform: rotate(180deg); color: var(--primary); }
+.spec-panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.3s ease; }
+.spec-panel-inner { overflow: hidden; }
+.spec-card.is-open .spec-panel { grid-template-rows: 1fr; }
 .spec-desc {
-  font-size: 0.83rem; color: #64748b; line-height: 1.4;
-  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-  overflow: hidden;
+  margin: 0 1.1rem 0.85rem;
+  font-size: 0.83rem; color: #64748b; line-height: 1.5;
 }
-.spec-arrow { flex: none; width: 18px; height: 18px; color: #cbd5e1; }
-.spec-arrow svg { width: 100%; height: 100%; }
+.spec-readmore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 1.1rem 1rem;
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+.spec-readmore:hover { text-decoration: underline; }
+.spec-readmore svg { width: 16px; height: 16px; }
 
-/* Mobile: match the tx-card grid used for treatments on /all-treatments
-   (2-column grid, icon centered on top) instead of the horizontal row. */
 @media (max-width: 639px) {
   .spec-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.65rem; }
-  .spec-card {
-    flex-direction: column;
-    text-align: center;
-    justify-content: flex-start;
-    gap: 0.4rem;
-    padding: 0.9rem 0.6rem 0.75rem;
-  }
+  .spec-toggle { flex-direction: column; text-align: center; gap: 0.4rem; padding: 0.9rem 0.6rem 0.75rem; }
   .spec-icon { width: 4rem; height: 4rem; border-radius: 999px; }
   .spec-icon svg { width: 32px; height: 32px; }
-  .spec-body { align-items: center; text-align: center; }
-  .spec-desc { white-space: normal; }
-  .spec-arrow { display: none; }
+  .spec-name { text-align: center; }
+  .spec-chevron { position: absolute; top: 0.9rem; right: 0.75rem; }
+  .spec-card { position: relative; }
+  .spec-desc, .spec-readmore { margin-left: 0.75rem; margin-right: 0.75rem; text-align: center; justify-content: center; }
 }
 
 /* ---- All-treatments grouped listing ---- */
