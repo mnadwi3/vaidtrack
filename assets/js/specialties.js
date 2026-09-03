@@ -11,11 +11,19 @@
   // with a real matching illustration get one here -- the rest keep whatever
   // the API supplies (or ICON_GENERIC).
   var ICON_OVERRIDES = {
+    'bone-marrow-transplant': 'assets/images/treatment-icons/bone-marrow-transplant.png',
+    'cardiology': 'assets/images/treatment-icons/cardiology.png',
+    'general-surgery': 'assets/images/treatment-icons/general-surgery.png',
+    'gynecology': 'assets/images/treatment-icons/gynecology.png',
+    'ivf': 'assets/images/treatment-icons/ivf.png',
     'kidney-transplant': 'assets/images/treatment-icons/kidney-transplant.png',
     'liver-transplant': 'assets/images/treatment-icons/liver-transplant.png',
+    'neurology': 'assets/images/treatment-icons/neurology.png',
+    'neurosurgery': 'assets/images/treatment-icons/neurosurgery.png',
     'oncology': 'assets/images/treatment-icons/oncology.png',
-    'gynecology': 'assets/images/treatment-icons/gynecology.png',
-    'cardiology': 'assets/images/treatment-icons/cardiology.png'
+    'orthopedics': 'assets/images/treatment-icons/orthopedics.png',
+    'spine-surgery': 'assets/images/treatment-icons/spine-surgery.png',
+    'urology': 'assets/images/treatment-icons/urology.png'
   };
 
   function escapeHtml(str) {
