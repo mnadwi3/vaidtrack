@@ -7,6 +7,17 @@
   var ICON_GENERIC =
     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3a3 3 0 013 3v2a5 5 0 01-5 5h-.5A2.5 2.5 0 007 15.5V17a4 4 0 004 4h2a4 4 0 004-4"/><circle cx="18.5" cy="17.5" r="2.5"/><path stroke-linecap="round" d="M9 3v3M15 3v3"/></svg>';
 
+  // Home-page-only icon overrides, keyed by specialty slug. Only specialties
+  // with a real matching illustration get one here -- the rest keep whatever
+  // the API supplies (or ICON_GENERIC).
+  var ICON_OVERRIDES = {
+    'kidney-transplant': 'assets/images/treatment-icons/kidney-transplant.png',
+    'liver-transplant': 'assets/images/treatment-icons/liver-transplant.png',
+    'oncology': 'assets/images/treatment-icons/oncology.png',
+    'gynecology': 'assets/images/treatment-icons/gynecology.png',
+    'cardiology': 'assets/images/treatment-icons/cardiology.png'
+  };
+
   function escapeHtml(str) {
     return String(str == null ? '' : str)
       .replace(/&/g, '&amp;')
@@ -37,7 +48,10 @@
     var name = specialty.name || '';
     var description = specialty.description || '';
     var url = specialty.url || '#';
-    var iconHtml = specialty.image
+    var overrideSrc = ICON_OVERRIDES[specialty.slug];
+    var iconHtml = overrideSrc
+      ? '<img src="' + escapeHtml(overrideSrc) + '" alt="" width="40" height="40" decoding="async">'
+      : specialty.image
       ? '<img src="' + escapeHtml(specialty.image) + '" alt="" width="40" height="40" decoding="async">'
       : ICON_GENERIC;
 
