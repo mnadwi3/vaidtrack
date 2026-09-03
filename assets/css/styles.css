@@ -1962,15 +1962,23 @@ header .site-logo-img {
   font-weight: var(--fw-regular);
   line-height: var(--lh-body) !important;
 }
+/* FAQ text is 15% smaller than the earlier sizing. Scoped with the
+   #faq-list id (rather than lowering the shared --fs-h4 variable) so this
+   only affects the FAQ section, not other headings that use --fs-h4. */
+#faq-list .faq-trigger { font-size: 1.06rem !important; }
+#faq-list .faq-answer p { font-size: 0.56rem !important; }
+@media (min-width: 768px) {
+  #faq-list .faq-trigger { font-size: 1.28rem !important; }
+}
 @media (max-width: 639px) {
   #faq-list .faq-trigger {
-    font-size: 0.62rem !important;
+    font-size: 0.53rem !important;
     line-height: 1.35 !important;
     padding-top: 0.64rem;
     padding-bottom: 0.64rem;
   }
   #faq-list .faq-answer p {
-    font-size: 0.57rem !important;
+    font-size: 0.48rem !important;
     line-height: 1.5 !important;
   }
 }
@@ -2014,7 +2022,6 @@ header .site-logo-img {
   padding-right: 1.75rem !important;
   padding-top: 0.67rem !important;
   padding-bottom: 0.67rem !important;
-  font-size: 0.91rem !important;
   line-height: 1.3 !important;
   display: flex;
   align-items: center;
@@ -2041,7 +2048,6 @@ header .site-logo-img {
     padding-right: 2rem !important;
     padding-top: 0.88rem !important;
     padding-bottom: 0.88rem !important;
-    font-size: 0.91rem !important;
   }
   .faq-answer-inner {
     padding-left: 2rem !important;
