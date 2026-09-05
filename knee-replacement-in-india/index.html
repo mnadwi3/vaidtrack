@@ -258,15 +258,195 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </section>
 
+<!-- Patient Journey Section -->
+<style>
+.vjs-section { --vjs-blue: #0353a4; --vjs-blue-tint: #EAF2FB; --vjs-ink: #152A46; --vjs-gray: #5A6B80; --vjs-gold: #D4AF37; }
+.vjs-track { position: relative; display: flex; flex-direction: column; }
+.vjs-step { position: relative; display: flex; gap: 16px; padding-bottom: 28px; }
+.vjs-step:last-child { padding-bottom: 0; }
+.vjs-marker { position: relative; z-index: 1; flex-shrink: 0; width: 44px; display: flex; flex-direction: column; align-items: center; }
+.vjs-line-vert { position: absolute; left: 21px; top: 44px; bottom: -28px; width: 2px; background: rgba(3,83,164,0.2); }
+.vjs-step:last-child .vjs-line-vert { display: none; }
+.vjs-num-circle { width: 44px; height: 44px; border-radius: 9999px; background: #fff; border: 2px solid var(--vjs-blue); display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--vjs-blue); font-size: 14px; }
+.vjs-step-start .vjs-num-circle, .vjs-step-end .vjs-num-circle { border-color: var(--vjs-gold); }
+.vjs-flag { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vjs-gold); margin-bottom: 6px; }
+.vjs-flag-bottom { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vjs-gold); margin-top: 6px; text-align: center; }
+.vjs-body { flex: 1 1 auto; background: #fff; border: 1px solid var(--vjs-gold); border-radius: 16px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(15,35,70,0.05); min-width: 0; }
+.vjs-icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.vjs-icon { flex-shrink: 0; width: 32px; height: 32px; border-radius: 9999px; background: var(--vjs-blue-tint); color: var(--vjs-blue); display: flex; align-items: center; justify-content: center; }
+.vjs-icon .material-symbols-outlined { font-size: 18px; }
+.vjs-title { font-weight: 800; color: var(--vjs-ink); font-size: 15.5px; line-height: 1.3; }
+.vjs-highlights { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0 0 8px; }
+.vjs-highlights li { font-size: 11.5px; font-weight: 700; color: var(--vjs-blue); background: var(--vjs-blue-tint); padding: 4px 10px; border-radius: 999px; }
+.vjs-desc { font-size: 13px; line-height: 1.5; color: var(--vjs-gray); margin: 0; }
+@media (min-width: 1024px) {
+  .vjs-track { flex-direction: row; align-items: stretch; gap: 0; }
+  .vjs-line-horizontal { position: absolute; left: 22px; right: 22px; top: 38px; height: 2px; background: rgba(3,83,164,0.2); z-index: 0; }
+  .vjs-step { flex-direction: column; align-items: center; text-align: center; padding: 0 8px; flex: 1 1 0; padding-bottom: 0; }
+  .vjs-line-vert { display: none; }
+  .vjs-marker { margin-bottom: 14px; width: auto; padding-top: 16px; padding-bottom: 16px; position: relative; }
+  .vjs-flag { position: absolute; top: 0; left: 50%; transform: translateX(-50%); white-space: nowrap; margin-bottom: 0; }
+  .vjs-flag-bottom { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); white-space: nowrap; margin-top: 0; }
+  .vjs-icon-row { flex-direction: column; }
+  .vjs-highlights { justify-content: center; }
+  .vjs-body { width: 100%; padding: 18px 16px; display: flex; flex-direction: column; flex: 1 1 auto; }
+}
+.vjs-desktop-only { display: none; }
+.vjs-mobile-only { display: block; }
+@media (min-width: 1024px) { .vjs-desktop-only { display: block; } .vjs-mobile-only { display: none; } }
+</style>
+<section class="py-12 md:py-24 bg-gradient-to-b from-background to-surface-container-low vjs-section" id="patient-journey">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-8 md:mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Complete Support From Arrival to Recovery</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">From your first medical opinion to your return home, our team coordinates every essential step of your medical journey in India.</p>
+</div>
+
+<div class="vjs-track">
+<div class="vjs-line-horizontal vjs-desktop-only" aria-hidden="true"></div>
+
+<div class="vjs-step vjs-step-start">
+<div class="vjs-marker">
+<span class="vjs-flag">Start</span>
+<div class="vjs-line-vert vjs-mobile-only" aria-hidden="true"></div>
+<div class="vjs-num-circle">01</div>
+</div>
+<div class="vjs-body">
+<div class="vjs-icon-row">
+<span class="vjs-icon"><span class="material-symbols-outlined">description</span></span>
+<h3 class="vjs-title">Medical Review</h3>
+</div>
+<ul class="vjs-highlights">
+<li>Send Your Reports</li>
+<li>Doctor's Opinion</li>
+</ul>
+<p class="vjs-desc">Share your medical reports and receive specialist guidance and an estimated care plan.</p>
+</div>
+</div>
+
+<div class="vjs-step">
+<div class="vjs-marker">
+<div class="vjs-line-vert vjs-mobile-only" aria-hidden="true"></div>
+<div class="vjs-num-circle">02</div>
+</div>
+<div class="vjs-body">
+<div class="vjs-icon-row">
+<span class="vjs-icon"><span class="material-symbols-outlined">badge</span></span>
+<h3 class="vjs-title">Visa Assistance</h3>
+</div>
+<ul class="vjs-highlights">
+<li>Medical Visa</li>
+<li>Documentation Support</li>
+</ul>
+<p class="vjs-desc">We assist with medical visa documentation, invitation letters and other requirements.</p>
+</div>
+</div>
+
+<div class="vjs-step">
+<div class="vjs-marker">
+<div class="vjs-line-vert vjs-mobile-only" aria-hidden="true"></div>
+<div class="vjs-num-circle">03</div>
+</div>
+<div class="vjs-body">
+<div class="vjs-icon-row">
+<span class="vjs-icon"><span class="material-symbols-outlined">flight</span></span>
+<h3 class="vjs-title">Travel &amp; Stay</h3>
+</div>
+<ul class="vjs-highlights">
+<li>Flight Assistance</li>
+<li>Accommodation Coordination</li>
+</ul>
+<p class="vjs-desc">Get support with flight arrangements and hotel accommodation near your hospital.</p>
+</div>
+</div>
+
+<div class="vjs-step">
+<div class="vjs-marker">
+<div class="vjs-line-vert vjs-mobile-only" aria-hidden="true"></div>
+<div class="vjs-num-circle">04</div>
+</div>
+<div class="vjs-body">
+<div class="vjs-icon-row">
+<span class="vjs-icon"><span class="material-symbols-outlined">flight_land</span></span>
+<h3 class="vjs-title">Arrival in India</h3>
+</div>
+<ul class="vjs-highlights">
+<li>Free Airport Pickup &amp; Drop</li>
+<li>Local SIM Arrangement</li>
+</ul>
+<p class="vjs-desc">Our team helps you get from the airport to your hospital and stay connected throughout.</p>
+</div>
+</div>
+
+<div class="vjs-step">
+<div class="vjs-marker">
+<div class="vjs-line-vert vjs-mobile-only" aria-hidden="true"></div>
+<div class="vjs-num-circle">05</div>
+</div>
+<div class="vjs-body">
+<div class="vjs-icon-row">
+<span class="vjs-icon"><span class="material-symbols-outlined">support_agent</span></span>
+<h3 class="vjs-title">Treatment &amp; Personal Support</h3>
+</div>
+<ul class="vjs-highlights">
+<li>24&times;7 Personal Manager</li>
+<li>Language Translator</li>
+</ul>
+<p class="vjs-desc">A dedicated coordinator and language support help you through treatment and your stay.</p>
+</div>
+</div>
+
+<div class="vjs-step vjs-step-end">
+<div class="vjs-marker">
+<div class="vjs-line-vert vjs-mobile-only" aria-hidden="true"></div>
+<div class="vjs-num-circle">06</div>
+<span class="vjs-flag-bottom vjs-desktop-only">Recovery</span>
+</div>
+<div class="vjs-body">
+<div class="vjs-icon-row">
+<span class="vjs-icon"><span class="material-symbols-outlined">home</span></span>
+<h3 class="vjs-title">Return &amp; Follow-up</h3>
+</div>
+<ul class="vjs-highlights">
+<li>Return Travel Assistance</li>
+<li>Post-Treatment Care</li>
+</ul>
+<p class="vjs-desc">We continue supporting you with follow-up coordination and care after you return home.</p>
+<span class="vjs-flag-bottom vjs-mobile-only">Recovery</span>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
 <!-- Treatment Options Section -->
 <style>
-.treatment-card-img { padding: 20px; }
-@media (min-width: 768px) { .treatment-card-img { padding: 32px; } }
-.treatment-pair-row { display: flex; flex-direction: column; gap: 32px; }
-.treatment-pair-row > * { display: flex; flex-direction: column; }
-.treatment-pair-row > * > .treatment-card-body { flex: 1 1 auto; }
-.treatment-pair-row > * > .treatment-card-cta { margin-top: auto; }
-@media (min-width: 900px) { .treatment-pair-row { flex-direction: row; align-items: stretch; } .treatment-pair-row > * { width: 50%; } }
+.ktx-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+@media (min-width: 768px) { .ktx-grid { grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, auto); gap: 20px; } }
+.ktx-card { display: flex; flex-direction: column; height: 100%; background: #fff; border-radius: 20px; border: 1px solid #E4E8ED; overflow: hidden; box-shadow: 0 1px 3px rgba(15,35,70,0.05); }
+@media (min-width: 768px) { .ktx-card { display: grid; grid-template-rows: subgrid; grid-row: span 4; } }
+.ktx-content { display: flex; flex-direction: column; gap: 14px; flex: 1 1 auto; text-align: center; padding: 24px 22px 26px; }
+@media (min-width: 768px) { .ktx-content { display: grid; grid-template-rows: subgrid; grid-row: span 4; padding: 28px 24px 28px; } }
+.ktx-header { margin-bottom: 2px; }
+.ktx-badge { display: inline-flex; align-items: center; gap: 6px; background: #EAF2FB; color: #0353a4; font-size: 12px; font-weight: 700; padding: 5px 12px; border-radius: 999px; margin-bottom: 12px; }
+.ktx-badge .material-symbols-outlined { font-size: 16px; }
+.ktx-title { font-size: 20px; font-weight: 800; color: #152A46; line-height: 1.2; margin-bottom: 8px; }
+@media (min-width: 768px) { .ktx-title { font-size: 23px; } }
+.ktx-title-accent { color: #0353a4; }
+.ktx-subtitle { font-weight: 700; font-size: 14px; color: #152A46; }
+.ktx-desc { font-size: 13.5px; line-height: 1.5; color: #5A6B80; }
+.ktx-checklist { text-align: left; background: #F3F7FC; border-radius: 14px; padding: 14px 16px; }
+.ktx-checklist-title { text-align: center; font-weight: 700; color: #0353a4; margin-bottom: 9px; font-size: 13.5px; }
+.ktx-checklist ul { display: flex; flex-direction: column; gap: 7px; list-style: none; padding: 0; margin: 0; }
+.ktx-checklist li { display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #33455C; line-height: 1.35; }
+.ktx-check-icon { flex-shrink: 0; width: 18px; height: 18px; border-radius: 999px; background: #0353a4; color: #fff; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+.ktx-check-icon .material-symbols-outlined { font-size: 12px; }
+.ktx-cta-wrap { margin-top: auto; align-self: end; width: 100%; }
+.ktx-cta { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #0353a4; color: #fff; font-weight: 700; padding: 12px 20px; border-radius: 999px; text-decoration: none; transition: filter 0.2s; }
+.ktx-cta:hover { filter: brightness(0.95); }
+.ktx-disclaimer { text-align: center; font-size: 11.5px; color: #8393A8; margin-top: 10px; }
 </style>
 <section class="py-12 md:py-24 bg-surface-container-low" id="treatments">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
@@ -274,60 +454,100 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Knee Replacement Options</h2>
 <div style="width:140px;height:4px;background:#0353a4;border-radius:999px;margin:0 auto;"></div>
 </div>
-<div id="treatments-grid-test" style="display:flex;flex-direction:column;gap:32px;">
+<div id="treatments-grid-test" class="ktx-grid">
 
-<div class="treatment-pair-row">
-<div class="reveal-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all" style="transition-delay: 0ms;">
-<div class="treatment-card-img bg-white">
-<img alt="Total Knee Replacement (TKR) surgery in India - before and after, benefits, and recovery" class="w-full h-auto rounded-lg cursor-zoom-in zoomable-treatment-img" src="treatment-images/Total-Knee.png">
+<div class="reveal-card ktx-card" style="transition-delay: 0ms;">
+<div class="ktx-content">
+<div class="ktx-header">
+<span class="ktx-badge"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">personal_injury</span>For Widespread Knee Damage</span>
+<h3 class="ktx-title">Total Knee Replacement <span class="ktx-title-accent">(TKR)</span></h3>
+<p class="ktx-subtitle">A long-term solution for severe knee pain.</p>
 </div>
-<div class="treatment-card-body px-5 md:px-8" style="padding-top:24px;padding-bottom:20px;">
-<p class="font-body-md text-sm md:text-base font-bold mb-2" style="color:#0353a4;text-align:center;">Suffering from severe knee pain?</p>
-<p class="font-body-md text-on-surface-variant text-sm md:text-base leading-relaxed">Total Knee Replacement in India can help restore mobility and improve your quality of life. Get access to experienced orthopedic surgeons, advanced hospitals, modern implants, and personalized care throughout.</p>
+<p class="ktx-desc">Total Knee Replacement in India can help restore mobility and improve your quality of life. Get access to experienced orthopedic surgeons, advanced hospitals, modern implants, and personalized care throughout.</p>
+<div class="ktx-checklist">
+<p class="ktx-checklist-title">May be suitable for:</p>
+<ul>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Advanced arthritis</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Damage across multiple areas of the knee</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Persistent pain and stiffness</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Limited improvement with non-surgical treatments</li>
+</ul>
 </div>
-<div class="treatment-card-cta flex justify-center px-5" style="padding-top:8px;padding-bottom:32px;">
-<a class="py-3 px-8 bg-primary text-on-primary text-center font-label-md text-label-md rounded-full hover:bg-tertiary transition-colors" style="display:inline-block;width:auto;" href="https://wa.me/919871262293?text=I'd%20like%20a%20free%20quote%20for%20Total%20Knee%20Replacement" target="_blank" rel="noopener noreferrer">Get Treatment Plan</a>
-</div>
-</div>
-
-<div class="reveal-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all" style="transition-delay: 80ms;">
-<div class="treatment-card-img bg-white">
-<img alt="Partial Knee Replacement (PKR) surgery in India - before and after, benefits, and recovery" class="w-full h-auto rounded-lg cursor-zoom-in zoomable-treatment-img" src="treatment-images/Partial-Knee.png">
-</div>
-<div class="treatment-card-body px-5 md:px-8" style="padding-top:24px;padding-bottom:20px;">
-<p class="font-body-md text-sm md:text-base font-bold mb-2" style="color:#0353a4;text-align:center;">Pain in just one part of your knee?</p>
-<p class="font-body-md text-on-surface-variant text-sm md:text-base leading-relaxed">Partial Knee Replacement in India preserves your healthy bone and gives you a faster, more natural recovery than a full replacement. Get access to experienced orthopedic surgeons, advanced hospitals, and personalized care.</p>
-</div>
-<div class="treatment-card-cta flex justify-center px-5" style="padding-top:8px;padding-bottom:32px;">
-<a class="py-3 px-8 bg-primary text-on-primary text-center font-label-md text-label-md rounded-full hover:bg-tertiary transition-colors" style="display:inline-block;width:auto;" href="https://wa.me/919871262293?text=I'd%20like%20a%20free%20quote%20for%20Partial%20Knee%20Replacement" target="_blank" rel="noopener noreferrer">Get Treatment Plan</a>
+<div class="ktx-cta-wrap">
+<a class="ktx-cta" href="https://wa.me/919871262293?text=I'd%20like%20a%20free%20quote%20for%20Total%20Knee%20Replacement" target="_blank" rel="noopener noreferrer">Get Treatment Plan<span class="material-symbols-outlined">arrow_forward</span></a>
+<p class="ktx-disclaimer">Free consultation &bull; No obligation &bull; Personalized for your condition</p>
 </div>
 </div>
 </div>
 
-<div class="treatment-pair-row">
-<div class="reveal-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all" style="transition-delay: 160ms;">
-<div class="treatment-card-img bg-white">
-<img alt="Bilateral Knee Replacement surgery in India - before and after, benefits, and recovery" class="w-full h-auto rounded-lg cursor-zoom-in zoomable-treatment-img" src="treatment-images/Bilateral-knee.png">
+<div class="reveal-card ktx-card" style="transition-delay: 80ms;">
+<div class="ktx-content">
+<div class="ktx-header">
+<span class="ktx-badge"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">personal_injury</span>For Single-Compartment Damage</span>
+<h3 class="ktx-title">Partial Knee Replacement <span class="ktx-title-accent">(PKR)</span></h3>
+<p class="ktx-subtitle">A quicker recovery for limited damage.</p>
 </div>
-<div class="treatment-card-body px-5 md:px-8" style="padding-top:24px;padding-bottom:20px;">
-<p class="font-body-md text-sm md:text-base font-bold mb-2" style="color:#0353a4;text-align:center;">Pain and stiffness in both knees?</p>
-<p class="font-body-md text-on-surface-variant text-sm md:text-base leading-relaxed">Bilateral Knee Replacement in India treats both joints in a single trip, saving travel time and combining recovery into one coordinated plan. Get access to experienced surgeons, advanced hospitals, and personalized care.</p>
+<p class="ktx-desc">Partial Knee Replacement in India preserves your healthy bone and gives you a faster, more natural recovery than a full replacement. Get access to experienced orthopedic surgeons, advanced hospitals, and personalized care.</p>
+<div class="ktx-checklist">
+<p class="ktx-checklist-title">May be suitable for:</p>
+<ul>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Damage confined to one part of the knee</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Healthy surrounding bone and ligaments</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Younger or more active patients</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Wanting a faster, more natural recovery</li>
+</ul>
 </div>
-<div class="treatment-card-cta flex justify-center px-5" style="padding-top:8px;padding-bottom:32px;">
-<a class="py-3 px-8 bg-primary text-on-primary text-center font-label-md text-label-md rounded-full hover:bg-tertiary transition-colors" style="display:inline-block;width:auto;" href="https://wa.me/919871262293?text=I'd%20like%20a%20free%20quote%20for%20Bilateral%20Knee%20Replacement" target="_blank" rel="noopener noreferrer">Get Treatment Plan</a>
+<div class="ktx-cta-wrap">
+<a class="ktx-cta" href="https://wa.me/919871262293?text=I'd%20like%20a%20free%20quote%20for%20Partial%20Knee%20Replacement" target="_blank" rel="noopener noreferrer">Get Treatment Plan<span class="material-symbols-outlined">arrow_forward</span></a>
+<p class="ktx-disclaimer">Free consultation &bull; No obligation &bull; Personalized for your condition</p>
+</div>
 </div>
 </div>
 
-<div class="reveal-card bg-surface-container-lowest rounded-xl border border-outline-variant overflow-hidden hover:shadow-md transition-all" style="transition-delay: 240ms;">
-<div class="treatment-card-img bg-white">
-<img alt="Robotic-Assisted Knee Replacement surgery in India - advanced technology, better precision, faster recovery" class="w-full h-auto rounded-lg cursor-zoom-in zoomable-treatment-img" src="treatment-images/robotic.png">
+<div class="reveal-card ktx-card" style="transition-delay: 160ms;">
+<div class="ktx-content">
+<div class="ktx-header">
+<span class="ktx-badge"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">personal_injury</span>For Pain In Both Knees</span>
+<h3 class="ktx-title">Bilateral Knee Replacement</h3>
+<p class="ktx-subtitle">Both knees treated in a single trip.</p>
 </div>
-<div class="treatment-card-body px-5 md:px-8" style="padding-top:24px;padding-bottom:20px;">
-<p class="font-body-md text-sm md:text-base font-bold mb-2" style="color:#0353a4;text-align:center;">Want the most advanced knee replacement?</p>
-<p class="font-body-md text-on-surface-variant text-sm md:text-base leading-relaxed">Robotic-Assisted Knee Replacement uses advanced technology to help surgeons plan and perform surgery with greater precision and accurate implant positioning. Get access to experienced surgeons, advanced hospitals, and care.</p>
+<p class="ktx-desc">Bilateral Knee Replacement in India treats both joints in a single trip, saving travel time and combining recovery into one coordinated plan. Get access to experienced surgeons, advanced hospitals, and personalized care.</p>
+<div class="ktx-checklist">
+<p class="ktx-checklist-title">May be suitable for:</p>
+<ul>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Arthritis or damage in both knees</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Wanting to avoid a second surgery trip</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Fit enough for a combined recovery plan</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Preferring one coordinated recovery plan</li>
+</ul>
 </div>
-<div class="treatment-card-cta flex justify-center px-5" style="padding-top:8px;padding-bottom:32px;">
-<a class="py-3 px-8 bg-primary text-on-primary text-center font-label-md text-label-md rounded-full hover:bg-tertiary transition-colors" style="display:inline-block;width:auto;" href="https://wa.me/919871262293?text=I'd%20like%20a%20free%20quote%20for%20Robotic-Assisted%20Knee%20Replacement" target="_blank" rel="noopener noreferrer">Get Treatment Plan</a>
+<div class="ktx-cta-wrap">
+<a class="ktx-cta" href="https://wa.me/919871262293?text=I'd%20like%20a%20free%20quote%20for%20Bilateral%20Knee%20Replacement" target="_blank" rel="noopener noreferrer">Get Treatment Plan<span class="material-symbols-outlined">arrow_forward</span></a>
+<p class="ktx-disclaimer">Free consultation &bull; No obligation &bull; Personalized for your condition</p>
+</div>
+</div>
+</div>
+
+<div class="reveal-card ktx-card" style="transition-delay: 240ms;">
+<div class="ktx-content">
+<div class="ktx-header">
+<span class="ktx-badge"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">precision_manufacturing</span>For Maximum Precision</span>
+<h3 class="ktx-title">Robotic-Assisted Knee Replacement</h3>
+<p class="ktx-subtitle">Advanced technology for greater accuracy.</p>
+</div>
+<p class="ktx-desc">Robotic-Assisted Knee Replacement uses advanced technology to help surgeons plan and perform surgery with greater precision and accurate implant positioning. Get access to experienced surgeons, advanced hospitals, and personalized care.</p>
+<div class="ktx-checklist">
+<p class="ktx-checklist-title">May be suitable for:</p>
+<ul>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Wanting the most precise implant alignment</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Complex or revision knee cases</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Faster, more predictable recovery</li>
+<li><span class="ktx-check-icon"><span class="material-symbols-outlined">check</span></span>Preferring the latest surgical technology</li>
+</ul>
+</div>
+<div class="ktx-cta-wrap">
+<a class="ktx-cta" href="https://wa.me/919871262293?text=I'd%20like%20a%20free%20quote%20for%20Robotic-Assisted%20Knee%20Replacement" target="_blank" rel="noopener noreferrer">Get Treatment Plan<span class="material-symbols-outlined">arrow_forward</span></a>
+<p class="ktx-disclaimer">Free consultation &bull; No obligation &bull; Personalized for your condition</p>
 </div>
 </div>
 </div>
@@ -337,224 +557,380 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </section>
 
 <!-- Specialists Section -->
+<style>
+.section-kicker { display: inline-flex; align-items: center; gap: 8px; font-family: "Work Sans", sans-serif; font-size: 11.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #003A70; background: rgba(0, 58, 112, 0.07); border: 1px solid rgba(0, 58, 112, 0.18); padding: 6px 14px; border-radius: 999px; margin-bottom: 14px; }
+.section-kicker .material-symbols-outlined { font-size: 14px; }
+.section-heading { font-weight: 700 !important; }
+.section-heading-rule { width: 52px; height: 3px; background: #D4A72C; border-radius: 999px; margin: 14px auto 0; }
+@media (min-width: 768px) { .section-kicker { font-size: 12.5px; padding: 7px 16px; margin-bottom: 16px; } .section-heading-rule { width: 56px; margin-top: 16px; } }
+.doctor-card { width: 264px; height: 364px; border: 1px solid #0057B8; flex: 0 0 auto; }
+.doctor-card:hover { border-color: #D4A72C; }
+.doctor-card-photo { height: 196px; width: 100%; flex-shrink: 0; overflow: hidden; position: relative; border-bottom: 1px solid #0057B8; }
+.doctor-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; filter: grayscale(15%) saturate(105%) brightness(1.03) contrast(0.97); }
+.doctor-card-info { flex: 1; width: 100%; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 10px 14px; overflow: hidden; }
+.doctor-card-textgroup { flex: 1; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+.doctor-card-badge { display: inline-block; align-self: center; background: #dbe3ff; color: #0057B8; font-size: 11px; line-height: 1; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; text-align: center; padding: 4px 10px; border-radius: 3px; margin-bottom: 8px; }
+.doctor-card-name { display: flex; align-items: center; gap: 5px; font-size: 18px; line-height: 1.2; font-weight: 700; margin-bottom: 5px; }
+.doctor-card-name .material-symbols-outlined { font-size: 16px; }
+.doctor-card-creds { display: flex; align-items: center; gap: 5px; font-size: 13px; line-height: 1.3; margin-bottom: 8px; }
+.doctor-card-creds .material-symbols-outlined { font-size: 16px; }
+.doctor-card-exp { display: flex; align-items: center; gap: 5px; font-size: 13px; line-height: 1; font-weight: 600; margin-bottom: 10px; }
+.doctor-card-exp .material-symbols-outlined { font-size: 16px; }
+.doctor-card-actions { display: flex; flex-direction: column; width: 100%; margin-top: auto; }
+.doctor-card-actions a { padding-top: 10px; padding-bottom: 10px; line-height: 1.4; font-size: 14px; border: 0; border-radius: 5px; }
+.doctor-card-actions .material-symbols-outlined { font-size: 17px; }
+@media (max-width: 639px) {
+  .doctor-card { width: calc(50% - 6px); max-width: 264px; height: auto; }
+  .doctor-card-photo { height: auto; aspect-ratio: 264 / 196; }
+  .doctor-card-info { padding: 8px 8px; }
+  .doctor-card-badge { font-size: 9px; white-space: normal; padding: 3px 8px; margin-bottom: 6px; }
+  .doctor-card-name { font-size: 14px; gap: 4px; margin-bottom: 3px; }
+  .doctor-card-name .material-symbols-outlined { font-size: 13px; }
+  .doctor-card-creds { font-size: 10.5px; gap: 4px; margin-bottom: 5px; }
+  .doctor-card-creds .material-symbols-outlined { font-size: 13px; }
+  .doctor-card-exp { font-size: 10.5px; margin-bottom: 6px; }
+  .doctor-card-exp .material-symbols-outlined { font-size: 13px; }
+  .doctor-card-actions a { padding-top: 8px; padding-bottom: 8px; font-size: 11px; gap: 4px; }
+  .doctor-card-actions .material-symbols-outlined { font-size: 14px; }
+}
+</style>
 <section class="py-12 md:py-24 bg-background" id="specialists">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="text-center mb-8 md:mb-16">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Expert Doctors</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+<div class="text-center mb-8 md:mb-16" style="max-width:640px;margin-left:auto;margin-right:auto;">
+<span class="section-kicker">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">stethoscope</span>
+Meet Our Specialists
+</span>
+<h2 class="section-heading font-headline-lg text-headline-lg text-on-surface">Expert Doctors</h2>
+<div class="section-heading-rule"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-4">
         Highly qualified specialists dedicated to restoring mobility and relieving pain with personalized care.
       </p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-gutter">
+<div class="flex flex-wrap justify-center gap-3 sm:gap-gutter">
 
-<!-- Specialist Card 5 -->
-<div class="flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
-<div class="relative pt-6 pb-5 px-4 flex flex-col items-center bg-gradient-to-b from-primary to-tertiary">
-<div class="relative z-10 rounded-[9999px] p-1 bg-white/10 backdrop-blur-sm shadow-lg mb-3 border border-white/20"><img alt="Dr Akshay Tiwari" class="w-20 h-20 md:w-24 md:h-24 rounded-[9999px] object-cover border-4 border-surface-container-lowest" src="images/dr-akshay-tiwari.jpg"></div>
-<span class="inline-block bg-white/10 text-white font-label-md text-[10px] md:text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-white/20 text-center whitespace-nowrap">Orthopedic Oncologist</span>
+<!-- Dr Akshay Tiwari -->
+<div class="doctor-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="doctor-card-photo"><img alt="Dr Akshay Tiwari" class="doctor-photo" src="images/dr-akshay-tiwari.png"></div>
+<div class="doctor-card-info">
+<span class="doctor-card-badge">Orthopedic Oncologist</span>
+<div class="doctor-card-textgroup">
+<h3 class="doctor-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span><span>Dr Akshay Tiwari</span></h3>
+<p class="doctor-card-creds text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span><span>MBBS, MS Ortho</span></p>
+<div class="doctor-card-exp text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span>20+ Years Experience</span>
 </div>
-<div class="px-3 md:px-4 pt-3 pb-3 md:pb-4 flex-1 flex flex-col items-center text-center">
-<h3 class="font-headline-md text-sm md:text-base font-bold text-on-surface mb-1">Dr Akshay Tiwari</h3>
-<p class="font-body-md text-[11px] md:text-xs text-on-surface-variant mb-3 line-clamp-2">MBBS, MS Ortho</p>
-<div class="flex items-center justify-center gap-1.5 text-primary mb-4 pb-3 border-b border-outline-variant w-full">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
-<span class="font-label-md text-xs md:text-sm font-semibold">20+ Years Experience</span>
 </div>
-<div class="flex flex-col gap-2 w-full mt-auto">
-<button type="button" class="open-treatment-modal-trigger w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-tertiary active:scale-95 transition-all">
-<span class="material-symbols-outlined text-[16px]">calendar_month</span>
-                        Book Consultation
-                    </button>
-<a class="w-full flex items-center justify-center gap-1.5 bg-[#25D366] text-white font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-[#128C7E] active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Akshay%20Tiwari" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">chat</span>
-                        WhatsApp
+<div class="doctor-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Akshay%20Tiwari" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Book Appointment
                     </a>
 </div>
 </div>
 </div>
 
-<!-- Specialist Card 9 -->
-<div class="flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
-<div class="relative pt-6 pb-5 px-4 flex flex-col items-center bg-gradient-to-b from-primary to-tertiary">
-<div class="relative z-10 rounded-[9999px] p-1 bg-white/10 backdrop-blur-sm shadow-lg mb-3 border border-white/20"><img alt="Dr IPS Oberoi" class="w-20 h-20 md:w-24 md:h-24 rounded-[9999px] object-cover border-4 border-surface-container-lowest" src="images/dr-ips-oberoi.jpg"></div>
-<span class="inline-block bg-white/10 text-white font-label-md text-[10px] md:text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-white/20 text-center whitespace-nowrap">Orthopedic Surgeon</span>
+<!-- Dr IPS Oberoi -->
+<div class="doctor-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="doctor-card-photo"><img alt="Dr IPS Oberoi" class="doctor-photo" src="images/dr-ips-oberoi.png"></div>
+<div class="doctor-card-info">
+<span class="doctor-card-badge">Orthopedic Surgeon</span>
+<div class="doctor-card-textgroup">
+<h3 class="doctor-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span><span>Dr IPS Oberoi</span></h3>
+<p class="doctor-card-creds text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span><span>MS Ortho, MCh Ortho</span></p>
+<div class="doctor-card-exp text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span>33+ Years Experience</span>
 </div>
-<div class="px-3 md:px-4 pt-3 pb-3 md:pb-4 flex-1 flex flex-col items-center text-center">
-<h3 class="font-headline-md text-sm md:text-base font-bold text-on-surface mb-1">Dr IPS Oberoi</h3>
-<p class="font-body-md text-[11px] md:text-xs text-on-surface-variant mb-3 line-clamp-2">MS Ortho, MCh Ortho</p>
-<div class="flex items-center justify-center gap-1.5 text-primary mb-4 pb-3 border-b border-outline-variant w-full">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
-<span class="font-label-md text-xs md:text-sm font-semibold">33+ Years Experience</span>
 </div>
-<div class="flex flex-col gap-2 w-full mt-auto">
-<button type="button" class="open-treatment-modal-trigger w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-tertiary active:scale-95 transition-all">
-<span class="material-symbols-outlined text-[16px]">calendar_month</span>
-                        Book Consultation
-                    </button>
-<a class="w-full flex items-center justify-center gap-1.5 bg-[#25D366] text-white font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-[#128C7E] active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20IPS%20Oberoi" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">chat</span>
-                        WhatsApp
+<div class="doctor-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20IPS%20Oberoi" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Book Appointment
                     </a>
 </div>
 </div>
 </div>
 
-
-<!-- Specialist Card 11 -->
-<div class="flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
-<div class="relative pt-6 pb-5 px-4 flex flex-col items-center bg-gradient-to-b from-primary to-tertiary">
-<div class="relative z-10 rounded-[9999px] p-1 bg-white/10 backdrop-blur-sm shadow-lg mb-3 border border-white/20"><img alt="Dr Hemant Sharma" class="w-20 h-20 md:w-24 md:h-24 rounded-[9999px] object-cover border-4 border-surface-container-lowest" src="images/dr_hemant_sharma.jpg"></div>
-<span class="inline-block bg-white/10 text-white font-label-md text-[10px] md:text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-white/20 text-center whitespace-nowrap">Orthopedic Surgeon</span>
+<!-- Dr Hemant Sharma -->
+<div class="doctor-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="doctor-card-photo"><img alt="Dr Hemant Sharma" class="doctor-photo" src="images/dr-hemant-sharma.png"></div>
+<div class="doctor-card-info">
+<span class="doctor-card-badge">Orthopedic Surgeon</span>
+<div class="doctor-card-textgroup">
+<h3 class="doctor-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span><span>Dr Hemant Sharma</span></h3>
+<p class="doctor-card-creds text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span><span>MBBS, DNB Ortho</span></p>
+<div class="doctor-card-exp text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span>31+ Years Experience</span>
 </div>
-<div class="px-3 md:px-4 pt-3 pb-3 md:pb-4 flex-1 flex flex-col items-center text-center">
-<h3 class="font-headline-md text-sm md:text-base font-bold text-on-surface mb-1">Dr Hemant Sharma</h3>
-<p class="font-body-md text-[11px] md:text-xs text-on-surface-variant mb-3 line-clamp-2">MBBS, DNB Ortho</p>
-<div class="flex items-center justify-center gap-1.5 text-primary mb-4 pb-3 border-b border-outline-variant w-full">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
-<span class="font-label-md text-xs md:text-sm font-semibold">31+ Years Experience</span>
 </div>
-<div class="flex flex-col gap-2 w-full mt-auto">
-<button type="button" class="open-treatment-modal-trigger w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-tertiary active:scale-95 transition-all">
-<span class="material-symbols-outlined text-[16px]">calendar_month</span>
-                        Book Consultation
-                    </button>
-<a class="w-full flex items-center justify-center gap-1.5 bg-[#25D366] text-white font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-[#128C7E] active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Hemant%20Sharma" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">chat</span>
-                        WhatsApp
+<div class="doctor-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Hemant%20Sharma" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Book Appointment
                     </a>
 </div>
 </div>
 </div>
 
-
-<!-- Specialist Card 13 -->
-<div class="flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
-<div class="relative pt-6 pb-5 px-4 flex flex-col items-center bg-gradient-to-b from-primary to-tertiary">
-<div class="relative z-10 rounded-[9999px] p-1 bg-white/10 backdrop-blur-sm shadow-lg mb-3 border border-white/20"><img alt="Dr Ashok Rajgopal" class="w-20 h-20 md:w-24 md:h-24 rounded-[9999px] object-cover border-4 border-surface-container-lowest" src="images/dr-ashok-rajgopal.jpg"></div>
-<span class="inline-block bg-white/10 text-white font-label-md text-[10px] md:text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-white/20 text-center whitespace-nowrap">Orthopedic Surgeon</span>
+<!-- Dr Ashok Rajgopal -->
+<div class="doctor-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="doctor-card-photo"><img alt="Dr Ashok Rajgopal" class="doctor-photo" src="images/dr-ashok-rajgopal.png"></div>
+<div class="doctor-card-info">
+<span class="doctor-card-badge">Orthopedic Surgeon</span>
+<div class="doctor-card-textgroup">
+<h3 class="doctor-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span><span>Dr Ashok Rajgopal</span></h3>
+<p class="doctor-card-creds text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span><span>MBBS, MS Ortho, MCh Ortho</span></p>
+<div class="doctor-card-exp text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span>39+ Years Experience</span>
 </div>
-<div class="px-3 md:px-4 pt-3 pb-3 md:pb-4 flex-1 flex flex-col items-center text-center">
-<h3 class="font-headline-md text-sm md:text-base font-bold text-on-surface mb-1">Dr Ashok Rajgopal</h3>
-<p class="font-body-md text-[11px] md:text-xs text-on-surface-variant mb-3 line-clamp-2">MBBS, MS Ortho, MCh Ortho</p>
-<div class="flex items-center justify-center gap-1.5 text-primary mb-4 pb-3 border-b border-outline-variant w-full">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
-<span class="font-label-md text-xs md:text-sm font-semibold">39+ Years Experience</span>
 </div>
-<div class="flex flex-col gap-2 w-full mt-auto">
-<button type="button" class="open-treatment-modal-trigger w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-tertiary active:scale-95 transition-all">
-<span class="material-symbols-outlined text-[16px]">calendar_month</span>
-                        Book Consultation
-                    </button>
-<a class="w-full flex items-center justify-center gap-1.5 bg-[#25D366] text-white font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-[#128C7E] active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Ashok%20Rajgopal" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">chat</span>
-                        WhatsApp
+<div class="doctor-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Ashok%20Rajgopal" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Book Appointment
                     </a>
 </div>
 </div>
 </div>
 
-<!-- Specialist Card 14 -->
-<div class="flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
-<div class="relative pt-6 pb-5 px-4 flex flex-col items-center bg-gradient-to-b from-primary to-tertiary">
-<div class="relative z-10 rounded-[9999px] p-1 bg-white/10 backdrop-blur-sm shadow-lg mb-3 border border-white/20"><img alt="Dr Yash Gulati" class="w-20 h-20 md:w-24 md:h-24 rounded-[9999px] object-cover border-4 border-surface-container-lowest" src="images/dr-yash-gulati.jpg"></div>
-<span class="inline-block bg-white/10 text-white font-label-md text-[10px] md:text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-white/20 text-center whitespace-nowrap">Orthopedic Surgeon</span>
+<!-- Dr Yash Gulati -->
+<div class="doctor-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="doctor-card-photo"><img alt="Dr Yash Gulati" class="doctor-photo" src="images/dr-yash-gulati.png"></div>
+<div class="doctor-card-info">
+<span class="doctor-card-badge">Orthopedic Surgeon</span>
+<div class="doctor-card-textgroup">
+<h3 class="doctor-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span><span>Dr Yash Gulati</span></h3>
+<p class="doctor-card-creds text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span><span>MBBS, MS Ortho, MCh Ortho</span></p>
+<div class="doctor-card-exp text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span>35+ Years Experience</span>
 </div>
-<div class="px-3 md:px-4 pt-3 pb-3 md:pb-4 flex-1 flex flex-col items-center text-center">
-<h3 class="font-headline-md text-sm md:text-base font-bold text-on-surface mb-1">Dr Yash Gulati</h3>
-<p class="font-body-md text-[11px] md:text-xs text-on-surface-variant mb-3 line-clamp-2">MBBS, MS Ortho, MCh Ortho</p>
-<div class="flex items-center justify-center gap-1.5 text-primary mb-4 pb-3 border-b border-outline-variant w-full">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
-<span class="font-label-md text-xs md:text-sm font-semibold">35+ Years Experience</span>
 </div>
-<div class="flex flex-col gap-2 w-full mt-auto">
-<button type="button" class="open-treatment-modal-trigger w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-tertiary active:scale-95 transition-all">
-<span class="material-symbols-outlined text-[16px]">calendar_month</span>
-                        Book Consultation
-                    </button>
-<a class="w-full flex items-center justify-center gap-1.5 bg-[#25D366] text-white font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-[#128C7E] active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Yash%20Gulati" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">chat</span>
-                        WhatsApp
+<div class="doctor-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Yash%20Gulati" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Book Appointment
                     </a>
 </div>
 </div>
 </div>
 
-<!-- Specialist Card 15 -->
-<div class="flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
-<div class="relative pt-6 pb-5 px-4 flex flex-col items-center bg-gradient-to-b from-primary to-tertiary">
-<div class="relative z-10 rounded-[9999px] p-1 bg-white/10 backdrop-blur-sm shadow-lg mb-3 border border-white/20"><img alt="Dr Subhash Jangid" class="w-20 h-20 md:w-24 md:h-24 rounded-[9999px] object-cover border-4 border-surface-container-lowest" src="images/dr-subhash-jangid.jpg"></div>
-<span class="inline-block bg-white/10 text-white font-label-md text-[10px] md:text-xs uppercase tracking-wider px-3 py-1 rounded-full border border-white/20 text-center whitespace-nowrap">Joint Replacement Specialist</span>
+<!-- Dr Subhash Jangid -->
+<div class="doctor-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="doctor-card-photo"><img alt="Dr Subhash Jangid" class="doctor-photo" src="images/dr-subhash-jangid.png"></div>
+<div class="doctor-card-info">
+<span class="doctor-card-badge">Joint Replacement Specialist</span>
+<div class="doctor-card-textgroup">
+<h3 class="doctor-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span><span>Dr Subhash Jangid</span></h3>
+<p class="doctor-card-creds text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span><span>MBBS, MS Ortho, DNB</span></p>
+<div class="doctor-card-exp text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span>27+ Years Experience</span>
 </div>
-<div class="px-3 md:px-4 pt-3 pb-3 md:pb-4 flex-1 flex flex-col items-center text-center">
-<h3 class="font-headline-md text-sm md:text-base font-bold text-on-surface mb-1">Dr Subhash Jangid</h3>
-<p class="font-body-md text-[11px] md:text-xs text-on-surface-variant mb-3 line-clamp-2">MBBS, MS Ortho, DNB</p>
-<div class="flex items-center justify-center gap-1.5 text-primary mb-4 pb-3 border-b border-outline-variant w-full">
-<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">military_tech</span>
-<span class="font-label-md text-xs md:text-sm font-semibold">27+ Years Experience</span>
 </div>
-<div class="flex flex-col gap-2 w-full mt-auto">
-<button type="button" class="open-treatment-modal-trigger w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-tertiary active:scale-95 transition-all">
-<span class="material-symbols-outlined text-[16px]">calendar_month</span>
-                        Book Consultation
-                    </button>
-<a class="w-full flex items-center justify-center gap-1.5 bg-[#25D366] text-white font-label-md text-xs md:text-label-md py-2 md:py-2.5 px-3 rounded-full hover:bg-[#128C7E] active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Subhash%20Jangid" target="_blank" rel="noopener noreferrer">
-<span class="material-symbols-outlined text-[16px]">chat</span>
-                        WhatsApp
+<div class="doctor-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Subhash%20Jangid" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Book Appointment
                     </a>
 </div>
 </div>
 </div>
 
+<!-- Dr Manoj Miglani -->
+<div class="doctor-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="doctor-card-photo"><img alt="Dr Manoj Miglani" class="doctor-photo" src="images/dr-manoj-miglani.png"></div>
+<div class="doctor-card-info">
+<span class="doctor-card-badge">Spine Surgeon</span>
+<div class="doctor-card-textgroup">
+<h3 class="doctor-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span><span>Dr Manoj Miglani</span></h3>
+<p class="doctor-card-creds text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span><span>M.S. (Orthopedics), MBBS</span></p>
+<div class="doctor-card-exp text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span>20+ Years Experience</span>
+</div>
+</div>
+<div class="doctor-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Manoj%20Miglani" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Book Appointment
+                    </a>
+</div>
+</div>
+</div>
+
+<!-- Dr Sanjay Sarup -->
+<div class="doctor-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="doctor-card-photo"><img alt="Dr Sanjay Sarup" class="doctor-photo" src="images/dr-sanjay-sarup.png" style="transform: translateY(-13px);"></div>
+<div class="doctor-card-info">
+<span class="doctor-card-badge">Paediatric Orthopaedics</span>
+<div class="doctor-card-textgroup">
+<h3 class="doctor-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span><span>Dr Sanjay Sarup</span></h3>
+<p class="doctor-card-creds text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span><span>MBBS, MS, MCh</span></p>
+<div class="doctor-card-exp text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span>20+ Years Experience</span>
+</div>
+</div>
+<div class="doctor-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Sanjay%20Sarup" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Book Appointment
+                    </a>
+</div>
+</div>
+</div>
+
+<!-- Dr Prof Raju Vaishya -->
+<div class="doctor-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="doctor-card-photo"><img alt="Dr Prof Raju Vaishya" class="doctor-photo" src="images/dr-raju-vaishya.png"></div>
+<div class="doctor-card-info">
+<span class="doctor-card-badge">Orthopaedic Surgeon</span>
+<div class="doctor-card-textgroup">
+<h3 class="doctor-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span><span>Dr Prof Raju Vaishya</span></h3>
+<p class="doctor-card-creds text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span><span>MBBS, MS, MCh</span></p>
+<div class="doctor-card-exp text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+<span>40+ Years Experience</span>
+</div>
+</div>
+<div class="doctor-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20consult%20Dr%20Prof%20Raju%20Vaishya" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Book Appointment
+                    </a>
+</div>
+</div>
+</div>
+
+</div>
 </div>
 </section>
 
 <!-- Partner Hospitals Section -->
+<style>
+.hospital-card { width: 100%; border: 1px solid #e2e5e5; }
+.hospital-card:hover { border-color: #c9cccc; }
+.hospital-card-photo { height: 130px; width: 100%; flex-shrink: 0; overflow: hidden; position: relative; }
+@media (min-width: 768px) { .hospital-card-photo { height: 170px; } }
+.hospital-photo { width: 100%; height: 100%; object-fit: cover; display: block; }
+.hospital-card-info { flex: 1; width: 100%; display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: 10px 14px 14px; }
+.hospital-card-badge { display: inline-block; background: #dbe3ff; color: #0057B8; font-size: 11px; line-height: 1; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; text-align: center; padding: 4px 10px; border-radius: 3px; margin-bottom: 8px; }
+.hospital-card-name { display: flex; align-items: center; gap: 5px; font-size: 14px; line-height: 1.25; font-weight: 700; margin-bottom: 6px; }
+@media (min-width: 768px) { .hospital-card-name { font-size: 16px; } }
+.hospital-card-name .material-symbols-outlined { font-size: 16px; flex-shrink: 0; }
+.hospital-card-address { display: flex; align-items: flex-start; gap: 5px; font-size: 11.5px; line-height: 1.4; margin-bottom: 10px; }
+.hospital-card-address .material-symbols-outlined { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+.hospital-card-actions { display: flex; flex-direction: column; width: 100%; margin-top: auto; }
+.hospital-card-actions a { padding-top: 10px; padding-bottom: 10px; line-height: 1.4; font-size: 13px; border: 0; border-radius: 5px; }
+.hospital-card-actions .material-symbols-outlined { font-size: 17px; }
+</style>
 <section class="py-12 md:py-20 bg-gradient-to-b from-surface-container-low to-background" id="hospitals">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="text-center mb-8 md:mb-14">
-<span class="inline-flex items-center gap-1.5 bg-primary-container text-on-primary-container font-label-md text-xs px-4 py-1.5 rounded-full mb-4">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span> JCI &amp; NABH Accredited Network
+<div class="text-center mb-8 md:mb-14" style="max-width:640px;margin-left:auto;margin-right:auto;">
+<span class="section-kicker">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span> JCI &amp; NABH Accredited Network
 </span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Top Hospitals</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Backed by India's leading hospital networks, equipped with world-class infrastructure.</p>
+<h2 class="section-heading font-headline-lg text-headline-lg text-on-surface">Top Hospitals</h2>
+<div class="section-heading-rule"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mt-4">Backed by India's leading hospital networks, equipped with world-class infrastructure.</p>
 </div>
-<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-gutter">
-<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="Apollo Hospital logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/Apollo.png"></div>
-<div class="h-px w-8 bg-outline-variant"></div>
-<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">Apollo Hospital</span>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-gutter">
+
+<div class="hospital-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="hospital-card-photo"><img alt="Indraprastha Apollo Hospitals building" class="hospital-photo" src="images/Hospital%20Photos/apollo-indraprastha.jpg"></div>
+<div class="hospital-card-info">
+<span class="hospital-card-badge">New Delhi</span>
+<h3 class="hospital-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_hospital</span><span>Indraprastha Apollo Hospitals</span></h3>
+<p class="hospital-card-address text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span><span>Sarita Vihar, Delhi Mathura Road, New Delhi 110076</span></p>
+<div class="hospital-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20know%20more%20about%20Indraprastha%20Apollo%20Hospitals" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Get Free Treatment Plan
+                    </a>
 </div>
-<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="BLK Max Hospital logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/blk%20max.png"></div>
-<div class="h-px w-8 bg-outline-variant"></div>
-<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">BLK Max Hospital</span>
 </div>
-<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="Artemis Hospital logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/Artemis_Hospital_-_Logo.png"></div>
-<div class="h-px w-8 bg-outline-variant"></div>
-<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">Artemis Hospital</span>
 </div>
-<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="Marengo Asia Hospitals logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/marengo.png"></div>
-<div class="h-px w-8 bg-outline-variant"></div>
-<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">Marengo Asia Hospitals</span>
+
+<div class="hospital-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="hospital-card-photo"><img alt="BLK-Max Super Speciality Hospital building" class="hospital-photo" src="images/Hospital%20Photos/blk-max.jpg"></div>
+<div class="hospital-card-info">
+<span class="hospital-card-badge">New Delhi</span>
+<h3 class="hospital-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_hospital</span><span>BLK-Max Super Speciality Hospital</span></h3>
+<p class="hospital-card-address text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span><span>Pusa Road, Rajendra Place, New Delhi 110005</span></p>
+<div class="hospital-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20know%20more%20about%20BLK-Max%20Super%20Speciality%20Hospital" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Get Free Treatment Plan
+                    </a>
 </div>
-<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="Fortis Hospitals logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/fortis.png"></div>
-<div class="h-px w-8 bg-outline-variant"></div>
-<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">Fortis Hospitals</span>
 </div>
-<div class="group relative flex flex-col items-center justify-center gap-3 md:gap-4 bg-surface-container-lowest rounded-2xl border border-outline-variant overflow-hidden shadow-sm py-4 px-3 md:py-6 md:px-6 hover:shadow-xl hover:border-primary hover:-translate-y-1.5 transition-all duration-300 max-w-[calc(100%-10px)] mx-auto sm:max-w-none sm:mx-0">
-<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"></div>
-<div class="w-full flex items-center justify-center px-2 md:px-4" style="height:96px;"><img alt="Medanta Hospital logo" class="max-w-full object-contain mix-blend-multiply transition-transform duration-300 group-hover:scale-105" style="max-height:96px;" src="images/Hospital%20Logos/medanta.png"></div>
-<div class="h-px w-8 bg-outline-variant"></div>
-<span class="font-label-md text-xs md:text-label-md text-on-surface text-center" style="font-weight:700;min-height:2.6em;display:flex;align-items:center;justify-content:center;line-height:1.3;">Medanta Hospital</span>
 </div>
+
+<div class="hospital-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="hospital-card-photo"><img alt="Artemis Hospital building" class="hospital-photo" src="images/Hospital%20Photos/Artemis-grm.webp"></div>
+<div class="hospital-card-info">
+<span class="hospital-card-badge">Gurugram</span>
+<h3 class="hospital-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_hospital</span><span>Artemis Hospital</span></h3>
+<p class="hospital-card-address text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span><span>Sector 51, Gurugram, Haryana 122001</span></p>
+<div class="hospital-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20know%20more%20about%20Artemis%20Hospital" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Get Free Treatment Plan
+                    </a>
+</div>
+</div>
+</div>
+
+<div class="hospital-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="hospital-card-photo"><img alt="Marengo Asia Hospitals building" class="hospital-photo" src="images/Hospital%20Photos/marengo-grm.jpg"></div>
+<div class="hospital-card-info">
+<span class="hospital-card-badge">Faridabad</span>
+<h3 class="hospital-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_hospital</span><span>Marengo Asia Hospitals</span></h3>
+<p class="hospital-card-address text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span><span>Sector 16, Faridabad, Haryana 121002</span></p>
+<div class="hospital-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20know%20more%20about%20Marengo%20Asia%20Hospitals" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Get Free Treatment Plan
+                    </a>
+</div>
+</div>
+</div>
+
+<div class="hospital-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="hospital-card-photo"><img alt="Fortis Escorts Hospital building" class="hospital-photo" src="images/Hospital%20Photos/fortis.webp"></div>
+<div class="hospital-card-info">
+<span class="hospital-card-badge">New Delhi</span>
+<h3 class="hospital-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_hospital</span><span>Fortis Escorts Hospital</span></h3>
+<p class="hospital-card-address text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span><span>Okhla Road, New Delhi 110025</span></p>
+<div class="hospital-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20know%20more%20about%20Fortis%20Escorts%20Hospital" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Get Free Treatment Plan
+                    </a>
+</div>
+</div>
+</div>
+
+<div class="hospital-card flex flex-col bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden border border-outline-variant hover:shadow-xl transition-all duration-300">
+<div class="hospital-card-photo"><img alt="Medanta - The Medicity building" class="hospital-photo" src="images/Hospital%20Photos/medanta.jpg"></div>
+<div class="hospital-card-info">
+<span class="hospital-card-badge">Gurugram</span>
+<h3 class="hospital-card-name text-on-surface"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_hospital</span><span>Medanta - The Medicity</span></h3>
+<p class="hospital-card-address text-on-surface-variant"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">location_on</span><span>Sector 38, Gurugram, Haryana 122001</span></p>
+<div class="hospital-card-actions">
+<a class="w-full flex items-center justify-center gap-1.5 bg-primary text-on-primary font-label-md hover:bg-tertiary active:scale-95 transition-all" href="https://wa.me/919871262293?text=I'd%20like%20to%20know%20more%20about%20Medanta%20-%20The%20Medicity" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined">chat</span>
+                        Get Free Treatment Plan
+                    </a>
+</div>
+</div>
+</div>
+
 </div>
 </div>
 </section>
@@ -649,135 +1025,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 <p class="text-center text-caption text-on-surface-variant mt-4">Prices are indicative estimates for comparison purposes and may vary based on individual case complexity, hospital, and surgeon.</p>
-</div>
-</div>
-</section>
-
-<!-- Process Section -->
-<section class="py-12 md:py-24 bg-background" id="process">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-<div class="text-center mb-8 md:mb-16">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">With You, Every Step of the Way</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-        We've streamlined the process to ensure you feel supported at every step of your recovery.
-      </p>
-</div>
-<!-- Mobile list view -->
-<div class="sm:hidden relative flex flex-col gap-3">
-<div class="absolute top-9 bottom-9 left-[38px] w-0.5 bg-primary/25 z-0"></div>
-<div class="journey-step relative z-10 flex items-center gap-4 bg-surface-container-lowest rounded-xl border-2 border-primary p-4 shadow-sm" style="transition-delay: 0ms;">
-<div class="w-11 h-11 shrink-0 rounded-full bg-surface-container-low flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">description</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-on-surface text-sm mb-0.5">Send Your Reports</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs">Share reports on WhatsApp for a free specialist review.</p>
-</div>
-</div>
-<div class="journey-step relative z-10 flex items-center gap-4 bg-surface-container-lowest rounded-xl border-2 border-primary p-4 shadow-sm" style="transition-delay: 80ms;">
-<div class="w-11 h-11 shrink-0 rounded-full bg-surface-container-low flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">stethoscope</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-on-surface text-sm mb-0.5">Doctor's Opinion</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs">Get a clear care plan and cost estimate from orthopedic specialists.</p>
-</div>
-</div>
-<div class="journey-step relative z-10 flex items-center gap-4 bg-surface-container-lowest rounded-xl border-2 border-primary p-4 shadow-sm" style="transition-delay: 160ms;">
-<div class="w-11 h-11 shrink-0 rounded-full bg-surface-container-low flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">badge</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-on-surface text-sm mb-0.5">Visa Assistance</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs">Invitation letters and document guidance for you and an attendant.</p>
-</div>
-</div>
-<div class="journey-step relative z-10 flex items-center gap-4 bg-surface-container-lowest rounded-xl border-2 border-primary p-4 shadow-sm" style="transition-delay: 240ms;">
-<div class="w-11 h-11 shrink-0 rounded-full bg-surface-container-low flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">flight</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-on-surface text-sm mb-0.5">Travel &amp; Stay</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs">Help with flights and lodging near your hospital.</p>
-</div>
-</div>
-<div class="journey-step relative z-10 flex items-center gap-4 bg-surface-container-lowest rounded-xl border-2 border-primary p-4 shadow-sm" style="transition-delay: 320ms;">
-<div class="w-11 h-11 shrink-0 rounded-full bg-surface-container-low flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">verified_user</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-on-surface text-sm mb-0.5">Airport Pickup</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs">Arrival and departure transfers arranged for your trip.</p>
-</div>
-</div>
-<div class="journey-step relative z-10 flex items-center gap-4 bg-surface-container-lowest rounded-xl border-2 border-primary p-4 shadow-sm" style="transition-delay: 400ms;">
-<div class="w-11 h-11 shrink-0 rounded-full bg-surface-container-low flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">schedule</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-on-surface text-sm mb-0.5">Post-Treatment Care</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs">Follow-up support after you return home.</p>
-</div>
-</div>
-</div>
-
-<div class="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-gutter">
-<!-- Step 1 -->
-<div class="journey-step flex flex-col items-center justify-center text-center aspect-square bg-surface-container-lowest rounded-xl border-2 border-primary p-3 shadow-md" style="transition-delay: 0ms;">
-<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center mb-2">
-<span class="material-symbols-outlined text-primary">description</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-sm">Send Your Reports</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs line-clamp-3">Share reports on WhatsApp for a free specialist review.</p>
-</div>
-
-<!-- Step 2 -->
-<div class="journey-step flex flex-col items-center justify-center text-center aspect-square bg-surface-container-lowest rounded-xl border-2 border-primary p-3 shadow-md" style="transition-delay: 100ms;">
-<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center mb-2">
-<span class="material-symbols-outlined text-primary">stethoscope</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-sm">Doctor's Opinion</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs line-clamp-3">Get a clear care plan and cost estimate from orthopedic specialists.</p>
-</div>
-
-<!-- Step 3 -->
-<div class="journey-step flex flex-col items-center justify-center text-center aspect-square bg-surface-container-lowest rounded-xl border-2 border-primary p-3 shadow-md" style="transition-delay: 200ms;">
-<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center mb-2">
-<span class="material-symbols-outlined text-primary">badge</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-sm">Visa Assistance</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs line-clamp-3">Invitation letters and document guidance for you and an attendant.</p>
-</div>
-
-<!-- Step 4 -->
-<div class="journey-step flex flex-col items-center justify-center text-center aspect-square bg-surface-container-lowest rounded-xl border-2 border-primary p-3 shadow-md" style="transition-delay: 300ms;">
-<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center mb-2">
-<span class="material-symbols-outlined text-primary">flight</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-sm">Travel &amp; Stay</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs line-clamp-3">Help with flights and lodging near your hospital.</p>
-</div>
-
-<!-- Step 5 -->
-<div class="journey-step flex flex-col items-center justify-center text-center aspect-square bg-surface-container-lowest rounded-xl border-2 border-primary p-3 shadow-md" style="transition-delay: 400ms;">
-<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center mb-2">
-<span class="material-symbols-outlined text-primary">verified_user</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-sm">Airport Pickup</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs line-clamp-3">Arrival and departure transfers arranged for your trip.</p>
-</div>
-
-<!-- Step 6 -->
-<div class="journey-step flex flex-col items-center justify-center text-center aspect-square bg-surface-container-lowest rounded-xl border-2 border-primary p-3 shadow-md" style="transition-delay: 500ms;">
-<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center mb-2">
-<span class="material-symbols-outlined text-primary">schedule</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface mb-1 text-sm">Post-Treatment Care</h3>
-<p class="font-body-md text-body-md text-on-surface-variant text-xs line-clamp-3">Follow-up support after you return home.</p>
-</div>
-</div>
-<div class="flex justify-center mt-12">
-<button type="button" class="open-treatment-modal-trigger inline-flex bg-primary text-on-primary font-label-md text-label-md px-8 py-4 rounded-full hover:bg-tertiary transition-colors" >Plan Your Treatments</button>
 </div>
 </div>
 </section>
@@ -1637,6 +1884,18 @@ window.addEventListener('load', function () {
       "name": "Dr Subhash Jangid",
       "medicalSpecialty": "Musculoskeletal",
       "description": "Joint Replacement Specialist. MBBS, MS Ortho, DNB. 27+ Years Experience."
+    },
+    {
+      "@type": "Physician",
+      "name": "Dr Manoj Miglani",
+      "medicalSpecialty": "Musculoskeletal",
+      "description": "Spine Surgeon. M.S. (Orthopedics), MBBS. 20+ Years Experience."
+    },
+    {
+      "@type": "Physician",
+      "name": "Dr Sanjay Sarup",
+      "medicalSpecialty": "Musculoskeletal",
+      "description": "Paediatric Orthopaedics. MBBS, MS, MCh. 20+ Years Experience."
     },
     {
       "@type": "FAQPage",
