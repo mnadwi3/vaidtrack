@@ -120,16 +120,22 @@
       align-items: center;
       overflow: hidden;
       min-height: calc(100svh - 4.25rem);
-      padding: 3.5rem 0 3.25rem;
-      background: linear-gradient(180deg, #ffffff 0%, #e6f1fb 38%, #7fb8e8 100%)
+      padding: 3rem 0 3.25rem
     }
 
     .hero2-bg {
-      display: none
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-size: cover;
+      background-position: center
     }
 
     .hero2-overlay {
-      display: none
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(0, 0, 0, .96) 0%, rgba(0, 0, 0, .86) 45%, rgba(0, 0, 0, .55) 100%)
     }
 
     .hero2-inner {
@@ -147,11 +153,8 @@
     .hero2-copy {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
       gap: 1rem;
-      max-width: 34rem;
-      margin: 0 auto
+      max-width: 34rem
     }
 
     .hero2-form-col {
@@ -159,7 +162,7 @@
     }
 
     .hero2-h1 {
-      color: #0b1c2c !important;
+      color: #fff !important;
       font-size: var(--fs-h1);
       font-weight: var(--fw-bold);
       line-height: 1.15;
@@ -167,7 +170,7 @@
     }
 
     .hero2-sub {
-      color: #3d4f5f !important;
+      color: rgba(255, 255, 255, .85) !important;
       margin: 0;
       max-width: 30rem
     }
@@ -175,9 +178,6 @@
     .hero2-ctas {
       display: flex;
       flex-direction: column;
-      align-items: stretch;
-      width: 100%;
-      max-width: 22rem;
       gap: .75rem;
       padding-top: .5rem
     }
@@ -187,15 +187,15 @@
       justify-content: center;
       align-items: center;
       gap: .5rem;
-      width: 100%;
+      color: #fff;
       font-weight: 700;
-      font-size: .9rem;
-      padding: .95rem 2rem;
-      border-radius: .9rem;
-      border: 2px solid transparent;
+      font-size: .875rem;
+      padding: .9rem 2rem;
+      border-radius: 9999px;
+      border: 0;
       cursor: pointer;
       text-decoration: none;
-      transition: filter .15s ease, background-color .15s ease
+      transition: filter .15s ease
     }
 
     .hero2-btn:hover {
@@ -203,29 +203,23 @@
     }
 
     .hero2-btn-primary {
-      color: #fff;
       background: var(--primary);
-      box-shadow: 0 8px 20px rgba(15, 76, 129, .25)
+      box-shadow: 0 6px 16px rgba(0, 0, 0, .25)
     }
 
     .hero2-btn-wa {
-      color: var(--primary-dark);
-      background: transparent;
-      border-color: var(--primary);
-    }
-
-    .hero2-btn-wa:hover {
-      background: rgba(15, 76, 129, .06)
+      background: var(--wa);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, .3)
     }
 
     .hero2-trust {
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: .6rem;
       margin: 1rem 0 0;
       padding: 1rem 0 0;
-      border-top: 1px solid rgba(11, 28, 44, .12);
+      border-top: 1px solid rgba(255, 255, 255, .2);
       list-style: none
     }
 
@@ -233,7 +227,7 @@
       display: flex;
       align-items: center;
       gap: .5rem;
-      color: #3d4f5f;
+      color: rgba(255, 255, 255, .85);
       font-size: .75rem;
       font-weight: 600
     }
@@ -244,8 +238,7 @@
 
     @media(min-width:640px) {
       .hero2-ctas {
-        flex-direction: row;
-        max-width: none
+        flex-direction: row
       }
     }
 
@@ -264,20 +257,6 @@
         align-items: center;
         justify-content: space-between;
         gap: 2.5rem
-      }
-
-      .hero2-copy {
-        align-items: flex-start;
-        text-align: left;
-        margin: 0
-      }
-
-      .hero2-ctas {
-        max-width: none
-      }
-
-      .hero2-trust {
-        align-items: flex-start
       }
 
       .hero2-form-col {
