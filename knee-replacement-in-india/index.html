@@ -306,7 +306,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- Patient Journey Section -->
 <style>
-.vjs-section { --vjs-blue: #0353a4; --vjs-blue-tint: #EAF2FB; --vjs-ink: #152A46; --vjs-gray: #5A6B80; --vjs-gold: #D4AF37; }
+.vjs-section { --vjs-blue: #0353a4; --vjs-blue-tint: #eaf2fb; --vjs-ink: #152a46; --vjs-gray: #5a6b80; --vjs-gold: #d4af37; }
 .vjs-track { position: relative; display: flex; flex-direction: column; }
 .vjs-step { position: relative; display: flex; gap: 16px; padding-bottom: 28px; }
 .vjs-step:last-child { padding-bottom: 0; }
@@ -314,18 +314,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .vjs-line-vert { position: absolute; left: 21px; top: 44px; bottom: -28px; width: 2px; background: rgba(3,83,164,0.2); }
 .vjs-step-start .vjs-line-vert { top: 64px; }
 .vjs-step:last-child .vjs-line-vert { display: none; }
-.vjs-num-circle { width: 44px; height: 44px; border-radius: 9999px; background: #fff; border: 2px solid var(--vjs-blue); display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--vjs-blue); font-size: 14px; }
+.vjs-num-circle { width: 44px; height: 44px; border-radius: 9999px; background: var(--vjs-blue); border: 4px solid #fff; outline: 1px solid rgba(3,83,164,0.22); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #fff; font-size: 13px; }
 .vjs-step-start .vjs-num-circle, .vjs-step-end .vjs-num-circle { border-color: var(--vjs-gold); }
 .vjs-flag { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vjs-gold); margin-bottom: 6px; }
 .vjs-flag-bottom { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vjs-gold); margin-top: 6px; text-align: center; }
-.vjs-body { flex: 1 1 auto; background: var(--vjs-blue); border: 3px solid var(--vjs-gold); border-radius: 16px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(15,35,70,0.05); min-width: 0; }
-.vjs-icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
-.vjs-icon { flex-shrink: 0; width: 32px; height: 32px; border-radius: 9999px; background: var(--vjs-blue-tint); color: var(--vjs-blue); display: flex; align-items: center; justify-content: center; }
+.vjs-body { flex: 1 1 auto; background: #fff; border: 1px solid #d7e1eb; border-top: 3px solid var(--vjs-blue); border-bottom: 3px solid var(--vjs-blue); border-radius: 12px; padding: 18px 16px; box-shadow: 0 8px 24px rgba(21,42,70,0.07); min-width: 0; }
+.vjs-icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+.vjs-icon { flex-shrink: 0; width: 32px; height: 32px; border-radius: 10px; background: var(--vjs-blue-tint); color: var(--vjs-blue); display: flex; align-items: center; justify-content: center; }
 .vjs-icon .material-symbols-outlined { font-size: 18px; }
-.vjs-title { font-weight: 800; color: #FFD43B; font-size: 15.5px; line-height: 1.3; }
-.vjs-highlights { display: flex; flex-direction: column; align-items: center; gap: 6px; list-style: none; padding: 0; margin: 0 0 8px; }
-.vjs-highlights li { font-size: 11.5px; font-weight: 700; color: #fff; background: transparent; padding: 0; border-radius: 0; white-space: nowrap; }
-.vjs-desc { font-size: 13px; line-height: 1.5; color: #fff; margin: 0; border-top: 1px solid var(--vjs-gold); padding-top: 10px; }
+.vjs-title { font-weight: 700; color: var(--vjs-ink); font-size: 15px; line-height: 1.3; }
+.vjs-highlights { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; list-style: none; padding: 0; margin: 0 0 14px; }
+.vjs-highlights li { position: relative; padding-left: 13px; font-size: 11.5px; font-weight: 600; color: var(--vjs-ink); white-space: nowrap; text-align: left; }
+.vjs-highlights li::before { content: ""; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; border-radius: 50%; background: var(--vjs-gold); }
+.vjs-desc { font-size: 13px; line-height: 1.5; color: var(--vjs-gray); margin: auto 0 0; border-top: 1px solid #e6edf3; padding-top: 12px; text-align: left; }
 @media (min-width: 1024px) {
   .vjs-track { flex-direction: row; align-items: stretch; gap: 0; }
   .vjs-line-horizontal { position: absolute; left: 22px; right: 22px; top: 38px; height: 2px; background: rgba(3,83,164,0.2); z-index: 0; }
@@ -336,7 +337,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .vjs-flag-bottom { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); white-space: nowrap; margin-top: 0; }
   .vjs-icon-row { flex-direction: column; }
   .vjs-highlights { justify-content: center; }
-  .vjs-body { width: 100%; padding: 18px 16px; display: flex; flex-direction: column; flex: 1 1 auto; }
+    .vjs-body { width: 100%; min-height: 248px; display: flex; flex-direction: column; flex: 1 1 auto; }
 }
 .vjs-desktop-only { display: none; }
 .vjs-mobile-only { display: block; }
@@ -365,7 +366,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <ul class="vjs-highlights">
 <li>Send Your Reports</li>
-<li>Doctor's Opinion</li>
+<li>Get - Doctor's Opinion</li>
 </ul>
 <p class="vjs-desc">Share your medical reports and receive specialist guidance and an estimated care plan.</p>
 </div>
