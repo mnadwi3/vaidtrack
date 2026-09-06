@@ -27,8 +27,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script>
+document.fonts.load('16px "Material Symbols Outlined"').then(function () {
+    document.documentElement.classList.add('material-symbols-ready');
+});
+</script>
 <style>
         html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    .material-symbols-outlined { visibility: hidden; }
+    .material-symbols-ready .material-symbols-outlined { visibility: visible; }
         @media (max-width: 639px) {
             .hero-copy-col {
                 margin-top: -15px;
