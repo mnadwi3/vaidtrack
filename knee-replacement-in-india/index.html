@@ -1149,7 +1149,13 @@ Meet Our Specialists
 .cost-guide-cta .open-treatment-modal-trigger { width: 100%; }
 .pricing-cost-columns { display: grid; gap: 28px; align-items: start; }
 .pricing-table-column, .cost-factors-column { min-width: 0; }
-.cost-factors-column .cost-guide-grid { grid-template-columns: minmax(0, 1fr); gap: 8px; margin-top: 20px; }
+.cost-factors-column { border: 1px solid #D7E1EB; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 4px 14px rgba(21,42,70,0.06); }
+.cost-factors-heading { margin: 0 !important; padding: 16px 18px; background: #0353A4; }
+.cost-factors-heading h3 { margin: 0; color: #fff !important; font-size: 16px; }
+.cost-factors-column .cost-guide-grid { display: block; margin: 0 !important; }
+.cost-factors-column .cost-guide-card { min-height: 54px; padding: 10px 16px; border: 0; border-bottom: 1px solid #E2E8F0; border-radius: 0; box-shadow: none; }
+.cost-factors-column .cost-guide-card:last-child { border-bottom: 0; }
+.cost-factors-column .cost-guide-card:nth-child(even) { background: rgba(234,242,251,0.4); }
 @media (min-width: 640px) {
     .cost-guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .cost-factors-column .cost-guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
@@ -1164,7 +1170,7 @@ Meet Our Specialists
     .cost-guide-cta { margin-top: 40px; }
 }
 </style>
-<div class="text-center">
+<div class="cost-factors-heading text-center">
 <h3 class="font-headline-md text-headline-md text-on-surface">What Affects the Cost?</h3>
 </div>
 <div class="cost-guide-grid">
