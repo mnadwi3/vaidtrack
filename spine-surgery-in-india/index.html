@@ -102,6 +102,21 @@ document.fonts.load('16px "Material Symbols Outlined"').then(function () {
         .hero-trust-chip .chip-icon .material-symbols-outlined { font-size: 15px; color: #FFCE54; }
         .form-free-ribbon { position: absolute; top: -12px; left: 20px; background: linear-gradient(135deg, #FFD873, #F5A623); color: #1A2E4A; font-size: 11px; font-weight: 800; letter-spacing: 0.02em; padding: 5px 14px; border-radius: 999px; box-shadow: 0 4px 12px rgba(245,166,35,0.5); }
 
+        /* Hero background + text formatting: blue/white gradient (no photo/dark overlay changes to markup) */
+        #hero > div.absolute.inset-0.z-0 > div:nth-child(1) { background-image: linear-gradient(180deg, #ffffff 0%, #e6f1fb 38%, #7fb8e8 100%) !important; }
+        #hero > div.absolute.inset-0.z-0 > div:nth-child(2),
+        #hero > div.absolute.inset-0.z-0 > div:nth-child(3) { background-image: none !important; }
+        #hero .hero-heading { color: #0b1c2c !important; }
+        #hero .hero-gold-accent { color: #c98a12 !important; }
+        #hero .hero-subheading { color: #3d4f5f !important; }
+        #hero .hero-subheading .text-white { color: #0b1c2c !important; }
+        #hero .text-white\/85 { color: #3d4f5f !important; }
+        #hero .text-white\/70 { color: #4b5f70 !important; }
+        #hero .hero-trust-bar { border-top-color: rgba(11,28,44,0.12) !important; }
+        #hero .hero-trust-chip span.font-caption { text-shadow: none !important; }
+        #hero .hero-trust-chip .chip-icon { background: rgba(15,76,129,0.12) !important; }
+        #hero .hero-trust-chip .chip-icon .material-symbols-outlined { color: #0F4C81 !important; }
+
         .glass-panel {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
