@@ -1050,7 +1050,9 @@ Meet Our Specialists
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto" style="margin-top:14px;">Flexible payment plans available. No hidden costs.</p>
 </div>
 
-<div>
+<div class="pricing-group">
+<div class="pricing-cost-columns">
+<div class="pricing-table-column">
 <!-- Mobile stacked price table -->
 <div class="sm:hidden rounded-xl border border-outline-variant overflow-hidden shadow-sm bg-surface-container-lowest">
 <table class="w-full border-collapse table-fixed text-xs">
@@ -1131,7 +1133,68 @@ Meet Our Specialists
 </table>
 </div>
 </div>
-<p class="text-center text-caption text-on-surface-variant mt-4">Prices are indicative estimates for comparison purposes and may vary based on individual case complexity, hospital, and surgeon.</p>
+</div>
+
+<div class="cost-factors-column">
+
+<style>
+.cost-guide-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; margin-top: 32px; }
+.cost-guide-card { min-height: 58px; padding: 10px 12px; border: 1px solid #E2E8F0; border-radius: 12px; background: #fff; box-shadow: 0 3px 10px rgba(21,42,70,0.05); display: flex; flex-direction: row; align-items: center; justify-content: flex-start; gap: 9px; }
+.cost-guide-icon { width: 28px; height: 28px; flex: 0 0 28px; border-radius: 8px; background: #EAF2FB; color: #0353A4; display: inline-flex; align-items: center; justify-content: center; }
+.cost-guide-icon .material-symbols-outlined { font-size: 17px; }
+.cost-guide-card-title { color: #152A46; font-family: "Work Sans", sans-serif; font-size: 12px; line-height: 1.2; font-weight: 600; }
+.cost-guide-cta { margin-top: 20px; padding: 24px 18px 0; border-top: 1px solid #E2E8F0; background: #F4F8FC; text-align: center; }
+.cost-guide-cta-copy { max-width: 560px; margin: 8px auto 18px; color: #5A6B80; font-size: 14px; line-height: 1.55; }
+.cost-guide-cta .open-treatment-modal-trigger { width: 100%; }
+.pricing-group { border: 1px solid #D7E1EB; border-radius: 16px; background: #F4F8FC; box-shadow: 0 4px 14px rgba(21,42,70,0.06); padding: 20px; }
+.pricing-cost-columns { display: grid; gap: 28px; align-items: stretch; }
+.pricing-table-column, .cost-factors-column { min-width: 0; }
+.cost-factors-column { border: 1px solid #D7E1EB; border-radius: 12px; overflow: hidden; background: #fff; box-shadow: 0 4px 14px rgba(21,42,70,0.06); }
+.cost-factors-heading { min-height: 68px; margin: 0 !important; padding: 16px 18px; background: #0353A4; display: flex; align-items: center; justify-content: center; }
+.cost-factors-heading h3 { margin: 0; color: #fff !important; font-size: 16px; }
+.cost-factors-column .cost-guide-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; margin: 0 !important; }
+.cost-factors-column .cost-guide-card { min-height: 73px; padding: 10px 16px; border: 0; border-bottom: 1px solid #E2E8F0; border-radius: 0; box-shadow: none; }
+.cost-factors-column .cost-guide-card:last-child { border-bottom: 0; }
+.cost-factors-column .cost-guide-card:nth-child(even) { background: rgba(234,242,251,0.4); }
+@media (min-width: 640px) {
+    .cost-guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .cost-factors-column .cost-guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+        .cost-guide-card { min-height: 64px; padding: 12px 14px; }
+    .cost-guide-cta { padding: 30px 30px 0; }
+    .cost-guide-cta .open-treatment-modal-trigger { width: auto; }
+    .pricing-group { padding: 28px; }
+}
+@media (min-width: 1024px) {
+    .pricing-cost-columns { grid-template-columns: minmax(0, 1.25fr) minmax(330px, 0.75fr); gap: 28px; }
+    .cost-guide-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 40px; }
+    .cost-guide-card { min-height: 64px; padding: 12px; }
+    .cost-guide-cta { margin-top: 28px; }
+    .pricing-group { padding: 32px; }
+}
+</style>
+<div class="cost-factors-heading text-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">What Affects the Cost?</h3>
+</div>
+<div class="cost-guide-grid">
+<div class="cost-guide-card"><span class="cost-guide-icon"><span class="material-symbols-outlined">medical_information</span></span><span class="cost-guide-card-title">Type of Hip Replacement</span></div>
+<div class="cost-guide-card"><span class="cost-guide-icon"><span class="material-symbols-outlined">orthopedics</span></span><span class="cost-guide-card-title">Implant Selection</span></div>
+<div class="cost-guide-card"><span class="cost-guide-icon"><span class="material-symbols-outlined">local_hospital</span></span><span class="cost-guide-card-title">Hospital</span></div>
+<div class="cost-guide-card"><span class="cost-guide-icon"><span class="material-symbols-outlined">stethoscope</span></span><span class="cost-guide-card-title">Surgeon</span></div>
+<div class="cost-guide-card"><span class="cost-guide-icon"><span class="material-symbols-outlined">precision_manufacturing</span></span><span class="cost-guide-card-title">Robotic-Assisted Surgery</span></div>
+<div class="cost-guide-card"><span class="cost-guide-icon"><span class="material-symbols-outlined">hotel</span></span><span class="cost-guide-card-title">Length of Hospital Stay</span></div>
+<div class="cost-guide-card"><span class="cost-guide-icon"><span class="material-symbols-outlined">physical_therapy</span></span><span class="cost-guide-card-title">Physiotherapy &amp; Rehabilitation</span></div>
+<div class="cost-guide-card"><span class="cost-guide-icon"><span class="material-symbols-outlined">clinical_notes</span></span><span class="cost-guide-card-title">Additional Medical Tests</span></div>
+</div>
+
+</div>
+
+</div>
+<div class="cost-guide-cta">
+<h3 class="font-headline-md text-headline-md text-on-surface">Get Your Personalized Treatment Estimate</h3>
+<p class="cost-guide-cta-copy">Share your medical reports and we'll help you understand the likely treatment pathway and estimated cost.</p>
+<button type="button" class="open-treatment-modal-trigger inline-flex justify-center items-center bg-primary text-on-primary font-label-md text-label-md font-bold px-6 py-3 rounded-full hover:bg-tertiary transition-colors shadow-md">Get Your Personalized Treatment Estimate</button>
+</div>
+</div>
 </div>
 </div>
 </section>
