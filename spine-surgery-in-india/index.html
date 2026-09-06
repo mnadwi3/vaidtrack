@@ -318,14 +318,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .vjs-step-start .vjs-num-circle, .vjs-step-end .vjs-num-circle { border-color: var(--vjs-gold); }
 .vjs-flag { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vjs-gold); margin-bottom: 6px; }
 .vjs-flag-bottom { font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--vjs-gold); margin-top: 6px; text-align: center; }
-.vjs-body { flex: 1 1 auto; background: #fff; border: 1px solid var(--vjs-gold); border-radius: 16px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(15,35,70,0.05); min-width: 0; }
+.vjs-body { flex: 1 1 auto; background: var(--vjs-blue); border: 3px solid var(--vjs-gold); border-radius: 16px; padding: 16px 18px; box-shadow: 0 1px 3px rgba(15,35,70,0.05); min-width: 0; }
 .vjs-icon-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
 .vjs-icon { flex-shrink: 0; width: 32px; height: 32px; border-radius: 9999px; background: var(--vjs-blue-tint); color: var(--vjs-blue); display: flex; align-items: center; justify-content: center; }
 .vjs-icon .material-symbols-outlined { font-size: 18px; }
-.vjs-title { font-weight: 800; color: var(--vjs-ink); font-size: 15.5px; line-height: 1.3; }
+.vjs-title { font-weight: 800; color: #FFD43B; font-size: 15.5px; line-height: 1.3; }
 .vjs-highlights { display: flex; flex-wrap: wrap; gap: 6px; list-style: none; padding: 0; margin: 0 0 8px; }
-.vjs-highlights li { font-size: 11.5px; font-weight: 700; color: var(--vjs-blue); background: var(--vjs-blue-tint); padding: 4px 10px; border-radius: 999px; }
-.vjs-desc { font-size: 13px; line-height: 1.5; color: var(--vjs-gray); margin: 0; }
+.vjs-highlights li { font-size: 11.5px; font-weight: 700; color: var(--vjs-blue); background: #fff; padding: 4px 10px; border-radius: 999px; white-space: nowrap; }
+.vjs-desc { font-size: 13px; line-height: 1.5; color: #fff; margin: 0; }
 @media (min-width: 1024px) {
   .vjs-track { flex-direction: row; align-items: stretch; gap: 0; }
   .vjs-line-horizontal { position: absolute; left: 22px; right: 22px; top: 38px; height: 2px; background: rgba(3,83,164,0.2); z-index: 0; }
@@ -480,7 +480,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .ktx-title { font-size: 20px; font-weight: 800; color: #152A46; line-height: 1.2; margin-bottom: 8px; }
 @media (min-width: 768px) { .ktx-title { font-size: 23px; } }
 .ktx-title-accent { color: #0353a4; }
-.ktx-subtitle { font-weight: 700; font-size: 14px; color: #152A46; }
+.ktx-subtitle { font-weight: 700; font-size: 14px; color: #152A46; white-space: nowrap; }
 .ktx-desc { font-size: 13.5px; line-height: 1.5; color: #5A6B80; }
 .ktx-checklist { text-align: left; background: #F3F7FC; border-radius: 14px; padding: 14px 16px; }
 .ktx-checklist-title { text-align: center; font-weight: 700; color: #0353a4; margin-bottom: 9px; font-size: 13.5px; }
@@ -497,14 +497,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-8 md:mb-16">
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Spine Surgery Options</h2>
-<div style="width:140px;height:4px;background:#0353a4;border-radius:999px;margin:0 auto;"></div>
+<div style="width:140px;height:4px;background:#D4AF37;border-radius:999px;margin:16px auto 0;"></div>
+<p class="font-body-md text-on-surface" style="margin-top:14px;">Explore different surgical options based on your condition, age, activity level, and previous treatment.</p>
 </div>
 <div id="treatments-grid-test" class="ktx-grid">
 
 <div class="reveal-card ktx-card" style="transition-delay: 0ms;">
 <div class="ktx-content">
 <div class="ktx-header">
-<span class="ktx-badge"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">personal_injury</span>For Chronic Lower Back Pain</span>
 <h3 class="ktx-title">Lumbar Spine Surgery</h3>
 <p class="ktx-subtitle">Relieving pain, restoring function.</p>
 </div>
@@ -528,7 +528,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="reveal-card ktx-card" style="transition-delay: 80ms;">
 <div class="ktx-content">
 <div class="ktx-header">
-<span class="ktx-badge"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">personal_injury</span>For Neck Pain &amp; Nerve Compression</span>
 <h3 class="ktx-title">Cervical Spine Surgery</h3>
 <p class="ktx-subtitle">Relieving pressure on the nerves in your neck.</p>
 </div>
@@ -552,7 +551,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="reveal-card ktx-card" style="transition-delay: 160ms;">
 <div class="ktx-content">
 <div class="ktx-header">
-<span class="ktx-badge"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">personal_injury</span>For Pinched Nerves</span>
 <h3 class="ktx-title">Decompression Procedures</h3>
 <p class="ktx-subtitle">Minimally invasive relief for nerve pain.</p>
 </div>
@@ -576,7 +574,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="reveal-card ktx-card" style="transition-delay: 240ms;">
 <div class="ktx-content">
 <div class="ktx-header">
-<span class="ktx-badge"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">personal_injury</span>For Abnormal Spinal Curvature</span>
 <h3 class="ktx-title">Scoliosis &amp; Spinal Deformity Surgery</h3>
 <p class="ktx-subtitle">Correcting curvature in adults and children.</p>
 </div>
@@ -600,7 +597,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="reveal-card ktx-card" style="transition-delay: 320ms;">
 <div class="ktx-content">
 <div class="ktx-header">
-<span class="ktx-badge"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">personal_injury</span>For Spinal Instability</span>
 <h3 class="ktx-title">Spinal Fusion Surgery</h3>
 <p class="ktx-subtitle">Permanent stability for a damaged spine.</p>
 </div>
@@ -624,7 +620,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="reveal-card ktx-card" style="transition-delay: 400ms;">
 <div class="ktx-content">
 <div class="ktx-header">
-<span class="ktx-badge"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">precision_manufacturing</span>For Maximum Precision</span>
 <h3 class="ktx-title">Robotic-Assisted Spine Surgery</h3>
 <p class="ktx-subtitle">Advanced technology for greater accuracy.</p>
 </div>
@@ -1064,6 +1059,7 @@ Meet Our Specialists
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
 <div class="text-center mb-8 md:mb-16">
 <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Transparent Pricing</h2>
+<div style="width:140px;height:4px;background:#D4AF37;border-radius:999px;margin:16px auto 0;"></div>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Flexible payment plans available. No hidden costs.</p>
 </div>
 
@@ -1551,6 +1547,7 @@ Book Consultation
 @media (min-width: 640px) { #site-footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; } }
 @media (min-width: 1024px) { #site-footer-grid { grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; } }
 </style>
+<style>.w-full.bg-primary [class*="text-white/"] { color: #fff; }</style>
 <footer class="w-full bg-primary mt-auto" style="border-top:1px solid rgba(255,255,255,0.18);">
 <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop" style="padding-top:56px;padding-bottom:28px;">
 <div id="site-footer-grid" class="text-left">
