@@ -127,5 +127,149 @@
     ],
     "location": "New Delhi, India",
     "is_featured": false
+  },
+  {
+    "id": 9,
+    "slug": "dr-ips-oberoi",
+    "name": "Dr IPS Oberoi",
+    "image": "images/doctors-images/dr-ips-oberoi.png",
+    "specialty": "Orthopedic Surgeon",
+    "experience": "33+ Years",
+    "qualification": "MS Ortho, MCh Ortho",
+    "expertise": [
+      "Joint Replacement",
+      "Trauma Surgery",
+      "Sports Injuries"
+    ],
+    "location": "New Delhi, India",
+    "is_featured": false
+  },
+  {
+    "id": 10,
+    "slug": "dr-hemant-sharma",
+    "name": "Dr Hemant Sharma",
+    "image": "images/doctors-images/dr-hemant-sharma.png",
+    "specialty": "Orthopedic Surgeon",
+    "experience": "31+ Years",
+    "qualification": "MBBS, DNB Ortho",
+    "expertise": [
+      "Joint Replacement",
+      "Arthroscopy",
+      "Spine Surgery"
+    ],
+    "location": "New Delhi, India",
+    "is_featured": false
+  },
+  {
+    "id": 11,
+    "slug": "dr-ashok-rajgopal",
+    "name": "Dr Ashok Rajgopal",
+    "image": "images/doctors-images/dr-ashok-rajgopal.png",
+    "specialty": "Orthopedic Surgeon",
+    "experience": "39+ Years",
+    "qualification": "MBBS, MS Ortho, MCh Ortho",
+    "expertise": [
+      "Knee Replacement",
+      "Hip Replacement",
+      "Complex Revision Surgery"
+    ],
+    "location": "New Delhi, India",
+    "is_featured": false
+  },
+  {
+    "id": 12,
+    "slug": "dr-yash-gulati",
+    "name": "Dr Yash Gulati",
+    "image": "images/doctors-images/dr-yash-gulati.png",
+    "specialty": "Orthopedic Surgeon",
+    "experience": "35+ Years",
+    "qualification": "MBBS, MS Ortho, MCh Ortho",
+    "expertise": [
+      "Joint Replacement",
+      "Robotic Surgery",
+      "Sports Medicine"
+    ],
+    "location": "New Delhi, India",
+    "is_featured": false
+  },
+  {
+    "id": 13,
+    "slug": "dr-subhash-jangid",
+    "name": "Dr Subhash Jangid",
+    "image": "images/doctors-images/dr-subhash-jangid.webp",
+    "specialty": "Joint Replacement Specialist",
+    "experience": "27+ Years",
+    "qualification": "MBBS, MS Ortho, DNB",
+    "expertise": [
+      "Knee Replacement",
+      "Hip Replacement",
+      "Revision Surgery"
+    ],
+    "location": "New Delhi, India",
+    "is_featured": false
+  },
+  {
+    "id": 14,
+    "slug": "dr-masood-habib",
+    "name": "Dr Masood Habib",
+    "image": "images/doctors-images/dr-masood-habib.png",
+    "specialty": "Joint Replacement Surgeon",
+    "experience": "19+ Years",
+    "qualification": "MBBS, MS",
+    "expertise": [
+      "Knee Replacement",
+      "Hip Replacement",
+      "Joint Preservation"
+    ],
+    "location": "New Delhi, India",
+    "is_featured": false
+  },
+  {
+    "id": 15,
+    "slug": "dr-ramneek-mahajan",
+    "name": "Dr Ramneek Mahajan",
+    "image": "images/doctors-images/dr-ramneek-mahajan.png",
+    "specialty": "Robotic Joint Replacement",
+    "experience": "27+ Years",
+    "qualification": "MBBS, MCh",
+    "expertise": [
+      "Robotic Knee Replacement",
+      "Robotic Hip Replacement",
+      "Complex Joint Surgery"
+    ],
+    "location": "New Delhi, India",
+    "is_featured": false
+  },
+  {
+    "id": 16,
+    "slug": "dr-raju-vaishya",
+    "name": "Dr Prof Raju Vaishya",
+    "image": "images/doctors-images/dr-raju-vaishya.png",
+    "specialty": "Orthopaedic Surgeon",
+    "experience": "40+ Years",
+    "qualification": "MBBS, MS, MCh",
+    "expertise": [
+      "Joint Replacement",
+      "Robotic Surgery",
+      "Orthopedic Research"
+    ],
+    "location": "New Delhi, India",
+    "is_featured": false
+  },
+  {
+    "id": 17,
+    "slug": "dr-ishwar-bohra",
+    "name": "Dr Ishwar Bohra",
+    "image": "images/doctors-images/dr-ishwar-bohra.png",
+    "specialty": "Joint Replacement Surgeon",
+    "experience": "23+ Years",
+    "qualification": "MBBS, MCh, MS",
+    "expertise": [
+      "Knee Replacement",
+      "Hip Replacement",
+      "Sports Injuries"
+    ],
+    "location": "New Delhi, India",
+    "is_featured": false
   }
 ]

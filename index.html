@@ -312,7 +312,7 @@
     }
   </style>
   <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=20260803-perf3">
-  <link rel="stylesheet" href="/assets/css/styles.min.css?v=20260904-faqsize1">
+  <link rel="stylesheet" href="/assets/css/styles.min.css?v=20260908-doc5col1">
 
   <!-- Schema.org Structured Data for MedicalBusiness and Organization -->
   <script type="application/ld+json">
@@ -719,320 +719,151 @@
       </div>
     </section>
     <!-- ========== LOCATION - Partner Hospitals ========== -->
-    <section id="location" class="bg-white scroll-mt-24 location-section">
-      <div class="w-full px-4 sm:px-6">
-        <div class="text-center mb-10 reveal">
+    <section id="location" class="py-16 sm:py-20 bg-white scroll-mt-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="text-center max-w-2xl mx-auto mb-10 reveal">
           <p class="text-sm font-semibold uppercase tracking-wider text-primary mb-2">Hospitals</p>
           <h2 class="font-display text-3xl sm:text-4xl font-bold text-primary">Our Partner Hospitals</h2>
           <div class="w-14 h-1 bg-gold rounded-full mx-auto mt-3" aria-hidden="true"></div>
+          <p class="text-slate-600 mt-4">Backed by India's leading hospital networks, equipped with world-class
+            infrastructure.</p>
         </div>
-      </div>
-      <div class="w-full hospitals-main">
-        <div class="hospitals-viewport reveal">
-          <div class="hospitals-track" id="hospitals-track">
-            <!-- Card 1: Apollo Hospital, Delhi -->
-            <div class="hospital-card bg-white rounded-2xl shadow-card overflow-hidden border border-slate-100">
-              <div class="hospital-card-img">
-                <picture>
-                  <source type="image/webp"
-                    srcset="images/hospital/apollo-delhi-480.webp?v=20260803-perf3 480w, images/hospital/apollo-delhi-800.webp?v=20260803-perf3 800w, images/hospital/apollo-delhi.webp?v=20260803-perf3 1024w"
-                    sizes="500px">
-                  <img src="images/hospital/apollo-delhi.png?v=20260803-perf3" alt="Apollo Hospital, Delhi"
-                    class="w-full h-full object-cover" width="500" height="250" loading="lazy" decoding="async">
-                </picture>
-              </div>
-              <div class="hospital-card-info bg-[var(--section-bg)] p-6 flex flex-col justify-center">
-                <h3 class="font-display text-xl sm:text-2xl font-bold text-primary mb-2">Apollo Hospital, Delhi</h3>
-                <div class="w-12 h-1 bg-gold rounded-full mb-4" aria-hidden="true"></div>
-                <p class="text-sm font-semibold text-secondary mb-1">Address</p>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                  Sarita Vihar, Delhi Mathura Road,<br>
-                  New Delhi - 110076,<br>
-                  Delhi, India
-                </p>
+
+        <div class="hospitals-grid" id="hospitals-grid" aria-live="polite">
+          <!-- Card 1: Apollo Hospital, Delhi -->
+          <article class="hcard reveal">
+            <div class="hcard-photo">
+              <picture>
+                <source type="image/webp"
+                  srcset="images/hospital/apollo-delhi-480.webp?v=20260803-perf3 480w, images/hospital/apollo-delhi-800.webp?v=20260803-perf3 800w, images/hospital/apollo-delhi.webp?v=20260803-perf3 1024w"
+                  sizes="500px">
+                <img src="images/hospital/apollo-delhi.png?v=20260803-perf3" alt="Apollo Hospital, Delhi"
+                  class="hcard-img" width="500" height="375" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="hcard-info">
+              <span class="hcard-badge">New Delhi</span>
+              <h3 class="hcard-name"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path fill="#fff" d="M13 6h-2v5H6v2h5v5h2v-5h5v-2h-5z"/></svg><span>Apollo Hospital, Delhi</span></h3>
+              <p class="hcard-address"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Sarita Vihar, Delhi Mathura Road, New Delhi 110076</span></p>
+              <div class="hcard-actions">
+                <a class="hcard-cta" href="https://wa.me/919871262293?text=I%27d%20like%20a%20free%20treatment%20plan%20from%20Apollo%20Hospital%2C%20Delhi" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Get Free Treatment Plan</a>
               </div>
             </div>
-            <!-- Card 2: replace image/name/address with hospital details -->
-            <div class="hospital-card bg-white rounded-2xl shadow-card overflow-hidden border border-slate-100">
-              <div class="hospital-card-img">
-                <img src="images/hospital/max-saket.jpg" alt="Partner hospital" class="w-full h-full object-cover"
-                  width="500" height="250" loading="lazy" decoding="async">
-              </div>
-              <div class="hospital-card-info bg-[var(--section-bg)] p-6 flex flex-col justify-center">
-                <h3 class="font-display text-xl sm:text-2xl font-bold text-primary mb-2">Max Super Speciality Hospital
-                </h3>
-                <div class="w-12 h-1 bg-gold rounded-full mb-4" aria-hidden="true"></div>
-                <p class="text-sm font-semibold text-secondary mb-1">Address</p>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                  1 2, Press Enclave Marg, Saket Institutional Area, Saket, New Delhi,<br>
-                  , Delhi - 110017,<br>
-                  India
-                </p>
+          </article>
+          <!-- Card 2: Max Super Speciality Hospital, Saket -->
+          <article class="hcard reveal">
+            <div class="hcard-photo">
+              <img src="images/hospital/max-saket.jpg" alt="Max Super Speciality Hospital" class="hcard-img"
+                width="500" height="375" loading="lazy" decoding="async">
+            </div>
+            <div class="hcard-info">
+              <span class="hcard-badge">New Delhi</span>
+              <h3 class="hcard-name"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path fill="#fff" d="M13 6h-2v5H6v2h5v5h2v-5h5v-2h-5z"/></svg><span>Max Super Speciality Hospital</span></h3>
+              <p class="hcard-address"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>2 Press Enclave Marg, Saket Institutional Area, Saket, New Delhi 110017</span></p>
+              <div class="hcard-actions">
+                <a class="hcard-cta" href="https://wa.me/919871262293?text=I%27d%20like%20a%20free%20treatment%20plan%20from%20Max%20Super%20Speciality%20Hospital" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Get Free Treatment Plan</a>
               </div>
             </div>
-            <!-- Card 3: replace image/name/address with hospital details -->
-            <div class="hospital-card bg-white rounded-2xl shadow-card overflow-hidden border border-slate-100">
-              <div class="hospital-card-img">
-                <img src="images/hospital/fortis-grm.jpg" alt="Partner hospital" class="w-full h-full object-cover"
-                  width="500" height="250" loading="lazy" decoding="async">
-              </div>
-              <div class="hospital-card-info bg-[var(--section-bg)] p-6 flex flex-col justify-center">
-                <h3 class="font-display text-xl sm:text-2xl font-bold text-primary mb-2">Fortis Memorial Research
-                  Institute</h3>
-                <div class="w-12 h-1 bg-gold rounded-full mb-4" aria-hidden="true"></div>
-                <p class="text-sm font-semibold text-secondary mb-1">Address</p>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                  Sector - 44, Opposite HUDA City Centre,<br>
-                  Grugram - 122003,<br>
-                  India
-                </p>
+          </article>
+          <!-- Card 3: Fortis Memorial Research Institute -->
+          <article class="hcard reveal">
+            <div class="hcard-photo">
+              <img src="images/hospital/fortis-grm.jpg" alt="Fortis Memorial Research Institute" class="hcard-img"
+                width="500" height="375" loading="lazy" decoding="async">
+            </div>
+            <div class="hcard-info">
+              <span class="hcard-badge">Gurugram</span>
+              <h3 class="hcard-name"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path fill="#fff" d="M13 6h-2v5H6v2h5v5h2v-5h5v-2h-5z"/></svg><span>Fortis Memorial Research Institute</span></h3>
+              <p class="hcard-address"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Sector 44, Opposite HUDA City Centre, Gurugram 122003</span></p>
+              <div class="hcard-actions">
+                <a class="hcard-cta" href="https://wa.me/919871262293?text=I%27d%20like%20a%20free%20treatment%20plan%20from%20Fortis%20Memorial%20Research%20Institute" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Get Free Treatment Plan</a>
               </div>
             </div>
-            <!-- Card 4: replace image/name/address with hospital details -->
-            <div class="hospital-card bg-white rounded-2xl shadow-card overflow-hidden border border-slate-100">
-              <div class="hospital-card-img">
-                <img src="images/hospital/Artemis-grm.webp" alt="Partner hospital" class="w-full h-full object-cover"
-                  width="500" height="250" loading="lazy" decoding="async">
-              </div>
-              <div class="hospital-card-info bg-[var(--section-bg)] p-6 flex flex-col justify-center">
-                <h3 class="font-display text-xl sm:text-2xl font-bold text-primary mb-2">Artemis Hospitals</h3>
-                <div class="w-12 h-1 bg-gold rounded-full mb-4" aria-hidden="true"></div>
-                <p class="text-sm font-semibold text-secondary mb-1">Address</p>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                  Sector - 51, Bindapur,<br>
-                  Grugram - 122018,<br>
-                  India
-                </p>
+          </article>
+          <!-- Card 4: Artemis Hospitals -->
+          <article class="hcard reveal">
+            <div class="hcard-photo">
+              <img src="images/hospital/Artemis-grm.webp" alt="Artemis Hospitals" class="hcard-img"
+                width="500" height="375" loading="lazy" decoding="async">
+            </div>
+            <div class="hcard-info">
+              <span class="hcard-badge">Gurugram</span>
+              <h3 class="hcard-name"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path fill="#fff" d="M13 6h-2v5H6v2h5v5h2v-5h5v-2h-5z"/></svg><span>Artemis Hospitals</span></h3>
+              <p class="hcard-address"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Sector 51, Bindapur, Gurugram 122018</span></p>
+              <div class="hcard-actions">
+                <a class="hcard-cta" href="https://wa.me/919871262293?text=I%27d%20like%20a%20free%20treatment%20plan%20from%20Artemis%20Hospitals" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Get Free Treatment Plan</a>
               </div>
             </div>
-            <!-- Card 5: replace image/name/address with hospital details -->
-            <div class="hospital-card bg-white rounded-2xl shadow-card overflow-hidden border border-slate-100">
-              <div class="hospital-card-img">
-                <img src="images/hospital/medanta-grm.jpg" alt="Partner hospital" class="w-full h-full object-cover"
-                  width="500" height="250" loading="lazy" decoding="async">
-              </div>
-              <div class="hospital-card-info bg-[var(--section-bg)] p-6 flex flex-col justify-center">
-                <h3 class="font-display text-xl sm:text-2xl font-bold text-primary mb-2">Medanta - The Medicity</h3>
-                <div class="w-12 h-1 bg-gold rounded-full mb-4" aria-hidden="true"></div>
-                <p class="text-sm font-semibold text-secondary mb-1">Address</p>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                  CH Baktawar Singh Rd,<br>
-                  Grugram - 122001,<br>
-                  India
-                </p>
+          </article>
+          <!-- Card 5: Medanta - The Medicity -->
+          <article class="hcard reveal">
+            <div class="hcard-photo">
+              <img src="images/hospital/medanta-grm.jpg" alt="Medanta - The Medicity" class="hcard-img"
+                width="500" height="375" loading="lazy" decoding="async">
+            </div>
+            <div class="hcard-info">
+              <span class="hcard-badge">Gurugram</span>
+              <h3 class="hcard-name"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path fill="#fff" d="M13 6h-2v5H6v2h5v5h2v-5h5v-2h-5z"/></svg><span>Medanta - The Medicity</span></h3>
+              <p class="hcard-address"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>CH Baktawar Singh Rd, Gurugram 122001</span></p>
+              <div class="hcard-actions">
+                <a class="hcard-cta" href="https://wa.me/919871262293?text=I%27d%20like%20a%20free%20treatment%20plan%20from%20Medanta%20-%20The%20Medicity" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Get Free Treatment Plan</a>
               </div>
             </div>
-            <!-- Card 6: replace image/name/address with hospital details -->
-            <div class="hospital-card bg-white rounded-2xl shadow-card overflow-hidden border border-slate-100">
-              <div class="hospital-card-img">
-                <img src="images/hospital/marengo-grm.jpg" alt="Partner hospital" class="w-full h-full object-cover"
-                  width="500" height="250" loading="lazy" decoding="async">
-              </div>
-              <div class="hospital-card-info bg-[var(--section-bg)] p-6 flex flex-col justify-center">
-                <h3 class="font-display text-xl sm:text-2xl font-bold text-primary mb-2">Marengo Asia Hospitals</h3>
-                <div class="w-12 h-1 bg-gold rounded-full mb-4" aria-hidden="true"></div>
-                <p class="text-sm font-semibold text-secondary mb-1">Address</p>
-                <p class="text-slate-600 text-sm leading-relaxed">
-                  Golf Course Ext Rd, Sushant Lok II, Sector 56,,<br>
-                  City - Pincode,<br>
-                  India
-                </p>
+          </article>
+          <!-- Card 6: Marengo Asia Hospitals -->
+          <article class="hcard reveal">
+            <div class="hcard-photo">
+              <img src="images/hospital/marengo-grm.jpg" alt="Marengo Asia Hospitals" class="hcard-img"
+                width="500" height="375" loading="lazy" decoding="async">
+            </div>
+            <div class="hcard-info">
+              <span class="hcard-badge">Gurugram</span>
+              <h3 class="hcard-name"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path fill="#fff" d="M13 6h-2v5H6v2h5v5h2v-5h5v-2h-5z"/></svg><span>Marengo Asia Hospitals</span></h3>
+              <p class="hcard-address"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Golf Course Ext Rd, Sushant Lok II, Sector 56, Gurugram</span></p>
+              <div class="hcard-actions">
+                <a class="hcard-cta" href="https://wa.me/919871262293?text=I%27d%20like%20a%20free%20treatment%20plan%20from%20Marengo%20Asia%20Hospitals" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Get Free Treatment Plan</a>
               </div>
             </div>
-          </div>
+          </article>
+          <!-- Card 7: BLK-Max Super Speciality Hospital -->
+          <article class="hcard reveal">
+            <div class="hcard-photo">
+              <img src="images/hospital/blk-max.jpg" alt="BLK-Max Super Speciality Hospital" class="hcard-img"
+                width="500" height="375" loading="lazy" decoding="async">
+            </div>
+            <div class="hcard-info">
+              <span class="hcard-badge">New Delhi</span>
+              <h3 class="hcard-name"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path fill="#fff" d="M13 6h-2v5H6v2h5v5h2v-5h5v-2h-5z"/></svg><span>BLK-Max Super Speciality Hospital</span></h3>
+              <p class="hcard-address"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Pusa Road, Rajendra Place, New Delhi 110005</span></p>
+              <div class="hcard-actions">
+                <a class="hcard-cta" href="https://wa.me/919871262293?text=I%27d%20like%20a%20free%20treatment%20plan%20from%20BLK-Max%20Super%20Speciality%20Hospital" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Get Free Treatment Plan</a>
+              </div>
+            </div>
+          </article>
+          <!-- Card 8: Manipal Hospitals -->
+          <article class="hcard reveal">
+            <div class="hcard-photo">
+              <img src="images/hospital/manipal.jpg" alt="Manipal Hospitals" class="hcard-img"
+                width="500" height="375" loading="lazy" decoding="async">
+            </div>
+            <div class="hcard-info">
+              <span class="hcard-badge">New Delhi</span>
+              <h3 class="hcard-name"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path fill="#fff" d="M13 6h-2v5H6v2h5v5h2v-5h5v-2h-5z"/></svg><span>Manipal Hospitals</span></h3>
+              <p class="hcard-address"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Sector 6, Dwarka, New Delhi 110075</span></p>
+              <div class="hcard-actions">
+                <a class="hcard-cta" href="https://wa.me/919871262293?text=I%27d%20like%20a%20free%20treatment%20plan%20from%20Manipal%20Hospitals" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>Get Free Treatment Plan</a>
+              </div>
+            </div>
+          </article>
         </div>
-      </div>
-      <div class="text-center mt-8">
-        <a href="/hospitals"
-          class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-lg text-sm transition-colors"
-          style="padding-left:20px;padding-right:20px;">Explore More Hospitals</a>
+
+        <div class="text-center" style="margin-top:2.5rem;">
+          <a href="/hospitals"
+            class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-lg text-sm transition-colors"
+            style="padding-left:20px;padding-right:20px;">Explore More Hospitals</a>
+        </div>
       </div>
     </section>
-    <style>
-      .location-section {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-      }
-
-      .hospitals-main {
-        max-width: 72rem;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 1rem;
-        padding-right: 1rem;
-        box-sizing: border-box;
-      }
-
-      @media (min-width: 640px) {
-        .hospitals-main {
-          padding-left: 1.5rem;
-          padding-right: 1.5rem;
-        }
-      }
-
-      .hospitals-viewport {
-        overflow: hidden;
-        width: 100%;
-        padding: 30px 0;
-        box-sizing: border-box;
-      }
-
-      .hospitals-track {
-        display: flex;
-        gap: 24px;
-        width: max-content;
-        transition: transform 0.8s ease;
-      }
-
-      .hospital-card {
-        flex: 0 0 300px;
-        width: 300px;
-        height: 395px;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-        text-decoration: none;
-        color: inherit;
-        cursor: pointer;
-      }
-
-      .hospital-card-img {
-        flex: 0 0 175px;
-        height: 175px;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .hospital-card-accreditations {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        z-index: 2;
-        display: flex;
-        gap: 8px !important;
-      }
-
-      .hospital-card-accreditations img {
-        width: 26px;
-        height: 26px;
-        object-fit: contain;
-        background: #fff;
-        border-radius: 6px;
-        padding: 3px;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
-      }
-
-      .hospital-card-info {
-        flex: 1 1 auto;
-        min-height: 0;
-        overflow: hidden;
-        padding: 18px !important;
-      }
-
-      .hospital-card-info span {
-        margin-bottom: 0.5rem !important;
-      }
-
-      .hospital-card-info h3 {
-        font-size: 1rem !important;
-        line-height: 1.25 !important;
-        margin-bottom: 0.25rem !important;
-      }
-
-      .hospital-card-info .h-1 {
-        margin-bottom: 0.5rem !important;
-      }
-
-      .hospital-card-info p {
-        margin-bottom: 0.2rem !important;
-        font-size: 0.75rem !important;
-        line-height: 1.35 !important;
-      }
-
-      @media (max-width: 768px) {
-        .hospital-card {
-          flex: 0 0 300px;
-          width: 300px;
-          height: 395px;
-        }
-
-        .hospitals-viewport {
-          padding-left: calc((100% - 300px) / 2);
-          padding-right: calc((100% - 300px) / 2);
-        }
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        .hospitals-track {
-          transition: none;
-        }
-      }
-    </style>
-    <script>
-      (function () {
-        var track = document.getElementById('hospitals-track');
-        if (!track) return;
-        var intervalId = null;
-
-        // Restartable so cms.js can re-init the loop after replacing the
-        // card list with live data (card count/width may differ).
-        function start() {
-          if (intervalId) { clearInterval(intervalId); intervalId = null; }
-          track.style.transition = 'none';
-          track.style.transform = 'translateX(0)';
-
-          // Strip any clone nodes a previous start() call appended. These
-          // are tagged individually (not tracked via a flag on `track`,
-          // which would go stale: cms.js replaces track's children via
-          // innerHTML when live data loads, but that doesn't touch
-          // attributes on `track` itself, so a flag could wrongly say
-          // "still cloned" for content that's actually already fresh).
-          Array.prototype.slice.call(track.querySelectorAll('[data-carousel-clone]')).forEach(function (el) {
-            el.remove();
-          });
-
-          var originalCount = track.children.length;
-
-          // 1-2 hospitals: nothing to loop. Show them as-is with no
-          // clones and no sliding animation — cloning here would make
-          // the same hospital visibly appear twice on screen at once.
-          if (originalCount <= 2) {
-            return;
-          }
-
-          var realCards = Array.prototype.slice.call(track.children);
-          realCards.forEach(function (card) {
-            var clone = card.cloneNode(true);
-            clone.setAttribute('data-carousel-clone', 'true');
-            clone.setAttribute('aria-hidden', 'true');
-            track.appendChild(clone);
-          });
-          var index = 0;
-
-          function step() {
-            var card = track.children[0];
-            if (!card) return;
-            var gap = parseFloat(getComputedStyle(track).gap) || 24;
-            var cardWidth = card.getBoundingClientRect().width;
-            index++;
-            track.style.transition = 'transform 0.8s ease';
-            track.style.transform = 'translateX(-' + (index * (cardWidth + gap)) + 'px)';
-            if (index >= originalCount) {
-              setTimeout(function () {
-                track.style.transition = 'none';
-                track.style.transform = 'translateX(0)';
-                index = 0;
-              }, 850);
-            }
-          }
-
-          intervalId = setInterval(step, 6500);
-        }
-
-        window.__startHospitalsCarousel = start;
-        start();
-      })();
-    </script>
 
     <!-- ========== JOURNEY: How it works + Visa & Travel (combined) ========== -->
     <section id="how-it-works" class="scroll-mt-24 bg-soft" aria-labelledby="hiw-heading">
@@ -1687,9 +1518,9 @@
     </a>
 
     <script src="assets/js/nav.js?v=20260808-navsmooth1" defer></script>
-    <script src="assets/js/doctors.js?v=20260808-home8doctors1" defer></script>
+    <script src="assets/js/doctors.js?v=20260908-limit10" defer></script>
     <script src="assets/js/specialties.js?v=20260904-weightloss1" defer></script>
-    <script src="assets/js/cms.js?v=20260807-txfix1" defer></script>
+    <script src="assets/js/cms.js?v=20260908-hospitalfidelity1" defer></script>
     <script src="assets/js/main.min.js?v=20260810-formstandardize1" defer></script>
 </body>
 

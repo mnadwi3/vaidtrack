@@ -84,6 +84,14 @@
   }
 }
 
+/* Site-wide content width, matched to the landing microsites'
+   max-w-container-max (1536px, see knee-replacement-in-india/css/tailwind.min.css).
+   Overrides Tailwind's built-in max-w-6xl (1152px) utility everywhere it's
+   used as the page container — header, section wrappers, and footer all
+   share this one class, so this single rule widens every page that loads
+   this stylesheet after tailwind.min.css. */
+.max-w-6xl { max-width: 96rem; }
+
 html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; overflow-x: hidden; }
 
 body {
@@ -372,16 +380,6 @@ label {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-}
-.hospital-card-about {
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.hospital-card-accreditations img {
-  height: 1.75rem;
-  width: auto;
 }
 .tx-book {
   display: inline-flex;
@@ -725,308 +723,324 @@ label {
   margin-right: auto;
 }
 
-/* ---- Doctor cards ---- */
+/* ---- Doctor cards ----
+   Shared by the homepage's "Top Doctors" section and the /all-doctors
+   directory page — photo-top bordered card with a specialty badge,
+   matching the doctor-card style used on the landing microsites
+   (e.g. /knee-replacement-in-india). Rendered by renderDirectoryCard()
+   in assets/js/doctors.js. */
+/* Flexbox, not grid: a grid's last row of leftover items hugs the left
+   edge, but flex-wrap + justify-content:center centers a short last row
+   as a group instead — card/doctor counts aren't guaranteed multiples of
+   the column count at every breakpoint. */
 .doc-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
   gap: 1rem;
-  align-items: stretch;
 }
-@media (min-width: 768px) {
-  .doc-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.1rem;
-  }
-}
-@media (min-width: 1024px) {
-  .doc-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.15rem;
-  }
-}
-.doc-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-start;
-  text-align: left;
-  background: var(--background);
-  border-radius: 0.9rem;
-  padding: 1.25rem 1.1rem 1rem;
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
-  border: 1px solid var(--border);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  min-width: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 26rem;
-  max-height: 26rem;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-.doc-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 26px var(--shadow-strong);
-  border-color: var(--primary-light);
-}
-.doc-photo {
-  width: 5.25rem;
-  height: 5.25rem;
-  border-radius: 999px;
-  margin: 0 auto 0.85rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(160deg, var(--accent-soft) 0%, #d7e6f1 100%);
-  color: var(--secondary);
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  border: 3px solid #fff;
-  box-shadow: 0 0 0 1px var(--border), 0 6px 14px rgba(15, 23, 42, 0.08);
-  flex-shrink: 0;
-  overflow: hidden;
-}
-.doc-photo span { line-height: 1; }
-.doc-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  display: block;
-}
-.doc-card h3 {
-  margin: 0 0 0.45rem;
-  font-size: 1rem !important;
-  font-weight: 700 !important;
-  line-height: 1.3 !important;
-  color: var(--secondary);
-  text-align: center;
-  width: 100%;
-  flex-shrink: 0;
-}
-.doc-card .doc-role {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
-  margin: 0 auto 1rem;
-  padding: 0 0 0.3rem;
-  border-bottom: 2px solid var(--secondary);
-  color: var(--secondary);
-  font-size: 0.72rem;
-  font-weight: 600;
-  line-height: 1.3;
-  max-width: 100%;
-  text-align: center;
-}
-.doc-info {
-  list-style: none;
-  margin: 0 0 1rem;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  width: 100%;
-  flex: 1 1 auto;
-}
-.doc-info li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.55rem;
-  margin: 0;
-  color: var(--text-light);
-  font-size: 0.78rem;
-  font-weight: 400;
-  line-height: 1.45;
-  text-align: left;
-}
-.doc-info li svg {
-  width: 1rem;
-  height: 1rem;
-  flex-shrink: 0;
-  margin-top: 0.12rem;
-  color: var(--primary);
-}
-.doc-info li span {
-  min-width: 0;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-/* Expertise is always the last item and has unbounded admin-authored
-   length; clamp it so one long entry can't grow the card taller than its
-   siblings in the row and throw the button rows out of alignment. */
-.doc-info li:last-child span {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.doc-info li strong {
-  font-weight: 700;
-  color: var(--secondary);
-}
-.doc-actions {
-  display: flex;
-  align-items: stretch;
-  gap: 0.45rem;
-  width: 100%;
-  margin-top: auto;
-  flex-shrink: 0;
-}
-.doc-book,
-.doc-card .doc-wa {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-  box-sizing: border-box;
-  min-height: 2.35rem;
-  padding: 0.45rem 0.5rem;
-  border-radius: 0.4rem;
-  color: var(--background);
-  font-size: 0.68rem;
-  font-weight: 700;
-  line-height: 1.2;
-  text-decoration: none;
-  text-align: center;
-  white-space: normal;
-  transition: background 0.15s ease, filter 0.15s ease;
-  margin-top: 0;
-  width: 0;
-  min-width: 0;
-  max-width: none;
-}
-.doc-book {
-  flex: 1 1 0;
-  background: var(--primary);
-}
-.doc-book:hover { background: var(--primary-dark); color: var(--background); }
-.doc-card .doc-wa {
-  flex: 1 1 0;
-  background: var(--wa);
-}
-.doc-card .doc-wa:hover { background: var(--wa-hover); color: var(--background); }
-.doc-book svg,
-.doc-card .doc-wa svg {
-  width: 0.9rem;
-  height: 0.9rem;
-  flex-shrink: 0;
-}
+.doc-grid > * { flex: 0 1 calc(50% - 0.5rem); }
 @media (min-width: 640px) {
-  .doc-card {
-    padding: 1.2rem 1.05rem 0.95rem;
-    border-radius: 1rem;
-    min-height: 24.3rem;
-    max-height: 24.3rem;
-  }
-  .doc-photo {
-    width: 5rem;
-    height: 5rem;
-    font-size: 1.1rem;
-    margin-bottom: 0.7rem;
-  }
-  .doc-card h3 { font-size: 1.05rem !important; }
-  .doc-card .doc-role { font-size: 0.75rem; padding: 0 0 0.3rem; }
-  .doc-info li { font-size: 0.8rem; }
-  .doc-book,
-  .doc-card .doc-wa {
-    font-size: 0.72rem;
-    min-height: 2.45rem;
-  }
+  .doc-grid { gap: 1.1rem; }
+  .doc-grid > * { flex-basis: calc(33.333% - 0.7333rem); }
 }
 @media (min-width: 1024px) {
-  .doc-card { min-height: 25.2rem; max-height: 25.2rem; }
-  .doc-card h3 { font-size: 1.05rem !important; }
-  .doc-info li { font-size: 0.8rem; }
-  .doc-book,
-  .doc-card .doc-wa { font-size: 0.7rem; }
+  /* 5 columns per row at desktop, per explicit request — unlike
+     .hospitals-grid (capped at 4 to match the landing page's card
+     width), doctor cards are meant to run narrower/denser here. */
+  .doc-grid { gap: 1.15rem; }
+  .doc-grid > * { flex-basis: calc(20% - 0.92rem); }
 }
 
-/* ---- Mobile-only: doctors + treatment section padding ---- */
+/* ---- Doctors + treatment section padding (mobile) ---- */
 @media (max-width: 767px) {
   #treatment > .max-w-6xl,
   #doctors > .max-w-6xl {
     padding-left: 0.875rem;  /* ~14px side margins */
     padding-right: 0.875rem;
   }
+}
 
-  .doc-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 1.35rem;
-    justify-items: stretch;
-    align-items: stretch;
-  }
+/* Sized ~20% more compact than a plain scale of the hospital .hcard —
+   same column/flex-basis grid as before, just smaller photo/padding/type
+   within each cell, per explicit request. */
+.dcard {
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  border: 1px solid var(--primary);
+  border-radius: 0.9rem;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  height: 100%;
+}
+.dcard:hover {
+  border-color: var(--gold);
+  box-shadow: 0 10px 26px var(--shadow-strong);
+  transform: translateY(-2px);
+}
+.dcard-photo {
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  border-bottom: 1px solid var(--primary);
+  overflow: hidden;
+  flex-shrink: 0;
+  background: linear-gradient(160deg, var(--accent-soft) 0%, #d7e6f1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dcard-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.dcard-initials {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--secondary);
+  letter-spacing: 0.02em;
+}
+.dcard-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.65rem 0.7rem;
+}
+.dcard-badge {
+  align-self: center;
+  background: var(--accent-soft);
+  color: var(--primary);
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.2rem;
+  margin-bottom: 0.45rem;
+}
+.dcard-textgroup {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dcard-name {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 0.25rem;
+  font-size: 0.84rem !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+  color: var(--secondary);
+}
+.dcard-name svg { width: 0.75rem; height: 0.75rem; flex-shrink: 0; color: var(--primary); }
+.dcard-creds {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 0.4rem;
+  font-size: 0.64rem;
+  line-height: 1.3;
+  color: var(--text-light);
+}
+.dcard-creds svg { width: 0.75rem; height: 0.75rem; flex-shrink: 0; color: var(--primary); }
+.dcard-exp {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.64rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+.dcard-exp svg { width: 0.75rem; height: 0.75rem; flex-shrink: 0; }
+.dcard-actions { width: 100%; margin-top: 0.55rem; }
+.dcard-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.48rem 0.4rem;
+  border-radius: 0.4rem;
+  background: var(--wa);
+  color: var(--background);
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.15s ease;
+}
+.dcard-cta:hover { background: var(--wa-hover); }
+.dcard-cta svg { width: 0.72rem; height: 0.72rem; flex-shrink: 0; }
+@media (max-width: 480px) {
+  .dcard-name { font-size: 0.74rem !important; }
+  .dcard-creds, .dcard-exp { font-size: 0.58rem; }
+  .dcard-badge { font-size: 0.5rem; padding: 0.16rem 0.4rem; }
+  .dcard-cta { font-size: 0.58rem; padding: 0.4rem 0.32rem; }
+}
 
-  .doc-card {
-    width: 100%;
-    max-width: none;
-    aspect-ratio: auto;
-    height: auto;
-    min-height: 0;
-    max-height: none;
-    border-radius: 1.1rem;
-    padding: 1.35rem 1.2rem 1.15rem;
-    box-shadow:
-      0 4px 10px rgba(15, 23, 42, 0.04),
-      0 14px 32px rgba(15, 23, 42, 0.08);
-    overflow: hidden;
-  }
-
-  .doc-photo {
-    width: 6rem;
-    height: 6rem;
-    font-size: 1.3rem;
-    margin-bottom: 0.95rem;
-  }
-
-  .doc-card h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.2rem !important;
-    line-height: 1.3 !important;
-    text-align: center;
-  }
-
-  .doc-card .doc-role {
-    margin: 0 auto 1.05rem;
-    padding: 0 0 0.35rem;
-    font-size: 0.85rem;
-    align-self: center;
-  }
-
-  .doc-info {
-    gap: 0.8rem;
-    margin-bottom: 1.1rem;
-  }
-
-  .doc-info li {
-    font-size: 0.9rem;
-    gap: 0.65rem;
-  }
-
-  .doc-info li svg {
-    width: 1.1rem;
-    height: 1.1rem;
-  }
-
-  .doc-book,
-  .doc-card .doc-wa {
-    min-height: 2.7rem;
-    padding: 0.6rem 0.55rem;
-    border-radius: 0.5rem;
-    font-size: 0.8rem;
-    white-space: normal;
-    margin-top: 0;
-    width: 0;
-    min-width: 0;
-  }
-
-  .doc-book svg,
-  .doc-card .doc-wa svg {
-    width: 1rem;
-    height: 1rem;
-  }
+/* ---- Hospital cards (homepage "Our Partner Hospitals") ----
+   Deliberately distinct from the doctor .dcard: on the landing microsites
+   (e.g. /knee-replacement-in-india) the hospital-card is a neutral,
+   photo-forward tile (thin gray border, no border under the photo, no
+   hover lift, smaller type) rather than the doctor card's blue-bordered/
+   gold-hover treatment — keep that contrast, don't reuse .dcard's palette.
+   Static grid — no auto-sliding carousel. Rendered by renderHospitalCard()
+   in assets/js/cms.js. */
+/* Flexbox, not grid: a grid's last row of leftover items hugs the left
+   edge, but flex-wrap + justify-content:center centers a short last row
+   as a group instead — 8 hospitals doesn't divide evenly into every
+   column count below. */
+.hospitals-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+}
+.hospitals-grid > * { flex: 0 1 calc(50% - 0.5rem); }
+@media (min-width: 640px) {
+  .hospitals-grid { gap: 1.1rem; }
+  .hospitals-grid > * { flex-basis: calc(33.333% - 0.7333rem); }
+}
+@media (min-width: 1024px) {
+  /* Cap at 4 columns, matching the landing microsite's grid — don't add
+     a 5th column at wider screens, or cards end up narrower than the
+     landing page's ~346px cards instead of simply growing with the
+     wider (.max-w-6xl, 1536px) container. */
+  .hospitals-grid { gap: 1.15rem; }
+  .hospitals-grid > * { flex-basis: calc(25% - 0.8625rem); }
+}
+.hcard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+}
+.hcard:hover {
+  border-color: #c9cccc;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+.hcard-photo {
+  width: 100%;
+  height: 8.75rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: var(--section-bg);
+  position: relative;
+}
+@media (min-width: 768px) {
+  .hcard-photo { height: 10.75rem; }
+}
+.hcard-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.hcard-link {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.18);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.hcard-link:hover { background: var(--primary); color: #fff; }
+.hcard-link svg { width: 0.85rem; height: 0.85rem; }
+.hcard-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.65rem 0.9rem 0.9rem;
+}
+.hcard-badge {
+  align-self: flex-start;
+  background: var(--accent-soft);
+  color: var(--primary);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+  border-radius: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+.hcard-name {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 0.35rem;
+  font-size: 0.88rem !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+  color: var(--secondary);
+}
+@media (min-width: 768px) {
+  .hcard-name { font-size: 1rem !important; }
+}
+.hcard-name svg { width: 0.85rem; height: 0.85rem; flex-shrink: 0; color: var(--secondary); }
+.hcard-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.3rem;
+  margin: 0 0 0.6rem;
+  font-size: 0.7rem;
+  line-height: 1.4;
+  color: var(--text-light);
+  flex: 1;
+}
+.hcard-address svg { width: 0.85rem; height: 0.85rem; flex-shrink: 0; margin-top: 0.05rem; color: var(--text-light); }
+.hcard-actions { width: 100%; margin-top: auto; }
+.hcard-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem 0.5rem;
+  border-radius: 0.4rem;
+  background: var(--primary);
+  color: var(--background);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.15s ease;
+}
+.hcard-cta:hover { background: var(--primary-dark); }
+.hcard-cta svg { width: 0.9rem; height: 0.9rem; flex-shrink: 0; }
+@media (max-width: 480px) {
+  .hcard-address { font-size: 0.65rem; }
+  .hcard-badge { font-size: 0.6rem; padding: 0.18rem 0.5rem; }
+  .hcard-cta { font-size: 0.72rem; padding: 0.55rem 0.4rem; }
 }
 
 /* Scroll reveal */

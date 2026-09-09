@@ -15,7 +15,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=20260818-3">
   <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=20260803-perf3">
-  <link rel="stylesheet" href="/assets/css/styles.min.css?v=20260808-viewallbtn1">
+  <link rel="stylesheet" href="/assets/css/styles.min.css?v=20260908-doc5col1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
@@ -373,13 +373,13 @@
     .hp-treatment-pill:hover { border-color: rgba(15,76,129,0.35); box-shadow: 0 10px 22px -16px rgba(15,76,129,0.35); }
 
     /* ---------- Doctors ----------
-       Mirrors the homepage doctor card's centered-photo layout and fixed
-       card height (assets/css/styles.css .doc-card) so a hospital page
-       doesn't read as a plain flat list, but drops the experience/
-       expertise detail rows since this is a secondary placement. Grid
-       items stretch to the row's tallest card by default, so every card
-       in a row shares one height and the button sits at the same y
-       regardless of qualification-text length (clamped below). */
+       A centered-photo, fixed-height card of its own (not shared with
+       assets/css/styles.css .dcard) so a hospital page doesn't read as a
+       plain flat list, but drops the experience/expertise detail rows
+       since this is a secondary placement. Grid items stretch to the
+       row's tallest card by default, so every card in a row shares one
+       height and the button sits at the same y regardless of
+       qualification-text length (clamped below). */
     .hp-doctor-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.35rem; align-items: stretch; }
     .hp-doctor-card {
       height: 100%;

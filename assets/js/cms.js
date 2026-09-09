@@ -10,6 +10,20 @@
 (function () {
   // Same server as the site; adjust if the admin panel is mounted elsewhere.
   var API_BASE = '/adminpanel';
+  var WA_NUMBER = '919871262293';
+
+  var ICON_HOSPITAL =
+    '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path fill="#fff" d="M13 6h-2v5H6v2h5v5h2v-5h5v-2h-5z"/></svg>';
+  var ICON_PIN =
+    '<svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+  var ICON_ARROW =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M10 7h7v7"/></svg>';
+  var ICON_CHAT =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>';
+
+  function waUrl(message) {
+    return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(message);
+  }
 
   function escapeHtml(str) {
     return String(str == null ? '' : str)
@@ -59,65 +73,51 @@
     }
   }
 
-  /* ---------- Hospitals ---------- */
+  /* ---------- Hospitals ----------
+     Photo-top bordered card with a city badge, matching the hospital-card
+     style used on the landing microsites (e.g. /knee-replacement-in-india).
+     Renders into a static grid (#hospitals-grid) — no carousel/auto-slide. */
   function renderHospitalCard(h) {
+    var name = h.name || '';
     var img = h.cover_image || h.logo || '';
     var imgHtml = img
-      ? '<img src="' + escapeHtml(img) + '" alt="' + escapeHtml(h.name) + '" class="w-full h-full object-cover" width="500" height="250" loading="lazy" decoding="async">'
+      ? '<img src="' + escapeHtml(img) + '" alt="' + escapeHtml(name) + '" class="hcard-img" width="500" height="375" loading="lazy" decoding="async">'
       : '';
 
-    var description = (h.description || '').trim();
-    if (description.length > 220) description = description.slice(0, 217).trim() + '…';
-    var descriptionHtml = description
-      ? '<p class="text-slate-600 text-sm leading-relaxed mb-3 hospital-card-about">' + escapeHtml(description) + '</p>'
+    var addressLines = [h.address_line1, h.address_line2].filter(Boolean).join(', ');
+    var addressText = addressLines || [h.city, h.pincode, h.country].filter(Boolean).join(', ');
+    var addressHtml = addressText
+      ? '<p class="hcard-address">' + ICON_PIN + '<span>' + escapeHtml(addressText) + '</span></p>'
       : '';
 
-    var addressLines = [h.address_line1, h.address_line2].filter(Boolean).map(escapeHtml).join('<br>');
-    var addressHtml = addressLines
-      ? '<p class="text-sm font-semibold text-secondary mb-1">Address</p>' +
-        '<p class="text-slate-600 text-sm leading-relaxed mb-2">' + addressLines + '</p>'
+    var href = h.url || '';
+    var linkHtml = href
+      ? '<a class="hcard-link" href="' + escapeHtml(href) + '" aria-label="Open ' + escapeHtml(name) + ' details page">' + ICON_ARROW + '</a>'
       : '';
 
-    var cityLine = [h.city, h.pincode, h.country].filter(Boolean).map(escapeHtml).join(', ');
-    var cityLineHtml = cityLine
-      ? '<p class="text-slate-600 text-sm leading-relaxed mb-3">' + cityLine + '</p>'
-      : '';
-
-    var accreditationHtml = '';
-    if (Array.isArray(h.accreditation_logos) && h.accreditation_logos.length) {
-      accreditationHtml = '<div class="hospital-card-accreditations flex items-center gap-1">' +
-        h.accreditation_logos.map(function (a) {
-          return '<img src="' + escapeHtml(a.logo) + '" alt="' + escapeHtml(a.label) + '" title="' + escapeHtml(a.label) + '" loading="lazy" decoding="async">';
-        }).join('') +
-        '</div>';
-    }
-
-    var href = h.url || '#';
+    var waMsg = "I'd like a free treatment plan from " + name;
 
     return (
-      '<a class="hospital-card bg-white rounded-2xl shadow-card overflow-hidden border border-slate-100" href="' + escapeHtml(href) + '">' +
-        '<div class="hospital-card-img">' + imgHtml + accreditationHtml + '</div>' +
-        '<div class="hospital-card-info bg-[var(--section-bg)] p-6 flex flex-col justify-center">' +
-          '<h3 class="font-display text-xl sm:text-2xl font-bold text-primary mb-2">' + escapeHtml(h.name) + '</h3>' +
-          '<div class="w-12 h-1 bg-gold rounded-full mb-4" aria-hidden="true"></div>' +
-          descriptionHtml +
+      '<article class="hcard reveal">' +
+        '<div class="hcard-photo">' + imgHtml + linkHtml + '</div>' +
+        '<div class="hcard-info">' +
+          (h.city ? '<span class="hcard-badge">' + escapeHtml(h.city) + '</span>' : '') +
+          '<h3 class="hcard-name">' + ICON_HOSPITAL + '<span>' + escapeHtml(name) + '</span></h3>' +
           addressHtml +
-          cityLineHtml +
+          '<div class="hcard-actions">' +
+            '<a class="hcard-cta" href="' + waUrl(waMsg) + '" target="_blank" rel="noopener noreferrer">' +
+              ICON_CHAT + 'Get Free Treatment Plan</a>' +
+          '</div>' +
         '</div>' +
-      '</a>'
+      '</article>'
     );
   }
 
   function renderHospitals(list) {
-    var track = document.getElementById('hospitals-track');
-    if (!track || !Array.isArray(list) || !list.length) return;
-    track.innerHTML = list.map(renderHospitalCard).join('');
-    // The inline carousel script clones/animates this track at parse time
-    // using the original card count; restart it so it re-measures the
-    // live card list instead of animating against stale geometry.
-    if (typeof window.__startHospitalsCarousel === 'function') {
-      window.__startHospitalsCarousel();
-    }
+    var grid = document.getElementById('hospitals-grid');
+    if (!grid || !Array.isArray(list) || !list.length) return;
+    grid.innerHTML = list.map(renderHospitalCard).join('');
+    observeReveal(grid.querySelectorAll('.reveal'));
   }
 
   /* ---------- Testimonials ---------- */
