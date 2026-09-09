@@ -10,7 +10,7 @@
 (function () {
   // Same server as the site; adjust if the admin panel is mounted elsewhere.
   var API_BASE = '/adminpanel';
-  var WA_NUMBER = '919871262293';
+  var WA_NUMBER = '919818377518';
 
   var ICON_HOSPITAL =
     '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path fill="#fff" d="M13 6h-2v5H6v2h5v5h2v-5h5v-2h-5z"/></svg>';
