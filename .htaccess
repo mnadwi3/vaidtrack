@@ -14,6 +14,13 @@ RewriteRule ^ /%1 [R=301,L]
 # Home section clean URLs → serve homepage (URL stays /treatment, /doctors, etc.)
 RewriteRule ^(treatment|doctors|testimonials|about-us|faq|contact|book-appointment|visa-travel|how-it-works)/?$ /index.html [L]
 
+# Redirect legacy hospital query-string URLs to clean paths
+RewriteCond %{QUERY_STRING} (^|&)slug=([a-zA-Z0-9-]+)
+RewriteRule ^hospital/?$ /hospitals/%2? [R=301,L]
+
+# Sitemap is generated live from the CMS so it never goes stale
+RewriteRule ^sitemap\.xml$ /adminpanel/sitemap.xml [L]
+
 # Serve extensionless URLs as .html files
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -28,6 +35,11 @@ RewriteRule ^treatments/([a-zA-Z0-9-]+)/?$ /adminpanel/treatments/$1 [L]
 # Specialty listing pages → dynamic admin-panel page
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^specialities/([a-zA-Z0-9-]+)/?$ /adminpanel/specialities/$1 [L]
+
+# Hospital detail pages with no legacy static file → dynamic admin-panel page
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}.html !-f
+RewriteRule ^hospitals/([a-zA-Z0-9-]+)/?$ /adminpanel/hospitals/$1 [L]
 
 # Performance: compression
 <IfModule mod_deflate.c>

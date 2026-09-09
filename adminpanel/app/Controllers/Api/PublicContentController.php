@@ -265,7 +265,7 @@ final class PublicContentController extends Controller
             'accreditation_logos' => $accreditationLogos,
             'seo_title' => $h['seo_title'] ?? $h['name'],
             'seo_description' => $h['seo_description'] ?? null,
-            'url' => '/hospital?slug=' . rawurlencode((string) $h['slug']),
+            'url' => '/hospitals/' . rawurlencode((string) $h['slug']),
         ];
     }
 

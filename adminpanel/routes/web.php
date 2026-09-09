@@ -10,6 +10,7 @@ use App\Controllers\FaqController;
 use App\Controllers\HospitalController;
 use App\Controllers\PublicDoctorController;
 use App\Controllers\PublicHospitalController;
+use App\Controllers\PublicSitemapController;
 use App\Controllers\PublicSpecialtyController;
 use App\Controllers\PublicTreatmentController;
 use App\Controllers\SettingsController;
@@ -90,6 +91,8 @@ $router->post('/hospitals/{id}/restore', [HospitalController::class, 'restore'],
 $router->post('/hospitals/{id}/duplicate', [HospitalController::class, 'duplicate'], [AuthMiddleware::class]);
 
 $router->get('/hospitals/{slug}', [PublicHospitalController::class, 'show']);
+
+$router->get('/sitemap.xml', [PublicSitemapController::class, 'index']);
 
 $router->get('/specialties', [SpecialtyController::class, 'index'], [AuthMiddleware::class]);
 $router->get('/specialties/create', [SpecialtyController::class, 'create'], [AuthMiddleware::class]);
