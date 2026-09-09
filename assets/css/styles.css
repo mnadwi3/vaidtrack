@@ -774,7 +774,11 @@ label {
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(15, 23, 42, 0.07);
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
-  height: 100%;
+  /* height must stay `auto` (the default) -- align-items:stretch on the
+     parent .doc-grid only equalizes cross-axis size when a flex item's
+     height computes to auto; an explicit height:100% opts the item out of
+     stretch entirely, so cards in the same row end up sized to their own
+     content instead of matching their tallest row-mate. */
 }
 .dcard:hover {
   border-color: var(--gold);
@@ -931,7 +935,7 @@ label {
   overflow: hidden;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  height: 100%;
+  /* height must stay `auto` -- see the identical note on .dcard above. */
 }
 .hcard:hover {
   border-color: #c9cccc;
