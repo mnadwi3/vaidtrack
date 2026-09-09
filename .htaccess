@@ -29,6 +29,13 @@ RewriteRule ^hospital/?$ /hospitals/%2? [R=301,L]
 # Sitemap is generated live from the CMS so it never goes stale
 RewriteRule ^sitemap\.xml$ /adminpanel/sitemap.xml [L]
 
+# Hospital listing page. Renamed off "hospitals.html" because a static file
+# with the exact same name as the /hospitals/{slug} dynamic route's first
+# path segment collides at the web-server level (confirmed via live testing:
+# ANY /X/... collides with a sibling X.html file, unrelated to any rewrite
+# rule — reproduced with /privacy-policy/*, /disclaimer/*, /index/* too).
+RewriteRule ^hospitals/?$ /hospitals-listing.html [L]
+
 # Serve extensionless URLs as .html files
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
