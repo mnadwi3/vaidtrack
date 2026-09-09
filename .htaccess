@@ -51,10 +51,10 @@ RewriteRule ^treatments/([a-zA-Z0-9-]+)/?$ /adminpanel/treatments/$1 [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^specialities/([a-zA-Z0-9-]+)/?$ /adminpanel/specialities/$1 [L]
 
-# Hospital detail pages with no legacy static file → dynamic admin-panel page
+# Hospital detail pages: serve the designed static page (reads the slug
+# from the URL path via JS) instead of the placeholder admin-panel view.
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME}.html !-f
-RewriteRule ^hospitals/([a-zA-Z0-9-]+)/?$ /adminpanel/hospitals/$1 [L]
+RewriteRule ^hospitals/([a-zA-Z0-9-]+)/?$ /hospital.html [L]
 
 # Performance: compression
 <IfModule mod_deflate.c>
