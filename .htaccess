@@ -1,3 +1,11 @@
+# Disable Apache content negotiation: without this, a request like
+# /hospitals/{slug} can collide with the sibling hospitals.html file and
+# get misrouted before mod_rewrite ever runs (confirmed via live testing —
+# 500s specifically on paths whose first segment has a same-named .html
+# sibling at this level; treatments/specialities have no such file and are
+# unaffected).
+Options -MultiViews
+
 RewriteEngine On
 
 # Redirect www → non-www (canonical domain)
