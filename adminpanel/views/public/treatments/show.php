@@ -12,7 +12,7 @@ $procedure = (string) ($treatment['procedure_overview'] ?? '');
 $recovery = (string) ($treatment['recovery'] ?? '');
 $whyChoose = (string) ($treatment['why_choose'] ?? '');
 $image = !empty($treatment['featured_image']) ? asset((string) $treatment['featured_image']) : null;
-$canonical = 'https://www.vaidtrack.com/treatments/' . ((string) ($treatment['slug'] ?? ''));
+$canonical = 'https://vaidtrack.com/treatments/' . ((string) ($treatment['slug'] ?? ''));
 $waNumber = '919818377518';
 $waMessage = 'Hi, I need ' . $name . ' treatment guidance and a free plan.';
 $waUrl = 'https://wa.me/' . $waNumber . '?text=' . rawurlencode($waMessage);
@@ -39,20 +39,20 @@ $renderBlock = static function (string $text) use ($lines): string {
 $jsonLd = [
     '@context' => 'https://schema.org',
     '@graph' => [
-        ['@type' => 'Organization', 'name' => 'VaidTrack.com', 'url' => 'https://www.vaidtrack.com', 'logo' => 'https://www.vaidtrack.com/images/vaidtrack-wordmark.png'],
+        ['@type' => 'Organization', 'name' => 'VaidTrack.com', 'url' => 'https://vaidtrack.com', 'logo' => 'https://vaidtrack.com/images/vaidtrack-wordmark.png'],
         [
             '@type' => 'MedicalWebPage',
             'name' => $title,
             'url' => $canonical,
             'about' => ['@type' => 'MedicalCondition', 'name' => $name],
             'description' => (string) ($treatment['seo_description'] ?? $overview),
-            'isPartOf' => ['@type' => 'WebSite', 'name' => 'VaidTrack.com', 'url' => 'https://www.vaidtrack.com'],
+            'isPartOf' => ['@type' => 'WebSite', 'name' => 'VaidTrack.com', 'url' => 'https://vaidtrack.com'],
         ],
         [
             '@type' => 'BreadcrumbList',
             'itemListElement' => [
-                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => 'https://www.vaidtrack.com/'],
-                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Treatment', 'item' => 'https://www.vaidtrack.com/treatment'],
+                ['@type' => 'ListItem', 'position' => 1, 'name' => 'Home', 'item' => 'https://vaidtrack.com/'],
+                ['@type' => 'ListItem', 'position' => 2, 'name' => 'Treatment', 'item' => 'https://vaidtrack.com/treatment'],
                 ['@type' => 'ListItem', 'position' => 3, 'name' => $name, 'item' => $canonical],
             ],
         ],

@@ -8,7 +8,7 @@
   <meta id="page-description" name="description" content="Partner hospitals and medical centers on VaidTrack Medical Tourism - India's leading medical tourism coordination platform.">
   <meta name="theme-color" content="#ffffff">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <link id="page-canonical" rel="canonical" href="https://vaidtrack.com/hospital">
+  <link id="page-canonical" rel="canonical" href="https://vaidtrack.com/hospitals">
   <link rel="icon" href="/favicon.ico?v=20260818-3" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=20260818-3">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=20260818-3">
@@ -800,7 +800,7 @@
 
         document.getElementById('page-title').textContent = (h.seo && h.seo.title ? h.seo.title : h.name) + ' | VaidTrack.com';
         document.getElementById('page-description').setAttribute('content', (h.seo && h.seo.description) || h.short_description || '');
-        document.getElementById('page-canonical').setAttribute('href', (h.seo && h.seo.canonical) ? 'https://www.vaidtrack.com' + h.seo.canonical.replace(/^\/adminpanel/, '') : window.location.href);
+        document.getElementById('page-canonical').setAttribute('href', window.location.href);
 
         var heroImg = document.getElementById('hp-hero-img');
         if (h.cover_image) { heroImg.src = h.cover_image; heroImg.alt = h.hero_image_alt || h.name; }

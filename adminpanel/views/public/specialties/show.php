@@ -5,7 +5,7 @@
 
 $name = (string) ($specialty['name'] ?? '');
 $description = (string) ($specialty['description'] ?? '');
-$canonical = 'https://www.vaidtrack.com/specialities/' . ((string) ($specialty['slug'] ?? ''));
+$canonical = 'https://vaidtrack.com/specialities/' . ((string) ($specialty['slug'] ?? ''));
 $waNumber = '919818377518';
 
 $renderCard = static function (array $t) use ($waNumber): string {

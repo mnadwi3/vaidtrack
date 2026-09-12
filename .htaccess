@@ -36,6 +36,11 @@ RewriteRule ^sitemap\.xml$ /adminpanel/sitemap.xml [L]
 # rule — reproduced with /privacy-policy/*, /disclaimer/*, /index/* too).
 RewriteRule ^hospitals/?$ /hospitals-listing.html [L]
 
+# The raw filename above is also reachable as its own clean URL (extensionless
+# rule below applies to every .html file); redirect it to the real canonical
+# /hospitals so there isn't a second indexable/crawlable duplicate URL.
+RewriteRule ^hospitals-listing/?$ /hospitals [R=301,L]
+
 # Serve extensionless URLs as .html files
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
